@@ -12,11 +12,11 @@ public class EnemyController : MonoBehaviour, IFreeze, ITakeDamage
     {
         Idle,
         Walk,
-        Run,
         Shoot
     }
 
-    public EnemyStates currentEnemyState;
+    private EnemyStates currentEnemyState;
+    private EnemyStates previousEnemyState;
     public EnemySO enemy;
     
     //Health Variables
@@ -31,11 +31,14 @@ public class EnemyController : MonoBehaviour, IFreeze, ITakeDamage
 
     [Header("AI Variables and Values")] 
     [SerializeField] private Transform[] destinations;
+    private Transform _currentDestination;
+    private int _currentPointIndex = 0;
     [SerializeField] private float currentSpeed = 2.0f;
     [SerializeField] private float walkSpeed = 2.0f;
-    [SerializeField] private float runSpeed = 2.0f;
     [SerializeField] private float speedWhileShooting = .5f;
     [SerializeField] private float distanceToPlayer; //How far away the player is
+    [SerializeField] private float minIdleTime = 1f; //Minimum time the enemy will idle
+    [SerializeField] private float maxIdleTime = 5f; //Maximum time the enemy will idle
     
     [Header("Combat")] 
     private bool _canShoot = true;
@@ -51,6 +54,9 @@ public class EnemyController : MonoBehaviour, IFreeze, ITakeDamage
     private void Start()
     {
         currentHealth = enemy.maxHealth;
+
+        currentEnemyState = EnemyStates.Walk;
+        enemyAgent.SetDestination(GetRandomDestination().position);
         
         //Find player on start
         player = GameObject.FindGameObjectWithTag("Player");
@@ -60,7 +66,15 @@ public class EnemyController : MonoBehaviour, IFreeze, ITakeDamage
     {
         if (isAlive)
         {
+            previousEnemyState = currentEnemyState;
             GetEnemyState();
+        
+            // If it just transitions from Idle to Walk
+            if (previousEnemyState == EnemyStates.Idle && currentEnemyState == EnemyStates.Walk)
+            {
+                enemyAgent.SetDestination(GetRandomDestination().position);
+            }
+
             HandleEnemyState();
         }
     }
@@ -75,14 +89,14 @@ public class EnemyController : MonoBehaviour, IFreeze, ITakeDamage
             {
                 currentEnemyState = EnemyStates.Shoot;
             }
-            else if (distanceToPlayer <= canShootDistance && distanceToPlayer >= wanderDistance)
+            else if (distanceToPlayer > canShootDistance && distanceToPlayer <= wanderDistance)
             {
                 currentEnemyState = EnemyStates.Walk;
             }
-            else
-            {
-                currentEnemyState = EnemyStates.Idle;
-            }
+        }
+        else
+        {
+            StartCoroutine(SetIdleState(Random.Range(minIdleTime, maxIdleTime)));
         }
     }
 
@@ -94,15 +108,12 @@ public class EnemyController : MonoBehaviour, IFreeze, ITakeDamage
                 enemyAgent.speed = 0.0f;
                 break;
             case EnemyStates.Walk:
-                enemyAgent.speed = walkSpeed;
-
-                if (!enemyAgent.pathPending && enemyAgent.remainingDistance <= .01f)
+                if (!enemyAgent.pathPending && enemyAgent.remainingDistance <= .1f)
                 {
-                    int randomDestination = Random.Range(destinations[0, destinations.Length));
+                    int randomDestination = Random.Range(0, destinations.Length);
+                    _currentDestination = destinations[randomDestination];
+                    enemyAgent.SetDestination(_currentDestination.position);
                 }
-                break;
-            case EnemyStates.Run:
-                enemyAgent.speed = runSpeed;
                 break;
             case EnemyStates.Shoot:
                 enemyAgent.speed = speedWhileShooting;
@@ -118,6 +129,25 @@ public class EnemyController : MonoBehaviour, IFreeze, ITakeDamage
         //enemyAnimator.SetFloat("Speed", currentSpeed);
     }
 
+    private IEnumerator SetIdleState(float idleTime)
+    {
+        currentEnemyState = EnemyStates.Idle;
+
+        // Wait for the specified idle time
+        yield return new WaitForSeconds(idleTime);
+
+        // After idling, the enemy should go back to walking if the player is not in range
+        if (!IsPlayerInRange())
+        {
+            currentEnemyState = EnemyStates.Walk;
+        }
+    }
+    
+    private Transform GetRandomDestination()
+    {
+        return destinations[Random.Range(0, destinations.Length)];
+    }
+    
     private bool IsLookingAtPlayer()
     {
         if (Physics.Raycast(

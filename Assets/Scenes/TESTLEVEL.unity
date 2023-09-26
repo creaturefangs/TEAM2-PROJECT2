@@ -299,6 +299,7 @@ GameObject:
   - component: {fileID: 504921323}
   - component: {fileID: 504921322}
   - component: {fileID: 504921321}
+  - component: {fileID: 504921325}
   m_Layer: 0
   m_Name: Ground
   m_TagString: Untagged
@@ -392,6 +393,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &504921325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504921320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: f5c28d5df7f44b246b0bee3d8a128a5c, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1 &565693703
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,7 +449,7 @@ Transform:
   m_GameObject: {fileID: 565693703}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.17, y: 0, z: -7.43}
+  m_LocalPosition: {x: -7.2799997, y: 0.97, z: -2.5700002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -566,7 +598,7 @@ Transform:
   m_GameObject: {fileID: 951223441}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.63, y: 0, z: -7.43}
+  m_LocalPosition: {x: -17.08, y: 0.97, z: -2.57}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -643,6 +675,14 @@ PrefabInstance:
     - target: {fileID: 11414148, guid: a3d3e9322b030904995bcd87999ccfe6, type: 3}
       propertyPath: openCloseWindow
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11434930, guid: a3d3e9322b030904995bcd87999ccfe6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11450382, guid: a3d3e9322b030904995bcd87999ccfe6, type: 3}
+      propertyPath: selectedToolbar
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 237262042, guid: a3d3e9322b030904995bcd87999ccfe6, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -815,18 +855,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e57e46522dfc0449afcd7dbb8e4e4b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentEnemyState: 0
   enemy: {fileID: 11400000, guid: a990157f711b39c43b8801febfa48d07, type: 2}
   isAlive: 1
   enemyAgent: {fileID: 1850202451}
   enemyForwardVector: {fileID: 1627316648}
   enemyAnimator: {fileID: 1850202453}
-  destinations: {fileID: 951223442}
+  destinations:
+  - {fileID: 951223442}
+  - {fileID: 565693704}
+  - {fileID: 1897232991}
   currentSpeed: 2
   walkSpeed: 2
-  runSpeed: 2
-  speedWhileShooting: 0.5
+  speedWhileShooting: 2
   distanceToPlayer: 0
+  minIdleTime: 1
+  maxIdleTime: 5
+  canShootDistance: 20
+  wanderDistance: 15
   playerMask:
     serializedVersion: 2
     m_Bits: 256
@@ -840,7 +885,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1850202449}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.29
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -849,7 +894,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
+  m_Height: 1.73
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
@@ -905,7 +950,7 @@ Transform:
   m_GameObject: {fileID: 1897232990}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.54, y: 0, z: -7.43}
+  m_LocalPosition: {x: 4.09, y: 0.97, z: -2.5700002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
