@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e7ef74e7b8c11947836826e68d6948f, type: 3}
+  m_Name: LaserRifle
+  m_EditorClassIdentifier: 
+  weaponPrefab: {fileID: 1259454994218041689, guid: fd4eb4e014f246847a23387d12add713,
+    type: 3}
+  muzzleFlash: {fileID: 1979869803963528563, guid: a0eb908545f8a7548bc808b329bbe223,
+    type: 3}
+  bullet: {fileID: 11400000, guid: 49a7f58afcab0ed42abaf293fb729482, type: 2}
+  weaponName: Laser Rifle
+  maxMagazineCapacity: 5
+  timeBetweenShots: 5
+  reloadTime: 8

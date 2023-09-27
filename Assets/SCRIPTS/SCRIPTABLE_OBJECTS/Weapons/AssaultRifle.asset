@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e7ef74e7b8c11947836826e68d6948f, type: 3}
+  m_Name: AssaultRifle
+  m_EditorClassIdentifier: 
+  weaponPrefab: {fileID: 3439463239451991696, guid: f1ab7503d2e6cd74f950db8926c47d39,
+    type: 3}
+  muzzleFlash: {fileID: 1979869803963528563, guid: a0eb908545f8a7548bc808b329bbe223,
+    type: 3}
+  bullet: {fileID: 11400000, guid: 9f3620ae6abaee94e85c9e43cf1dea48, type: 2}
+  weaponName: Assault Rifle
+  maxMagazineCapacity: 30
+  timeBetweenShots: 3
+  reloadTime: 6

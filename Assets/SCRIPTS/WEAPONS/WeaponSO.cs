@@ -4,7 +4,10 @@ using UnityEngine;
 public class WeaponSO : ScriptableObject
 {
     public GameObject weaponPrefab;
-    public string weaponName;
-    public int maxMagazineCapacity;
-    public int timeBetweenShots;
+    public GameObject muzzleFlash;
+    public BulletSO bullet;
+    public string weaponName; //MOSTLY FOR DEBUG PURPOSES
+    [Range(5, 31)]public int maxMagazineCapacity;
+    [Range(2, 6)]public int timeBetweenShots;
+    [Range(4, 11)] public int reloadTime;
 }

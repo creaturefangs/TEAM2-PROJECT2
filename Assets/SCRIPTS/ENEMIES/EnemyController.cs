@@ -50,7 +50,7 @@ public class EnemyController : MonoBehaviour, IFreeze
     [Header("Misc Variables")] 
     [SerializeField] private LayerMask playerMask;
     [SerializeField] private float maxPlayerDistance = 50.0f;
-    private GameObject player;
+    public GameObject player;
     
     
     private void Start()
@@ -82,10 +82,12 @@ public class EnemyController : MonoBehaviour, IFreeze
             if (distanceToPlayer <= canShootDistance)
             {
                 currentEnemyState = EnemyStates.Shoot;
+                enemyAgent.isStopped = true; // Stop the agent
             }
             else if (distanceToPlayer > canShootDistance && distanceToPlayer <= wanderDistance)
             {
                 currentEnemyState = EnemyStates.Walk;
+                enemyAgent.isStopped = false; // Let the agent move again
             }
         }
         else
@@ -111,13 +113,19 @@ public class EnemyController : MonoBehaviour, IFreeze
                         Debug.Log("Moving to next destination");
                     }
                 }
+                enemyAgent.speed = walkSpeed; // make the enemy walk at walk speed
                 break;
             case EnemyStates.Shoot:
-                enemyAgent.speed = speedWhileShooting;
-
                 if (weaponController.CanShoot(isFrozen) && IsLookingAtPlayer())
                 {
                     weaponController.Shoot();
+
+                    // look at player
+                    Quaternion targetRotation = Quaternion.LookRotation(player.transform.position - transform.position);
+                    transform.rotation = Quaternion.RotateTowards(
+                        transform.rotation,
+                        targetRotation,
+                        weaponController.lookRotationSpeed * Time.deltaTime);
                 }
                 break;
         }
