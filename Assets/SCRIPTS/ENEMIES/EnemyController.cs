@@ -6,7 +6,7 @@ using UnityEngine.AI;
 using Random = UnityEngine.Random;
 
 
-public class EnemyController : MonoBehaviour, IFreeze, ITakeDamage
+public class EnemyController : MonoBehaviour, IFreeze
 {
     public enum EnemyStates
     {
@@ -27,23 +27,25 @@ public class EnemyController : MonoBehaviour, IFreeze, ITakeDamage
     [SerializeField] private NavMeshAgent enemyAgent;
     [SerializeField] private Transform enemyForwardVector;
     [SerializeField] private Animator enemyAnimator;
-
+    [SerializeField] private EnemyWeaponController weaponController;
 
     [Header("AI Variables and Values")] 
     [SerializeField] private Transform[] destinations;
     private Transform _currentDestination;
     private int _currentPointIndex = 0;
-    [SerializeField] private float currentSpeed = 2.0f;
+    [SerializeField] private float currentSpeed;
     [SerializeField] private float walkSpeed = 2.0f;
     [SerializeField] private float speedWhileShooting = .5f;
-    [SerializeField] private float distanceToPlayer; //How far away the player is
     [SerializeField] private float minIdleTime = 1f; //Minimum time the enemy will idle
     [SerializeField] private float maxIdleTime = 5f; //Maximum time the enemy will idle
+    public float distanceToPlayer; //How far away the player is
     
-    [Header("Combat")] 
-    private bool _canShoot = true;
-    [SerializeField] private float canShootDistance = 20.0f;
+    [Header("Combat")]
+    public float canShootDistance = 20.0f;
     [SerializeField] private float wanderDistance = 15.0f;
+    
+    [Header("Freezing")]
+    public bool isFrozen = false;
     
     [Header("Misc Variables")] 
     [SerializeField] private LayerMask playerMask;
@@ -64,17 +66,9 @@ public class EnemyController : MonoBehaviour, IFreeze, ITakeDamage
 
     private void Update()
     {
-        if (isAlive)
+        if (isAlive && !isFrozen)
         {
-            previousEnemyState = currentEnemyState;
             GetEnemyState();
-        
-            // If it just transitions from Idle to Walk
-            if (previousEnemyState == EnemyStates.Idle && currentEnemyState == EnemyStates.Walk)
-            {
-                enemyAgent.SetDestination(GetRandomDestination().position);
-            }
-
             HandleEnemyState();
         }
     }
@@ -104,30 +98,43 @@ public class EnemyController : MonoBehaviour, IFreeze, ITakeDamage
     {
         switch (currentEnemyState)
         {
-            case EnemyStates.Idle: 
+            case EnemyStates.Idle:
                 enemyAgent.speed = 0.0f;
                 break;
             case EnemyStates.Walk:
-                if (!enemyAgent.pathPending && enemyAgent.remainingDistance <= .1f)
+                if (!isFrozen) // Only set destination when not frozen
                 {
-                    int randomDestination = Random.Range(0, destinations.Length);
-                    _currentDestination = destinations[randomDestination];
-                    enemyAgent.SetDestination(_currentDestination.position);
+                    if (!enemyAgent.pathPending && enemyAgent.remainingDistance <= .025f)
+                    {
+                        // If the enemy reaches the current destination, find the next one
+                        FindNextDestination();
+                        Debug.Log("Moving to next destination");
+                    }
                 }
                 break;
             case EnemyStates.Shoot:
                 enemyAgent.speed = speedWhileShooting;
 
-                if (_canShoot && IsLookingAtPlayer())
+                if (weaponController.CanShoot(isFrozen) && IsLookingAtPlayer())
                 {
-                    Shoot();
+                    weaponController.Shoot();
                 }
                 break;
         }
 
         currentSpeed = enemyAgent.speed;
-        //enemyAnimator.SetFloat("Speed", currentSpeed);
+        //TODO:
+        //Set enemies' speed in the animator here
     }
+
+    
+    private void FindNextDestination()
+    {
+        int randomDestination = Random.Range(0, destinations.Length);
+        _currentDestination = destinations[randomDestination];
+        enemyAgent.SetDestination(_currentDestination.position);
+    }
+
 
     private IEnumerator SetIdleState(float idleTime)
     {
@@ -171,28 +178,35 @@ public class EnemyController : MonoBehaviour, IFreeze, ITakeDamage
         return distanceToPlayer <= maxPlayerDistance;
     }
 
-    private void Shoot()
+    public void ApplyFreeze(float duration, float slowSpeed, float slowAnimSpeed)
     {
-        
+        StartCoroutine(FreezeCoroutine(duration, slowSpeed, slowAnimSpeed));
     }
 
-    public void StartFreeze()
+    private IEnumerator FreezeCoroutine(float freezeTime, float slowSpeed, float slowAnimSpeed)
     {
-        throw new NotImplementedException();
+        if (!isFrozen) // Ensure enemy is only frozen once
+        {
+            isFrozen = true;
+            float normalSpeed = enemyAgent.speed;
+            float normalAnimSpeed = enemyAnimator.speed;
+
+            enemyAgent.speed = slowSpeed;
+            enemyAnimator.speed = slowAnimSpeed;
+
+            yield return new WaitForSeconds(freezeTime);
+
+            isFrozen = false;
+            enemyAgent.speed = normalSpeed;
+            enemyAnimator.speed = normalAnimSpeed;
+
+            // After the freeze, check if the enemy should return to walking
+            if (!IsPlayerInRange())
+            {
+                currentEnemyState = EnemyStates.Walk;
+            }
+        }
     }
 
-    public void ApplyDamage()
-    {
-        throw new NotImplementedException();
-    }
 
-    public void TakeDamage()
-    {
-        throw new NotImplementedException();
-    }
-
-    public void Die()
-    {
-        throw new NotImplementedException();
-    }
 }

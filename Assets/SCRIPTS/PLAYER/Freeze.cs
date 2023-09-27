@@ -7,61 +7,53 @@ using Input = UnityEngine.Windows.Input;
 
 public class Freeze : MonoBehaviour
 {
-    [SerializeField] private float freezeDistance;
-    
-    public bool canFreeze = false;
-    public int freezeItemCount = 0;
-    public bool _canMakeFreeze = false;
+    [SerializeField] private float freezeDistance; //How far away enemies can be to be frozen
+    public bool canFreeze = false; //Can freeze?
+    public float freezeTime = 5f; // The time the enemy remains slowed down in seconds
+    public float slowSpeed = 0.5f; // The slowed-down speed
+    public float slowAnimSpeed = 0.5f; // The slowed-down animation speed
 
     private GameObject[] _enemyControllers;
-    
-    
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
-        // if (Keyboard.current.fKey.wasPressedThisFrame && canFreeze)
-        // {
-        //     FreezeEnemies();
-        // }
+        if (Keyboard.current.fKey.wasPressedThisFrame && canFreeze)
+        {
+            FreezeEnemies();
+            Debug.Log("Freezing");
+        }
     }
 
-    public void FreezeEnemies()
+    private void FreezeEnemies()
     {
         if (canFreeze)
         {
             canFreeze = false;
             _enemyControllers = GameObject.FindGameObjectsWithTag("Enemy");
-
-            if (EnemiesInArea(_enemyControllers))
+            List<GameObject> enemiesInArea = EnemiesInArea(_enemyControllers);
+            foreach (var enemy in enemiesInArea)
             {
-                //_enemyControllers.Freeze();
+                IFreeze iFreeze = enemy.GetComponent<IFreeze>();
+                if (iFreeze != null)
+                {
+                    // Apply freeze effect with desired parameters
+                    iFreeze.ApplyFreeze(freezeTime, slowSpeed, slowAnimSpeed);
+                }
             }
-
         }
     }
 
-    private bool EnemiesInArea(GameObject[] enemies)
+    private List<GameObject> EnemiesInArea(GameObject[] enemies)
     {
+        List<GameObject> enemiesInArea = new List<GameObject>();
         foreach (var enemy in _enemyControllers)
         {
-            return Vector3.Distance(transform.position, enemy.transform.position) < freezeDistance;
+            if (Vector3.Distance(transform.position, enemy.transform.position) < freezeDistance)
+            {
+                enemiesInArea.Add(enemy);
+            }
         }
-        return false;
-    }
-    
-    public void CraftFreeze()
-    {
-        if (_canMakeFreeze)
-        {
-            freezeItemCount = 0;
-            _canMakeFreeze = false;
-            canFreeze = true;
-            PlayerUI.instance.EnableUIElement(PlayerUI.instance.freezeImage);
-        }
+        return enemiesInArea;
     }
 }
+

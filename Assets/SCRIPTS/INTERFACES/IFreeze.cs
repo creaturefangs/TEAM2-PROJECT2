@@ -4,5 +4,6 @@ using UnityEngine;
 
 public interface IFreeze
 {
-    void StartFreeze();
+    void ApplyFreeze(float duration, float slowSpeed, float slowAnimSpeed);
 }
+
