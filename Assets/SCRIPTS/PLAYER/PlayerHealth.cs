@@ -7,7 +7,7 @@ public class PlayerHealth : MonoBehaviour, ITakeDamage
 {
     private float _health;
     private float maxHealth = 100;
-
+    public bool isAlive = true;
     private void Start()
     {
         _health = maxHealth;
@@ -31,6 +31,6 @@ public class PlayerHealth : MonoBehaviour, ITakeDamage
 
     public void Die()
     {
-        throw new System.NotImplementedException();
+        isAlive = false;
     }
 }

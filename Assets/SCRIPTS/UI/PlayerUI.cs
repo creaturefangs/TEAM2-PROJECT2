@@ -6,12 +6,13 @@ using UnityEngine;
 public class PlayerUI : MonoBehaviour
 {
     public static PlayerUI instance;
-    
+    public Transform raycastOrigin;
     [Header("UI Elements related to powerups/abilities")]
     public GameObject freezeImage;
-
+    
     [Header("Player UI Elements")] 
     public TMP_Text healthText;
+    public TMP_Text itemPickupText;
     private void Awake()
     {
         #region PlayerUI singleton

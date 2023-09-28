@@ -30,11 +30,13 @@ TagManager:
   - CoverPoint
   - Interactable
   - AIAction
+  - Syringe
+  - RedEye
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Pickup
   - Water
   - UI
   - 
