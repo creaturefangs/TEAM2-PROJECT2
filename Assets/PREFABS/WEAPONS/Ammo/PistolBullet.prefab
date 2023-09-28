@@ -149,8 +149,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 11400000, guid: 9f3620ae6abaee94e85c9e43cf1dea48, type: 2}
-  vfxHitGreen: {fileID: 0}
-  vfxHitRed: {fileID: 0}
+  vfxHitGreen: {fileID: 613433886817584985, guid: 6e845b0e80fad2d4c93ff505a0750129,
+    type: 3}
+  vfxHitRed: {fileID: 613433886817584985, guid: 9f5fbcfb6299c2b4c912f3ff44f14463,
+    type: 3}
 --- !u!1 &2460103540412423803
 GameObject:
   m_ObjectHideFlags: 0

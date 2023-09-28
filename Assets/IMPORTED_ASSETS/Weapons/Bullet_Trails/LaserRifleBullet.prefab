@@ -159,7 +159,7 @@ GameObject:
   - component: {fileID: 8271562712297535610}
   - component: {fileID: 7138863943229796398}
   m_Layer: 0
-  m_Name: M4Bullet
+  m_Name: LaserRifleBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

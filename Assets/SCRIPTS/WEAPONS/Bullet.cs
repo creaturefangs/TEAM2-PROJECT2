@@ -25,6 +25,6 @@ public class Bullet : MonoBehaviour
 
         //hit target
         Instantiate(other.GetComponent<ITakeDamage>() != null ? vfxHitGreen : vfxHitRed, transform.position,
-            Quaternion.identity);
+            Quaternion.identity); Debug.Log("hit target");
     }
 }

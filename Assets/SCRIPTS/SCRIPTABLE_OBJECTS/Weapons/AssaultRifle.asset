@@ -20,4 +20,4 @@ MonoBehaviour:
   weaponName: Assault Rifle
   maxMagazineCapacity: 30
   timeBetweenShots: 3
-  reloadTime: 6
+  reloadTime: 4

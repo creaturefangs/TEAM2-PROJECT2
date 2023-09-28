@@ -20,4 +20,4 @@ MonoBehaviour:
   weaponName: Laser Rifle
   maxMagazineCapacity: 5
   timeBetweenShots: 5
-  reloadTime: 8
+  reloadTime: 5

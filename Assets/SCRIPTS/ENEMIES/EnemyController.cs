@@ -25,9 +25,9 @@ public class EnemyController : MonoBehaviour, IFreeze
     
     [Header("AI Components")]
     [SerializeField] private NavMeshAgent enemyAgent;
-    [SerializeField] private Transform enemyForwardVector;
     [SerializeField] private Animator enemyAnimator;
     [SerializeField] private EnemyWeaponController weaponController;
+    public Transform enemyForwardVector;
 
     [Header("AI Variables and Values")] 
     [SerializeField] private Transform[] destinations;
@@ -76,19 +76,11 @@ public class EnemyController : MonoBehaviour, IFreeze
     private void GetEnemyState()
     {
         distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
-
-        if (IsPlayerInRange())
+        
+        if (distanceToPlayer > canShootDistance && distanceToPlayer <= wanderDistance)
         {
-            if (distanceToPlayer <= canShootDistance)
-            {
-                currentEnemyState = EnemyStates.Shoot;
-                enemyAgent.isStopped = true; // Stop the agent
-            }
-            else if (distanceToPlayer > canShootDistance && distanceToPlayer <= wanderDistance)
-            {
-                currentEnemyState = EnemyStates.Walk;
-                enemyAgent.isStopped = false; // Let the agent move again
-            }
+            currentEnemyState = EnemyStates.Walk;
+            enemyAgent.isStopped = false; // Let the agent move again
         }
         else
         {
@@ -116,16 +108,29 @@ public class EnemyController : MonoBehaviour, IFreeze
                 enemyAgent.speed = walkSpeed; // make the enemy walk at walk speed
                 break;
             case EnemyStates.Shoot:
-                if (weaponController.CanShoot(isFrozen) && IsLookingAtPlayer())
+                if (IsPlayerInRange(canShootDistance))
                 {
-                    weaponController.Shoot();
+                    if (IsPlayerInLineOfSight()) // Check if the player is in the enemy's line of sight
+                    {
+                        weaponController.Shoot();
 
-                    // look at player
-                    Quaternion targetRotation = Quaternion.LookRotation(player.transform.position - transform.position);
-                    transform.rotation = Quaternion.RotateTowards(
-                        transform.rotation,
-                        targetRotation,
-                        weaponController.lookRotationSpeed * Time.deltaTime);
+                        // Look at player
+                        Quaternion targetRotation = Quaternion.LookRotation(player.transform.position - transform.position);
+                        transform.rotation = Quaternion.RotateTowards(
+                            transform.rotation,
+                            targetRotation,
+                            weaponController.lookRotationSpeed * Time.deltaTime);
+                    }
+                    else
+                    {
+                        // Player is out of line of sight, switch to another state (e.g., Wander)
+                        currentEnemyState = EnemyStates.Walk;
+                    }
+                }
+                else
+                {
+                    // Player is out of range, switch to another state (e.g., Wander)
+                    currentEnemyState = EnemyStates.Walk;
                 }
                 break;
         }
@@ -144,6 +149,20 @@ public class EnemyController : MonoBehaviour, IFreeze
     }
 
 
+    private bool IsPlayerInLineOfSight()
+    {
+        Vector3 directionToPlayer = player.transform.position - transform.position;
+        if (Physics.Raycast(transform.position, directionToPlayer, out RaycastHit hit, maxPlayerDistance, playerMask))
+        {
+            if (hit.collider.CompareTag("Player"))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    
     private IEnumerator SetIdleState(float idleTime)
     {
         currentEnemyState = EnemyStates.Idle;
@@ -152,7 +171,7 @@ public class EnemyController : MonoBehaviour, IFreeze
         yield return new WaitForSeconds(idleTime);
 
         // After idling, the enemy should go back to walking if the player is not in range
-        if (!IsPlayerInRange())
+        if (!IsPlayerInRange(maxPlayerDistance))
         {
             currentEnemyState = EnemyStates.Walk;
         }
@@ -181,9 +200,9 @@ public class EnemyController : MonoBehaviour, IFreeze
         return false;
     }
 
-    private bool IsPlayerInRange()
+    public bool IsPlayerInRange(float distanceVariable)
     {
-        return distanceToPlayer <= maxPlayerDistance;
+        return distanceToPlayer <= distanceVariable;
     }
 
     public void ApplyFreeze(float duration, float slowSpeed, float slowAnimSpeed)
@@ -209,7 +228,7 @@ public class EnemyController : MonoBehaviour, IFreeze
             enemyAnimator.speed = normalAnimSpeed;
 
             // After the freeze, check if the enemy should return to walking
-            if (!IsPlayerInRange())
+            if (!IsPlayerInRange(wanderDistance))
             {
                 currentEnemyState = EnemyStates.Walk;
             }
