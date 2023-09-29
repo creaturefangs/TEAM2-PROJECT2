@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
 {
     private Rigidbody bulletRigidbody;
     public BulletSO bullet;
-
+    public Vector3 direction { get; set; }
     [SerializeField] private Transform vfxHitGreen;
     [SerializeField] private Transform vfxHitRed;
     private void Awake()
@@ -16,7 +16,7 @@ public class Bullet : MonoBehaviour
 
     private void Start()
     {
-        bulletRigidbody.velocity = transform.forward * bullet.bulletSpeed;
+        bulletRigidbody.velocity = direction * bullet.bulletSpeed;
     }
 
     private void OnTriggerEnter(Collider other)
