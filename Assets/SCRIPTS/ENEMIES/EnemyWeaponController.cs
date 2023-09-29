@@ -49,24 +49,26 @@ public class EnemyWeaponController : MonoBehaviour
 
     public void Shoot()
     {
-        if (_currentAmmo > 0 && _timeSinceLastShot < Time.time + weapon.timeBetweenShots)
+        if (_currentAmmo > 0 && Time.time >= _timeSinceLastShot + weapon.timeBetweenShots)
         {
             _timeSinceLastShot = Time.time;
             _currentAmmo--;
             isShooting = true;
-            
+        
             // Calculate the direction to the player
             Vector3 direction = (enemyController.player.transform.position - transform.position).normalized;
             // Add random offset based on accuracy radius
-            direction += new Vector3(UnityEngine.Random.Range(-weapon.bulletSpread, weapon.bulletSpread), 
-                UnityEngine.Random.Range(-weapon.bulletSpread, weapon.bulletSpread), 0);
+            direction += new Vector3(UnityEngine.Random.Range(-weapon.bulletSpread, weapon.bulletSpread), UnityEngine.Random.Range(-weapon.bulletSpread, weapon.bulletSpread), 0);
 
             GameObject bulletObj = Instantiate(weapon.bullet.bulletPrefab, firePosition.position, firePosition.rotation);
             bulletObj.GetComponent<Bullet>().direction = direction;
             Destroy(bulletObj, weapon.reloadTime + .75f);
-            
+        
             GameObject flash = Instantiate(weapon.muzzleFlash, firePosition.position, firePosition.rotation);
             Destroy(flash, .5f);
+            
+            //Gunshot sound
+            audioSource.PlayOneShot(weapon.gunshotSoundClip);
         }
 
         if (_currentAmmo <= 0)

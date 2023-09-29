@@ -18,6 +18,8 @@ MonoBehaviour:
     type: 3}
   bullet: {fileID: 11400000, guid: 49a7f58afcab0ed42abaf293fb729482, type: 2}
   weaponName: Laser Rifle
+  gunshotSoundClip: {fileID: 8300000, guid: 04d5e82769b3d904eb774c3ceb30b957, type: 3}
   maxMagazineCapacity: 5
-  timeBetweenShots: 5
-  reloadTime: 5
+  timeBetweenShots: 3.5
+  reloadTime: 3.5
+  bulletSpread: 0

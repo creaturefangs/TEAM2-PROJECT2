@@ -18,6 +18,8 @@ MonoBehaviour:
     type: 3}
   bullet: {fileID: 11400000, guid: edb30dd506820c9488ba765caced488c, type: 2}
   weaponName: Pistol
+  gunshotSoundClip: {fileID: 8300000, guid: 3bdb182125ad18f4b88c2b88fa5e294f, type: 3}
   maxMagazineCapacity: 12
   timeBetweenShots: 2
-  reloadTime: 4
+  reloadTime: 3.5
+  bulletSpread: 0

@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 
 [CreateAssetMenu (fileName = "Weapon", menuName = "Weapons/Weapon", order = 2)]
 public class WeaponSO : ScriptableObject
