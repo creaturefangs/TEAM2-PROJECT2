@@ -12,13 +12,15 @@ public class EnemyWeaponController : MonoBehaviour
     private float _timeSinceLastShot;
     [SerializeField] private Transform firePosition;
     public float lookRotationSpeed = 5.0f;
-    private bool _isReloading = false;
-    private bool _isShooting = false;
+#pragma warning disable CS0414 // Field is assigned but its value is never used
+    private bool isReloading = false;
+#pragma warning restore CS0414 // Field is assigned but its value is never used
+    private bool isShooting = false;
     
     [Header("References")]
     [SerializeField] private EnemyController enemyController;
     [SerializeField] private LayerMask playerMask;
-
+    [SerializeField] private AudioSource audioSource;
     private void Start()
     {
         _currentAmmo = weapon.maxMagazineCapacity;
@@ -38,7 +40,7 @@ public class EnemyWeaponController : MonoBehaviour
             }
         }
 
-        if (_isShooting)
+        if (isShooting)
         {
             RotateAroundPlayer();
         }
@@ -51,12 +53,13 @@ public class EnemyWeaponController : MonoBehaviour
         {
             _timeSinceLastShot = Time.time;
             _currentAmmo--;
-            _isShooting = true;
+            isShooting = true;
             
             GameObject flash = Instantiate(weapon.muzzleFlash, firePosition.position, firePosition.rotation);
             Destroy(flash, .5f);
             
-            Instantiate(weapon.bullet.bulletPrefab, firePosition.position, firePosition.rotation);
+            GameObject bulletObj = Instantiate(weapon.bullet.bulletPrefab, firePosition.position, firePosition.rotation);
+            Destroy(bulletObj, weapon.reloadTime + .75f);
             ShootingRaycast();
         }
 
@@ -91,12 +94,12 @@ public class EnemyWeaponController : MonoBehaviour
 
     private IEnumerator Reload()
     {
-        _isReloading = true;
+        isReloading = true;
         //Start a reloading animation here
         
         yield return new WaitForSeconds(weapon.reloadTime);
         
-        _isReloading = false;
+        isReloading = false;
         _currentAmmo = weapon.maxMagazineCapacity;
     }
 

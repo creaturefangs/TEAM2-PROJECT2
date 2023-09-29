@@ -18,6 +18,7 @@ MonoBehaviour:
     type: 3}
   bullet: {fileID: 11400000, guid: 9f3620ae6abaee94e85c9e43cf1dea48, type: 2}
   weaponName: Assault Rifle
+  gunshotSoundClip: {fileID: 0}
   maxMagazineCapacity: 30
-  timeBetweenShots: 3
-  reloadTime: 4
+  timeBetweenShots: 0.51
+  reloadTime: 2

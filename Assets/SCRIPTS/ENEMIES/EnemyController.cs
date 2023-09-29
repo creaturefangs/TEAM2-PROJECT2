@@ -32,9 +32,9 @@ public class EnemyController : MonoBehaviour, IFreeze
     [Header("AI Variables and Values")] 
     [SerializeField] private Transform[] destinations;
     private Transform _currentDestination;
-    private int _currentPointIndex = 0;
     [SerializeField] private float currentSpeed;
     [SerializeField] private float walkSpeed = 2.0f;
+#pragma warning restore CS0414 // Field is assigned but its value is never used
     [SerializeField] private float speedWhileShooting = .5f;
     [SerializeField] private float minIdleTime = 1f; //Minimum time the enemy will idle
     [SerializeField] private float maxIdleTime = 5f; //Maximum time the enemy will idle

@@ -198,7 +198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   freezeDistance: 10
-  canFreeze: 1
+  canFreeze: 0
   freezeTime: 5
   slowSpeed: 0.5
   slowAnimSpeed: 0.5
@@ -739,6 +739,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: eb0608fa68f96e94f8568e5b3bc1b801, type: 2}
+  itemPickupEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 669100032}
+        m_TargetAssemblyTypeName: ItemPickupComponent, Assembly-CSharp
+        m_MethodName: OnItemPickup
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  particles: {fileID: 1855448914312632416, guid: c5e04e869096706428deeef18e763a3d,
+    type: 3}
 --- !u!4 &865966383 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 486354, guid: a3d3e9322b030904995bcd87999ccfe6,
@@ -2235,6 +2252,7 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 256
+  audioSource: {fileID: 0}
 --- !u!1 &1859697301 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1346501719238660687, guid: c3b919f3feb6a5a4fb0a9705db410cfe,
@@ -2275,6 +2293,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: 6f5d336f5a23e6f408d87604d435a8b1, type: 2}
+  itemPickupEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1859697304}
+        m_TargetAssemblyTypeName: ItemPickupComponent, Assembly-CSharp
+        m_MethodName: OnItemPickup
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  particles: {fileID: 1855448914312632416, guid: c5e04e869096706428deeef18e763a3d,
+    type: 3}
 --- !u!1 &1897232990
 GameObject:
   m_ObjectHideFlags: 0

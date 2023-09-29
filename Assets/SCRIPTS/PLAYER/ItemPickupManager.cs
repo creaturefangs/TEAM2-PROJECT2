@@ -7,13 +7,13 @@ public class ItemPickupManager : MonoBehaviour
     [SerializeField] private LayerMask pickupLayerMask;
     [SerializeField] private float pickupDistance = 2.0f;
     [SerializeField] private KeyCode itemPickupKeyCode;
-    
+
     private ItemPickupSO itemUnderCursor;
 
-    private void Update()
+    private void LateUpdate()
     {
         ItemPickupSO currentItem = null;
-        
+        bool isLookingAtItem = false;
         if (Physics.Raycast(
                 PlayerUI.instance.raycastOrigin.position,
                 PlayerUI.instance.raycastOrigin.forward,
@@ -25,20 +25,28 @@ public class ItemPickupManager : MonoBehaviour
             if (pickup != null)
             {
                 currentItem = pickup.itemData;
+                isLookingAtItem = true;
+
                 if (Input.GetKeyDown(itemPickupKeyCode))
                 {
-                    Destroy(hitInfo.collider.gameObject);
+                    isLookingAtItem = false;
+                    
                     //Invoke an event depending on the item that is picked up
+                    pickup.itemPickupEvent.Invoke();
+                    currentItem = null;
                 }
             }
+            else
+            {
+                isLookingAtItem = false;
+            }
         }
-
-        if(currentItem != itemUnderCursor)
-        {
-            itemUnderCursor = currentItem;
-
-            // Update the text only if the item under cursor has changed
-            PlayerUI.instance.itemPickupText.text = itemUnderCursor != null ? $"Press {itemPickupKeyCode} to pickup {itemUnderCursor.itemName}" : "";
-        }
+        
+        // Update the text only when the state changes (if looking at an item, show the pickup text, else pickup text is empty
+        PlayerUI.instance.itemPickupText.text = isLookingAtItem
+            ? $"Press {itemPickupKeyCode} to pickup {currentItem.itemName}"
+            : "";
+        
+        itemUnderCursor = currentItem;
     }
 }

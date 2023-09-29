@@ -17,7 +17,7 @@ public class Freeze : MonoBehaviour
 
     void Update()
     {
-        if (Keyboard.current.fKey.wasPressedThisFrame && canFreeze)
+        if (Keyboard.current.rKey.wasPressedThisFrame && canFreeze)
         {
             FreezeEnemies();
             Debug.Log("Freezing");
