@@ -60,34 +60,12 @@ public class EnemyWeaponController : MonoBehaviour
             
             GameObject bulletObj = Instantiate(weapon.bullet.bulletPrefab, firePosition.position, firePosition.rotation);
             Destroy(bulletObj, weapon.reloadTime + .75f);
-            ShootingRaycast();
+            //ShootingRaycast();
         }
 
         if (_currentAmmo <= 0)
         {
             StartCoroutine(Reload());
-        }
-    }
-
-    private void ShootingRaycast()
-    {
-        if (Physics.Raycast(
-                enemyController.enemyForwardVector.position,
-                firePosition.forward,
-                out RaycastHit hitInfo,
-                weapon.bullet.maxHitDistance,
-                playerMask))
-        {
-            if (hitInfo.collider == null) return;
-            if (hitInfo.collider.GetComponent<ITakeDamage>() != null)
-            {
-                ITakeDamage damageTaker = hitInfo.collider.GetComponent<ITakeDamage>();
-                if (damageTaker != null)// just to make sure damage taker is still there
-                {
-                    damageTaker.TakeDamage(weapon.bullet.damage);
-                    Debug.Log("Hit" + hitInfo.collider.name);
-                }
-            }
         }
     }
     
@@ -107,7 +85,7 @@ public class EnemyWeaponController : MonoBehaviour
     {
         // Calculate the direction to the player
         Vector3 direction = (enemyController.player.transform.position - transform.position).normalized;
-
+    
         // Update the enemy's rotation to look at the player
         Quaternion lookRotation = Quaternion.LookRotation(direction);
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * lookRotationSpeed);

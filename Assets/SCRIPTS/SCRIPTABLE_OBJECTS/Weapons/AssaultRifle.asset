@@ -20,5 +20,5 @@ MonoBehaviour:
   weaponName: Assault Rifle
   gunshotSoundClip: {fileID: 0}
   maxMagazineCapacity: 30
-  timeBetweenShots: 0.51
-  reloadTime: 2
+  timeBetweenShots: 3.37
+  reloadTime: 3.441

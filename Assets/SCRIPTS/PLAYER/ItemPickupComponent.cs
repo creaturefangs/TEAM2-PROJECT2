@@ -6,6 +6,7 @@ public class ItemPickupComponent : MonoBehaviour
     public ItemPickupSO itemData;
     public UnityEvent itemPickupEvent;
     public ParticleSystem particles;
+    public GameObject itemUIImage;
     
     public void OnItemPickup()
     {

@@ -23,8 +23,10 @@ public class Bullet : MonoBehaviour
     {
         Destroy(gameObject);
 
+        ITakeDamage damageTaker = other.GetComponent<ITakeDamage>();
         //hit target
-        Instantiate(other.GetComponent<ITakeDamage>() != null ? vfxHitGreen : vfxHitRed, transform.position,
-            Quaternion.identity); Debug.Log("hit target");
+        // Instantiate(damageTaker != null ? vfxHitGreen : vfxHitRed, other.transform.position,
+        //     Quaternion.identity);
+        damageTaker?.TakeDamage(bullet.damage);
     }
 }
