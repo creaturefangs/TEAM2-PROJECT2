@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -238,6 +238,69 @@ MonoBehaviour:
     m_Bits: 8
   pickupDistance: 5
   itemPickupKeyCode: 102
+--- !u!114 &218562639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 218562610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab01fc92c35bcd64681457359b1685c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  openCloseEvents: 0
+  openCloseWindow: 1
+  selectedToolbar: 0
+  actionInput:
+    useInput: 1
+    isAxisInUse: 0
+    isUnityInput: 0
+    keyboard: L
+    keyboardAxis: 0
+    joystick: A
+    joystickAxis: 0
+    mobile: A
+    mobileAxis: 0
+    joystickAxisInvert: 0
+    keyboardAxisInvert: 0
+    mobileAxisInvert: 0
+    timeButtonWasPressed: 0
+    lastTimeTheButtonWasPressed: 0
+    inButtomTimer: 0
+  animationClip: Punch
+  animationEnd: 0.9
+  OnPlayAnimation:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 611434151}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnEndAnimation:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 611434151}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &264180274
 GameObject:
   m_ObjectHideFlags: 0
@@ -1087,13 +1150,17 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 183642, guid: a3d3e9322b030904995bcd87999ccfe6, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 409158, guid: a3d3e9322b030904995bcd87999ccfe6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.0107455
       objectReference: {fileID: 0}
     - target: {fileID: 409158, guid: a3d3e9322b030904995bcd87999ccfe6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 1.63
       objectReference: {fileID: 0}
     - target: {fileID: 409158, guid: a3d3e9322b030904995bcd87999ccfe6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1147,13 +1214,77 @@ PrefabInstance:
       propertyPath: openCloseWindow
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11414148, guid: a3d3e9322b030904995bcd87999ccfe6, type: 3}
+      propertyPath: selectedToolbar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11414148, guid: a3d3e9322b030904995bcd87999ccfe6, type: 3}
+      propertyPath: OnDoAction.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11414148, guid: a3d3e9322b030904995bcd87999ccfe6, type: 3}
+      propertyPath: OnDoAction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 11414148, guid: a3d3e9322b030904995bcd87999ccfe6, type: 3}
+      propertyPath: OnDoAction.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 11414148, guid: a3d3e9322b030904995bcd87999ccfe6, type: 3}
+      propertyPath: OnDoAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 218562610}
+    - target: {fileID: 11414148, guid: a3d3e9322b030904995bcd87999ccfe6, type: 3}
+      propertyPath: OnDoAction.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 218562610}
+    - target: {fileID: 11414148, guid: a3d3e9322b030904995bcd87999ccfe6, type: 3}
+      propertyPath: OnDoAction.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11414148, guid: a3d3e9322b030904995bcd87999ccfe6, type: 3}
+      propertyPath: OnDoAction.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11414148, guid: a3d3e9322b030904995bcd87999ccfe6, type: 3}
+      propertyPath: OnDoAction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 11414148, guid: a3d3e9322b030904995bcd87999ccfe6, type: 3}
+      propertyPath: OnDoAction.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 11414148, guid: a3d3e9322b030904995bcd87999ccfe6, type: 3}
+      propertyPath: OnDoAction.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 11414148, guid: a3d3e9322b030904995bcd87999ccfe6, type: 3}
+      propertyPath: OnDoAction.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 11414148, guid: a3d3e9322b030904995bcd87999ccfe6, type: 3}
+      propertyPath: OnDoAction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11414148, guid: a3d3e9322b030904995bcd87999ccfe6, type: 3}
+      propertyPath: OnDoAction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11414148, guid: a3d3e9322b030904995bcd87999ccfe6, type: 3}
+      propertyPath: OnDoAction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 11414148, guid: a3d3e9322b030904995bcd87999ccfe6, type: 3}
+      propertyPath: OnDoAction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 11434930, guid: a3d3e9322b030904995bcd87999ccfe6, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11450382, guid: a3d3e9322b030904995bcd87999ccfe6, type: 3}
       propertyPath: selectedToolbar
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 237262042, guid: a3d3e9322b030904995bcd87999ccfe6, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -1220,6 +1351,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 218562638}
+    - targetCorrespondingSourceObject: {fileID: 149290, guid: a3d3e9322b030904995bcd87999ccfe6,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 218562639}
     - targetCorrespondingSourceObject: {fileID: 1203127704, guid: a3d3e9322b030904995bcd87999ccfe6,
         type: 3}
       insertIndex: -1
@@ -2069,7 +2204,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1850202449}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
+  m_Avatar: {fileID: 9000000, guid: 66f838e05d071364d973b43aa353e74d, type: 3}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
