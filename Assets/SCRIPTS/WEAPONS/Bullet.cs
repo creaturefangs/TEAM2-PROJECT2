@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,8 +26,19 @@ public class Bullet : MonoBehaviour
 
         ITakeDamage damageTaker = other.GetComponent<ITakeDamage>();
         //hit target
-        // Instantiate(damageTaker != null ? vfxHitGreen : vfxHitRed, other.transform.position,
-        //     Quaternion.identity);
+         Instantiate(damageTaker != null && !other.CompareTag("Enemy") ? vfxHitGreen : vfxHitRed, other.transform.position,
+             Quaternion.identity);
+        damageTaker?.TakeDamage(bullet.damage);
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        Destroy(gameObject);
+
+        ITakeDamage damageTaker = other.gameObject.GetComponent<ITakeDamage>();
+        //hit target
+        Instantiate(damageTaker != null && !other.gameObject.CompareTag("Enemy") ? vfxHitGreen : vfxHitRed, other.transform.position,
+            Quaternion.identity);
         damageTaker?.TakeDamage(bullet.damage);
     }
 }
