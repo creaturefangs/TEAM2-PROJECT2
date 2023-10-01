@@ -3,6 +3,7 @@ using System.Collections;
 using Invector;
 using Unity.VisualScripting;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class EnemyWeaponController : MonoBehaviour
 {
@@ -61,7 +62,10 @@ public class EnemyWeaponController : MonoBehaviour
             // Calculate the direction to the player
             Vector3 direction = (enemyController.player.transform.position - transform.position).normalized;
             // Add random offset based on bullet spread
-            direction += new Vector3(UnityEngine.Random.Range(-weapon.bulletSpread, weapon.bulletSpread), UnityEngine.Random.Range(-weapon.bulletSpread, weapon.bulletSpread), 0);
+            direction += new Vector3(
+                Random.Range(-weapon.bulletSpread, weapon.bulletSpread),
+                Random.Range(-weapon.bulletSpread, weapon.bulletSpread),
+                0);
 
             GameObject bulletObj = Instantiate(weapon.bullet.bulletPrefab, firePosition.position, firePosition.rotation);
             bulletObj.GetComponent<Bullet>().direction = direction;

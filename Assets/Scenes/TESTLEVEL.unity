@@ -644,6 +644,7 @@ MonoBehaviour:
   health: 0
   maxHealth: 100
   isAlive: 1
+  invincibilityTimeout: 5
 --- !u!114 &218562638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2930,7 +2931,7 @@ MonoBehaviour:
   particles: {fileID: 1855448914312632416, guid: c5e04e869096706428deeef18e763a3d,
     type: 3}
   itemUIImage: {fileID: 0}
-  enableDestructionOnPickup: 1
+  enableDestructionOnPickup: 0
 --- !u!65 &1358683598
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4855,7 +4856,7 @@ MonoBehaviour:
   particles: {fileID: 1855448914312632416, guid: c5e04e869096706428deeef18e763a3d,
     type: 3}
   itemUIImage: {fileID: 0}
-  enableDestructionOnPickup: 1
+  enableDestructionOnPickup: 0
 --- !u!1 &1870954246 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -203856693384778745, guid: 66f838e05d071364d973b43aa353e74d,
@@ -5426,7 +5427,7 @@ MonoBehaviour:
   particles: {fileID: 1855448914312632416, guid: c5e04e869096706428deeef18e763a3d,
     type: 3}
   itemUIImage: {fileID: 0}
-  enableDestructionOnPickup: 1
+  enableDestructionOnPickup: 0
 --- !u!65 &2056556666
 BoxCollider:
   m_ObjectHideFlags: 0

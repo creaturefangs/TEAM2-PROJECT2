@@ -12,9 +12,8 @@ public class ItemPickupComponent : MonoBehaviour
     {
         //ParticleSystem particleObj = Instantiate(particles, transform.position, Quaternion.identity);
         //Destroy(particleObj, .25f);
-        
-        if(enableDestructionOnPickup){ Destroy(gameObject); }
-        
     }
+    
+    
     
 }

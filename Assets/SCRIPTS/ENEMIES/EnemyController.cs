@@ -21,7 +21,6 @@ public class EnemyController : MonoBehaviour, IFreeze
     
     [Header("AI Components")]
     public NavMeshAgent enemyAgent;
-    [SerializeField] private Animator enemyAnimator;
     [SerializeField] private EnemyWeaponController weaponController;
     public Transform enemyForwardVector;
     private EnemyHealth enemyHealth;
@@ -46,8 +45,10 @@ public class EnemyController : MonoBehaviour, IFreeze
     [SerializeField] private LayerMask playerMask;
     [SerializeField] private float maxPlayerDistance = 50.0f;
     public GameObject player;
-    
-    
+
+
+    [Header("Animation")]
+    public Animator enemyAnimator;
     private void Start()
     {
         currentHealth = enemy.maxHealth;
@@ -105,8 +106,7 @@ public class EnemyController : MonoBehaviour, IFreeze
                 break;
         }
         currentSpeed = enemyAgent.speed;
-        //TODO:
-        //Set enemies' speed in the animator here
+        //TODO: Set enemies' speed in the animator here
     }
 
     private void WalkStateActions()

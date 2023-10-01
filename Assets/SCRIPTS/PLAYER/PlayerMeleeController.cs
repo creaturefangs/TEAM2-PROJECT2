@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -14,12 +13,12 @@ public class PlayerMeleeController : MonoBehaviour
    
     [SerializeField] private LayerMask enemyMask;
 
-    private bool _isAttacking = false;
-    private bool _readyToAttack = true;
+    private bool isAttacking;
+    private bool isReadyToAttack = true;
 
     [SerializeField] private GameObject attackHitEffect;
 
-    [Header("Audio")] //Source should be on the MeleeAttackPoint (Child of player->3dmodel->armature->hips->spine->spine1
+    [Header("Audio")] //Source should be on the MeleeAttackPoint (Child of player->3dModel->armature->hips->spine->spine1
     [SerializeField] private AudioSource meleeAudioSource;
     [SerializeField] private AudioClip punchSound;
     [SerializeField] private AudioClip hitSound;
@@ -33,10 +32,10 @@ public class PlayerMeleeController : MonoBehaviour
 
     private void Attack()
     {
-        if (!_readyToAttack || _isAttacking) return;
+        if (!isReadyToAttack || isAttacking) return;
 
-        _readyToAttack = false;
-        _isAttacking = true;
+        isReadyToAttack = false;
+        isAttacking = true;
 
         Invoke(nameof(ResetAttack), attackSpeed);
         Invoke(nameof(AttackRaycast), attackDelay);
@@ -78,8 +77,8 @@ public class PlayerMeleeController : MonoBehaviour
 
     private void ResetAttack()
     {
-        _isAttacking = false;
-        _readyToAttack = true;
+        isAttacking = false;
+        isReadyToAttack = true;
     }
 
     private float AttackDamage()

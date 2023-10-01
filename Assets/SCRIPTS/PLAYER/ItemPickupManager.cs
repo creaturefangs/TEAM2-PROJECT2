@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,12 +8,17 @@ public class ItemPickupManager : MonoBehaviour
     [SerializeField] private LayerMask pickupLayerMask;
     [SerializeField] private float pickupDistance = 2.0f;
     [SerializeField] private KeyCode itemPickupKeyCode;
-
+    private PlayerHealth playerHealth;
     private ItemPickupSO itemUnderCursor;
+
+    private void Awake()
+    {
+        playerHealth = GetComponent<PlayerHealth>();
+    }
 
     private void LateUpdate()
     {
-        ItemPickupSO currentItem = null;
+        ItemPickupComponent currentPickupComponent = null;
         bool isLookingAtItem = false;
         if (Physics.Raycast(
                 PlayerUI.instance.raycastOrigin.position,
@@ -24,29 +30,41 @@ public class ItemPickupManager : MonoBehaviour
             var pickup = hitInfo.collider.gameObject.GetComponent<ItemPickupComponent>();
             if (pickup != null)
             {
-                currentItem = pickup.itemData;
+                currentPickupComponent = pickup;
                 isLookingAtItem = true;
 
+                if (pickup.CompareTag("Syringe") && playerHealth.IsBelowMaxHealth())
+                {
+                    pickup.enableDestructionOnPickup = true;
+                }
+                
                 if (Input.GetKeyDown(itemPickupKeyCode))
                 {
                     isLookingAtItem = false;
-                    
+                
                     //Invoke an event depending on the item that is picked up
                     pickup.itemPickupEvent.Invoke();
-                    currentItem = null;
+
+                    //If destruction is enabled on pickup, destroy the item gameObject
+                    if(pickup.enableDestructionOnPickup)
+                    {
+                        Destroy(pickup.gameObject);
+                    }
+
+                    
+                
+                    currentPickupComponent = null;
                 }
             }
-            else
+            else 
             {
                 isLookingAtItem = false;
             }
         }
-        
+    
         // Update the text only when the state changes (if looking at an item, show the pickup text, else pickup text is empty
         PlayerUI.instance.itemPickupText.text = isLookingAtItem
-            ? $"Press {itemPickupKeyCode} to pickup {currentItem.itemName}"
+            ? $"Press {itemPickupKeyCode} to pickup {currentPickupComponent.itemData.itemName}"
             : "";
-        
-        itemUnderCursor = currentItem;
     }
 }
