@@ -5,12 +5,13 @@ public class EnemyHealth : MonoBehaviour, ITakeDamage
 {
     public float currentHealth;
     private float _maxHealth = 100;
-
     public bool isAlive = true;
 
+    private EnemyController enemyController;
     private void Start()
     {
         currentHealth = _maxHealth;
+        enemyController = GetComponent<EnemyController>();
     }
 
     public void ApplyDamage(float amount)
@@ -31,5 +32,8 @@ public class EnemyHealth : MonoBehaviour, ITakeDamage
     public void Die()
     {
         isAlive = false;
+        transform.root.SendMessage ("ActivateRagdoll", SendMessageOptions.DontRequireReceiver);
+        
+        //enemyController.enemyAgent.speed = 0.0f;
     }
 }

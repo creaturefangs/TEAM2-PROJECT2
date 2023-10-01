@@ -18,20 +18,19 @@ public class EnemyController : MonoBehaviour, IFreeze
     
     //Health Variables
     public float currentHealth { get; private set; }
-    public bool isAlive = true;
     
     [Header("AI Components")]
-    [SerializeField] private NavMeshAgent enemyAgent;
+    public NavMeshAgent enemyAgent;
     [SerializeField] private Animator enemyAnimator;
     [SerializeField] private EnemyWeaponController weaponController;
     public Transform enemyForwardVector;
+    private EnemyHealth enemyHealth;
 
     [Header("AI Variables and Values")] 
     [SerializeField] private Transform[] destinations;
     private Transform _currentDestination;
     [SerializeField] private float currentSpeed;
     [SerializeField] private float walkSpeed = 2.0f;
-#pragma warning restore CS0414 // Field is assigned but its value is never used
     [SerializeField] private float speedWhileShooting = .5f;
 
     public float distanceToPlayer; //How far away the player is
@@ -62,11 +61,13 @@ public class EnemyController : MonoBehaviour, IFreeze
     
         // Find player on start
         player = GameObject.FindGameObjectWithTag("Player");
+
+        enemyHealth = GetComponent<EnemyHealth>();
     }
 
     private void Update()
     {
-        if (isAlive && !isFrozen)
+        if (enemyHealth.isAlive && !isFrozen)
         {
             GetEnemyState();
             HandleEnemyState();

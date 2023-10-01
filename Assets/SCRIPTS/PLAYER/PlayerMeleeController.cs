@@ -13,7 +13,6 @@ public class PlayerMeleeController : MonoBehaviour
     [SerializeField] private float maxMeleeDamage = 75.0f;
    
     [SerializeField] private LayerMask enemyMask;
-    [SerializeField] private float attackAnimationTime = .9f;
 
     private bool _isAttacking = false;
     private bool _readyToAttack = true;

@@ -21,15 +21,18 @@ public class EnemyWeaponController : MonoBehaviour
     [SerializeField] private EnemyController enemyController;
     [SerializeField] private LayerMask playerMask;
     [SerializeField] private AudioSource audioSource;
+    private EnemyHealth enemyHealth;
 
     private void Start()
     {
         _currentAmmo = weapon.maxMagazineCapacity;
+        
+        enemyHealth = GetComponent<EnemyHealth>();
     }
 
     private void Update()
     {
-        if (enemyController.isAlive && !enemyController.isFrozen)
+        if (enemyHealth.isAlive && !enemyController.isFrozen)
         {
             if (enemyController.IsPlayerInRange(enemyController.canShootDistance))
             {
