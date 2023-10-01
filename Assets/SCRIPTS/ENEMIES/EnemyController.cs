@@ -58,7 +58,8 @@ public class EnemyController : MonoBehaviour, IFreeze
         // Ensure that the agent is in the moving state
         enemyAgent.isStopped = false;
 
-        enemyAgent.SetDestination(GetRandomDestination().position);
+        _currentDestination = GetRandomDestination();
+        enemyAgent.SetDestination(_currentDestination.position);
     
         // Find player on start
         player = GameObject.FindGameObjectWithTag("Player");
@@ -100,15 +101,50 @@ public class EnemyController : MonoBehaviour, IFreeze
         {
             case EnemyStates.Walk:
                 WalkStateActions();
+                //FaceDestination(true, _currentDestination);
                 break;
             case EnemyStates.Shoot:
                 ShootStateActions();
+                //FaceDestination(false, _currentDestination);
                 break;
         }
         currentSpeed = enemyAgent.speed;
         //TODO: Set enemies' speed in the animator here
+        SetEnemyAnimationState(currentEnemyState);
     }
 
+    private void SetEnemyAnimationState(EnemyStates state)
+    {
+        if (!enemyAnimator.GetBool("isDead"))
+        {
+            switch (state)
+            {
+                case EnemyStates.Walk:
+                    enemyAnimator.SetBool("isWalking", false);
+                    enemyAnimator.SetBool("isRunning", true);
+                    break;
+                case EnemyStates.Shoot:
+                    enemyAnimator.SetBool("isWalking", true);
+                    enemyAnimator.SetBool("isRunning", false);
+                    break;
+            }
+        }
+    }
+
+    private void FaceDestination(bool walking, Transform destination)
+    {
+        if (!walking)
+        {
+            Vector3 targetDirection = (destination.position - transform.position).normalized;
+
+            Quaternion lookDirection = Quaternion.LookRotation(targetDirection);
+
+            transform.rotation = Quaternion.Slerp(transform.rotation, lookDirection,
+                Time.deltaTime * weaponController.lookRotationSpeed);
+        }
+       
+    }
+    
     private void WalkStateActions()
     {
         if (!isFrozen) 
@@ -128,8 +164,6 @@ public class EnemyController : MonoBehaviour, IFreeze
     {
         enemyAgent.speed = speedWhileShooting;
     }
-    
-
     
     private void FindNextDestination()
     {

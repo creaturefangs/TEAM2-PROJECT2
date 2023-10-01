@@ -1,4 +1,5 @@
 using System;
+using Invector.vCharacterController;
 using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour, ITakeDamage
@@ -8,10 +9,13 @@ public class EnemyHealth : MonoBehaviour, ITakeDamage
     public bool isAlive = true;
 
     private EnemyController enemyController;
+
+    private vRagdoll ragdoll;
     private void Start()
     {
         currentHealth = _maxHealth;
         enemyController = GetComponent<EnemyController>();
+        ragdoll = GetComponent<vRagdoll>();
     }
 
     public void ApplyDamage(float amount)
@@ -32,8 +36,8 @@ public class EnemyHealth : MonoBehaviour, ITakeDamage
     public void Die()
     {
         isAlive = false;
-        transform.root.SendMessage ("ActivateRagdoll", SendMessageOptions.DontRequireReceiver);
+        enemyController.enemyAgent.speed = 0.0f;
         
-        //enemyController.enemyAgent.speed = 0.0f;
+        transform.root.SendMessage ("ActivateRagdoll", SendMessageOptions.DontRequireReceiver);
     }
 }
