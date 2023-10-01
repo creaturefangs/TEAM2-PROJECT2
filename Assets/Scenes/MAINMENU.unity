@@ -195,7 +195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.48036626, g: 1, b: 0.3160377, a: 1}
+  m_Color: {r: 0.074509814, g: 0.43529412, b: 0.23781069, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -349,7 +349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.254717, g: 0.021816839, b: 0.015619445, a: 1}
+  m_Color: {r: 0.3301887, g: 0.16297513, b: 0.15730688, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -380,18 +380,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 3601997260310687589}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &342195735 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1439327439432836716, guid: 4246db090d729484e90d932b93d6bed0,
-    type: 3}
-  m_PrefabInstance: {fileID: 3601997260310687589}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71f0aeb3f29e57f48a4d97447188911d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &842131453
 GameObject:
   m_ObjectHideFlags: 0
@@ -1347,11 +1335,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1642755292}
-    - target: {fileID: 4123791655164995944, guid: 158954672b030c143abf80146d4467c4,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnHelpButtonClick
-      objectReference: {fileID: 0}
     - target: {fileID: 8513289299623185379, guid: 158954672b030c143abf80146d4467c4,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1385,12 +1368,12 @@ PrefabInstance:
     - target: {fileID: 8513289299623185379, guid: 158954672b030c143abf80146d4467c4,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 160
+      value: 451.1559
       objectReference: {fileID: 0}
     - target: {fileID: 8513289299623185379, guid: 158954672b030c143abf80146d4467c4,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 30
+      value: 109.5287
       objectReference: {fileID: 0}
     - target: {fileID: 8513289299623185379, guid: 158954672b030c143abf80146d4467c4,
         type: 3}
@@ -1430,12 +1413,12 @@ PrefabInstance:
     - target: {fileID: 8513289299623185379, guid: 158954672b030c143abf80146d4467c4,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 4
+      value: -0.3102
       objectReference: {fileID: 0}
     - target: {fileID: 8513289299623185379, guid: 158954672b030c143abf80146d4467c4,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -13
+      value: -23.7757
       objectReference: {fileID: 0}
     - target: {fileID: 8513289299623185379, guid: 158954672b030c143abf80146d4467c4,
         type: 3}
@@ -1470,31 +1453,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1642755292}
-    - target: {fileID: 2066225035460481241, guid: 4246db090d729484e90d932b93d6bed0,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnCreditButtonClick
-      objectReference: {fileID: 0}
-    - target: {fileID: 2754452563455962353, guid: 4246db090d729484e90d932b93d6bed0,
-        type: 3}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 342195735}
-    - target: {fileID: 2754452563455962353, guid: 4246db090d729484e90d932b93d6bed0,
-        type: 3}
-      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 342195735}
-    - target: {fileID: 2754452563455962353, guid: 4246db090d729484e90d932b93d6bed0,
-        type: 3}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: HoverSound
-      objectReference: {fileID: 0}
-    - target: {fileID: 2754452563455962353, guid: 4246db090d729484e90d932b93d6bed0,
-        type: 3}
-      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ClickSound
-      objectReference: {fileID: 0}
     - target: {fileID: 7378590825923010881, guid: 4246db090d729484e90d932b93d6bed0,
         type: 3}
       propertyPath: m_Pivot.x
