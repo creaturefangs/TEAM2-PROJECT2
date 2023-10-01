@@ -16,7 +16,7 @@ public class ItemPickupManager : MonoBehaviour
         playerHealth = GetComponent<PlayerHealth>();
     }
 
-    private void LateUpdate()
+    private void FixedUpdate()
     {
         ItemPickupComponent currentPickupComponent = null;
         bool isLookingAtItem = false;
@@ -33,8 +33,10 @@ public class ItemPickupManager : MonoBehaviour
                 currentPickupComponent = pickup;
                 isLookingAtItem = true;
 
-                if (pickup.CompareTag("Syringe") && playerHealth.IsBelowMaxHealth())
+                
+                if (pickup.CompareTag("Syringe"))
                 {
+                    if (!playerHealth.IsBelowMaxHealth()) return;
                     pickup.enableDestructionOnPickup = true;
                 }
                 

@@ -45,8 +45,10 @@ public class PlayerHealth : MonoBehaviour, ITakeDamage, IInvincibility
         {
             health = maxHealth;
         }
-        
-        health += amount;
+        else
+        {
+            health += amount;
+        }
         healthBar.UpdateHealthBar(health);
     }
 
