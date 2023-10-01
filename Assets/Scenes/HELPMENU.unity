@@ -1637,10 +1637,10 @@ GameObject:
   - component: {fileID: 376336562532140327}
   - component: {fileID: 492549646617822089}
   - component: {fileID: 4123791655417095650}
-  - component: {fileID: 8785517553234825375}
   - component: {fileID: 2270830425694580829}
   - component: {fileID: 3034277624391320194}
   - component: {fileID: 7520732766791865727}
+  - component: {fileID: 8513289298834081642}
   m_Layer: 5
   m_Name: StartButton
   m_TagString: Untagged
@@ -2196,7 +2196,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 442307299}
         m_TargetAssemblyTypeName: MainMenuButtons, Assembly-CSharp
-        m_MethodName: OnLevelOneClick
+        m_MethodName: OnClickLoadScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2462,6 +2462,27 @@ RectTransform:
   m_AnchoredPosition: {x: -487.8486, y: -461.39}
   m_SizeDelta: {x: 504.4344, y: 96.503}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &8513289298834081642
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2148077464548990686}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b2fa5daf3d106fa4b968fcd435f66cc6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!224 &8513289298904179265
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2534,27 +2555,6 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: c424dd70790630e498557ed218b7a818, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!95 &8785517553234825375
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2148077464548990686}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ea2aa8cc075f64b4c82da174f6617ee6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

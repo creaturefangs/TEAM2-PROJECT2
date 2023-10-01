@@ -32,7 +32,7 @@ public class MainMenuButtons : MonoBehaviour
 
     public void OnClickPlaytest()
     {
-        SceneManager.LoadScene("PLAYTEST");
+        SceneManager.LoadScene("TESTLEVEL");
     }
 
     public void OnClickCutsceneOne()
@@ -42,7 +42,7 @@ public class MainMenuButtons : MonoBehaviour
 
     public void OnClickLoadScreen()
     {
-        SceneManager.LoadScene("LoadingScene");
+        SceneManager.LoadScene("LOADSCENE");
     }
 
     public void OnClickSettings()

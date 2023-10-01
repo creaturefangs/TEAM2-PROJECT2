@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class LoadingScreen : MonoBehaviour
 {
     public Slider loadingBar;
-    public Text progressText;
+    public TMP_Text progressText;
 
     private void Start()
     {
@@ -16,7 +17,7 @@ public class LoadingScreen : MonoBehaviour
 
     IEnumerator LoadAsyncScene()
     {
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("YourNextSceneName");
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("LEVELONE");
         asyncLoad.allowSceneActivation = false;
 
         while (!asyncLoad.isDone)

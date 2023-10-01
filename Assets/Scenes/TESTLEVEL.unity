@@ -4721,6 +4721,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6131102757471568034, guid: 00600692e35bee04ba8ff295f40431fb,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6930929658948953871, guid: 00600692e35bee04ba8ff295f40431fb,
         type: 3}
       propertyPath: toggleWalk
