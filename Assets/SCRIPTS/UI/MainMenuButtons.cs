@@ -39,4 +39,9 @@ public class MainMenuButtons : MonoBehaviour
     {
         SceneManager.LoadScene("LoadingScreen");
     }
+
+    public void OnClickSettings()
+    {
+        SceneManager.LoadScene("SETTINGSSCENE");
+    }
 }
