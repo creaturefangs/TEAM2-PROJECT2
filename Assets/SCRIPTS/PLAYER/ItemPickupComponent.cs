@@ -7,11 +7,14 @@ public class ItemPickupComponent : MonoBehaviour
     public UnityEvent itemPickupEvent;
     public ParticleSystem particles;
     public GameObject itemUIImage;
-    
+    public bool enableDestructionOnPickup = true;
     public void OnItemPickup()
     {
         //ParticleSystem particleObj = Instantiate(particles, transform.position, Quaternion.identity);
         //Destroy(particleObj, .25f);
-        Destroy(gameObject);
+        
+        if(enableDestructionOnPickup){ Destroy(gameObject); }
+        
     }
+    
 }

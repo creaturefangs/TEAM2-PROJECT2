@@ -2,32 +2,39 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class PlayerHealth : MonoBehaviour, ITakeDamage
 {
     [SerializeField] private HealthBar healthBar;
-    private float _health;
-    private float maxHealth = 100;
+    [FormerlySerializedAs("_health")] public float health;
+    public float maxHealth = 100;
     public bool isAlive = true;
     private void Start()
     {
-        _health = maxHealth;
-        healthBar.UpdateHealthBar(_health);
+        health = maxHealth;
+        healthBar.UpdateHealthBar(health);
     }
 
     public void ApplyDamage(float amount)
     {
-        _health -= amount;
+        health -= amount;
     }
 
     public void TakeDamage(float amount)
     {
         ApplyDamage(amount);
-        healthBar.UpdateHealthBar(_health);
-        if (_health <= 0)
+        healthBar.UpdateHealthBar(health);
+        if (health <= 0)
         {
             Die();
         }
+    }
+
+    public void IncreaseHealth(float amount)
+    {
+        health += amount;
+        healthBar.UpdateHealthBar(health);
     }
 
     public void Die()

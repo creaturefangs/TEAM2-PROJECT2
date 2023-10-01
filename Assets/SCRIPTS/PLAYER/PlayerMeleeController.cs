@@ -43,12 +43,13 @@ public class PlayerMeleeController : MonoBehaviour
         Invoke(nameof(AttackRaycast), attackDelay);
 
         
-        meleeAudioSource.pitch = Random.Range(.9f, 1.1f);
+        //meleeAudioSource.pitch = Random.Range(.9f, 1.1f);
         //meleeAudioSource.PlayOneShot(punchSound);
     }
 
     private void AttackRaycast()
     {
+        Debug.Log("AttackRaycast");
         if (Physics.Raycast(
                 attackPoint.transform.position,
                 attackPoint.transform.forward,
@@ -58,7 +59,7 @@ public class PlayerMeleeController : MonoBehaviour
         {
             HitTarget(hitInfo.point);
 
-            if (hitInfo.transform.TryGetComponent(out ITakeDamage damageTaker))
+            if (hitInfo.collider.CompareTag("Enemy") && hitInfo.transform.TryGetComponent(out ITakeDamage damageTaker))
             {
                 damageTaker.TakeDamage(AttackDamage());
                 Debug.Log("Hit " + hitInfo.transform.name);
@@ -69,7 +70,7 @@ public class PlayerMeleeController : MonoBehaviour
 
     private void HitTarget(Vector3 hitPos)
     {
-        meleeAudioSource.pitch = 1.0f;
+       // meleeAudioSource.pitch = 1.0f;
        // meleeAudioSource.PlayOneShot(hitSound);
         
         //GameObject hitEffectObj = Instantiate(attackHitEffect, hitPos, Quaternion.identity);
