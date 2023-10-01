@@ -12,17 +12,22 @@ public class MainMenuButtons : MonoBehaviour
 
     public void OnHelpButtonClick()
     {
-        SceneManager.LoadScene("HelpScene");
+        SceneManager.LoadScene("HELPMENU");
+    }
+
+    public void OnLevelOneClick()
+    {
+        SceneManager.LoadScene("LEVELONE");
     }
 
     public void OnCreditButtonClick()
     {
-        SceneManager.LoadScene("Credits");
+        SceneManager.LoadScene("CREDITS");
     }
 
     public void OnMainMenuButtonClick()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("MAINMENU");
     }
 
     public void OnClickPlaytest()
@@ -37,7 +42,7 @@ public class MainMenuButtons : MonoBehaviour
 
     public void OnClickLoadScreen()
     {
-        SceneManager.LoadScene("LoadingScreen");
+        SceneManager.LoadScene("LoadingScene");
     }
 
     public void OnClickSettings()
