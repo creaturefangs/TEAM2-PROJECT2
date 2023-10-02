@@ -22,4 +22,4 @@ MonoBehaviour:
   maxMagazineCapacity: 12
   timeBetweenShots: 2
   reloadTime: 3.5
-  bulletSpread: 0
+  bulletSpread: 0.05
