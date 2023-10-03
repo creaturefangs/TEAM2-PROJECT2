@@ -21,5 +21,5 @@ MonoBehaviour:
   gunshotSoundClip: {fileID: 8300000, guid: 3bdb182125ad18f4b88c2b88fa5e294f, type: 3}
   maxMagazineCapacity: 12
   timeBetweenShots: 2
-  reloadTime: 3.5
+  reloadTime: 3.475
   bulletSpread: 0.05
