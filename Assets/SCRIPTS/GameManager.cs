@@ -38,6 +38,10 @@ public class GameManager : MonoBehaviour
     {
         killCounter++;
     }
-    
+
+    public void ResetPlayerKillCount()
+    {
+        killCounter = 0;
+    }
     
 }

@@ -21,7 +21,7 @@ public class ObjectiveManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.I))
         {
-            if (pauseManager.GameIsPaused == true)
+            if (pauseManager.gameIsPaused == true)
             {
                 CPVisible = false;
 

@@ -1,5 +1,7 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Random = UnityEngine.Random;
 
 public class PlayerMeleeController : MonoBehaviour
 {
@@ -17,11 +19,20 @@ public class PlayerMeleeController : MonoBehaviour
     private bool isReadyToAttack = true;
 
     [SerializeField] private GameObject attackHitEffect;
+    
+    //Killstreaks
+    private KillstreakManager _killStreaks;
 
     [Header("Audio")] //Source should be on the MeleeAttackPoint (Child of player->3dModel->armature->hips->spine->spine1
     [SerializeField] private AudioSource meleeAudioSource;
     [SerializeField] private AudioClip punchSound;
     [SerializeField] private AudioClip hitSound;
+
+    private void Awake()
+    {
+        _killStreaks = GetComponent<KillstreakManager>();
+    }
+
     private void Update()
     {
         if (Mouse.current.leftButton.wasPressedThisFrame)
@@ -61,9 +72,9 @@ public class PlayerMeleeController : MonoBehaviour
             {
                 damageTaker.TakeDamage(AttackDamage());
                 Debug.Log("Hit " + hitInfo.transform.name);
+                _killStreaks.GrantKillStreaks();
             }
         }
-        
     }
 
     private void HitTarget(Vector3 hitPos)
@@ -81,7 +92,7 @@ public class PlayerMeleeController : MonoBehaviour
         isReadyToAttack = true;
     }
 
-    private float AttackDamage()
+    public float AttackDamage()
     {
         return Random.Range(minMeleeDamage, maxMeleeDamage);
     }

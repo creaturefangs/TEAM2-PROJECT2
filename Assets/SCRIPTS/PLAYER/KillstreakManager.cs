@@ -1,15 +1,56 @@
+using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class KillstreakManager : MonoBehaviour
 {
-    public KillstreakSO[] killStreaks;
-    public UnityEvent killStreakEvent;
+    private PlayerHealth _playerHealth;
+    private PlayerMeleeController _meleeController;
 
-    public void GrantKillstreak()
+    [Header("Killstreak Cooldowns")]
+    [SerializeField] private float rageDuration = 20.0f;
+    private void Awake()
     {
-        killStreakEvent?.Invoke();
+        _playerHealth = GetComponent<PlayerHealth>();
+        _meleeController = GetComponent<PlayerMeleeController>();
+    }
+
+    private void Update()
+    {
+        if (Keyboard.current.tabKey.wasPressedThisFrame && !PlayerUI.instance.pauseManager.gameIsPaused)
+        {
+            PlayerUI.instance.killStreakUI.SetActive(!PlayerUI.instance.killStreakUI.activeSelf);
+        }
+    }
+
+    public void GrantKillStreaks()
+    {
+        switch (GameManager.instance.killCounter)
+        {
+            case 5: 
+                _playerHealth.IncreaseHealth(50);
+                PlayerUI.instance.ShowAdditionalHealth(_playerHealth.health);
+                break;
+            case 10:
+                PlayerUI.instance.EnableUIElement(SceneManager.GetActiveScene().name == "LEVELONE"
+                    ? PlayerUI.instance.fireRageParticles
+                    : PlayerUI.instance.iceRageParticles);
+                StartCoroutine(StartTemporaryDamageBuff()); 
+                break;
+        }
+    }
+
+    private IEnumerator StartTemporaryDamageBuff()
+    {
+        var attackDamage = _meleeController.AttackDamage();
+        attackDamage += 50.0f;
+        Debug.Log("attackDamage: " + attackDamage);
+        
+        yield return new WaitForSeconds(rageDuration);
+        
+        attackDamage -= 50.0f;
     }
 }

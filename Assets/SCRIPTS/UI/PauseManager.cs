@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class PauseManager : MonoBehaviour
 {
-    public bool GameIsPaused = false;
+    public bool gameIsPaused = false;
     public GameObject pauseMenuUI;
     public GameObject playerUI;
     public AudioSource pauseSFX;
@@ -20,7 +21,7 @@ public class PauseManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (GameIsPaused)
+            if (gameIsPaused)
             {
                 Resume();
             }
@@ -40,7 +41,7 @@ public class PauseManager : MonoBehaviour
         Time.timeScale = 1f;
         pauseMenuUI.SetActive(false);
         playerUI.SetActive(true);
-        GameIsPaused = false;
+        gameIsPaused = false;
         AudioListener.pause = false;
         pauseSFX.Play();
 
@@ -51,7 +52,7 @@ public class PauseManager : MonoBehaviour
         Time.timeScale = 0f;
         pauseMenuUI.SetActive(true);
         playerUI.SetActive(false);
-        GameIsPaused = true;
+        gameIsPaused = true;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         pauseSFX.Play();
@@ -60,7 +61,7 @@ public class PauseManager : MonoBehaviour
 
     public void LoadMenu()
     {
-        GameIsPaused = false;
+        gameIsPaused = false;
         Time.timeScale = 1f;
         Debug.Log("Loading Menu...");
         SceneManager.LoadScene("MAINMENU");
