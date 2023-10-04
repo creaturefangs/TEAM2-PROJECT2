@@ -53,4 +53,10 @@ public class PlayerUI : MonoBehaviour
     {
         additionalHealthText.text = " + " + amount.ToString("0");
     }
+
+    public void UpdateKillsUI(int kills, int killsToNextKillStreak)
+    {
+        killsText.text = kills.ToString();
+        killsToNextKillStreakText.text = killsToNextKillStreak.ToString(); 
+    }
 }

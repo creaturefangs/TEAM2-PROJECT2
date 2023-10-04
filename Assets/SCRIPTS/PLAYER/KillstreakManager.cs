@@ -28,6 +28,7 @@ public class KillstreakManager : MonoBehaviour
 
     public void GrantKillStreaks()
     {
+        //TODO: Update player texture overlay the more kills they get(blood builds up over time on the player)
         switch (GameManager.instance.killCounter)
         {
             case 5: 

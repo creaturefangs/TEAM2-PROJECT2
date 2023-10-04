@@ -23,6 +23,7 @@ public class EnemyController : MonoBehaviour, IFreeze
     public NavMeshAgent enemyAgent;
     [SerializeField] private EnemyWeaponController weaponController;
     public Transform enemyForwardVector;
+    public Transform feetPosition;
     private EnemyHealth enemyHealth;
 
     [Header("AI Variables and Values")] 

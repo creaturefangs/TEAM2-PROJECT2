@@ -5,6 +5,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance { get; set; }
     public int killCounter = 0;
+    public int killsToNextKillStreak = 5;
+    public int maxKillsToNextKillStreak = 5;
     public int levelIndex { get; set; }
     private void Awake() 
     {
@@ -17,6 +19,10 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
     }
 
+    /// <summary>
+    /// When player completes a level, call GameManager.instance.IncrementLevelCount(), then call GameManager.instance.LoadLevel(GameManager.instance.levelIndex)
+    /// </summary>
+    /// <param name="currentLevel"></param>
     public void LoadLevel(int currentLevel)
     {
         switch (levelIndex)
@@ -32,16 +38,24 @@ public class GameManager : MonoBehaviour
             default: SceneManager.LoadScene("MAINMENU");
                 break;
         }
+        ResetPlayerKillCount();
     }
 
     public void IncrementPlayerKillCount()
     {
         killCounter++;
+
+        if (killsToNextKillStreak <= 0)
+        {
+            killsToNextKillStreak = 5;
+        }else killsToNextKillStreak--;
+        
+        PlayerUI.instance.UpdateKillsUI(killCounter, killsToNextKillStreak);
     }
 
     public void ResetPlayerKillCount()
     {
         killCounter = 0;
+        PlayerUI.instance.UpdateKillsUI(killCounter, maxKillsToNextKillStreak);
     }
-    
 }
