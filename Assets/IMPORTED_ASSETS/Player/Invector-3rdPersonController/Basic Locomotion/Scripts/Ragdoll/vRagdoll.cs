@@ -321,7 +321,7 @@ namespace Invector.vCharacterController
                 characterHips.SetParent(_ragdollContainer.transform);
             }
 
-            if (ragdolled && !inStabilize && !keepRagdolled && !iChar.isDead)
+            if (ragdolled && !inStabilize && !keepRagdolled && iChar != null && !iChar.isDead)
             {
                 ragdolled = false;
                 StartCoroutine(ResetPlayer(1.1f));
@@ -330,7 +330,6 @@ namespace Invector.vCharacterController
             {
                 transform.position = characterHips.position;
             }
-
         }
 
         protected virtual void OnDestroy()

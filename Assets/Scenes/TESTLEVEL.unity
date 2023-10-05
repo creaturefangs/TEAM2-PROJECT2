@@ -6525,6 +6525,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3337634393218079982, guid: 5281d71afdeb4734c857eafca7efcd53,
+        type: 3}
+      propertyPath: selectedToolbar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3337634393218079982, guid: 5281d71afdeb4734c857eafca7efcd53,
+        type: 3}
+      propertyPath: verticalMultiplier
+      value: 0.422
+      objectReference: {fileID: 0}
+    - target: {fileID: 3337634393218079982, guid: 5281d71afdeb4734c857eafca7efcd53,
+        type: 3}
+      propertyPath: horizontalMultiplier
+      value: 0.793
+      objectReference: {fileID: 0}
     - target: {fileID: 4891712544516388294, guid: 5281d71afdeb4734c857eafca7efcd53,
         type: 3}
       propertyPath: m_Name

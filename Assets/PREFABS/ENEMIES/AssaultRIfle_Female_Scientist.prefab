@@ -2164,8 +2164,8 @@ MonoBehaviour:
   - Weapon
   - Ignore Ragdoll
   - BodyPart
-  horizontalMultiplier: 1
-  verticalMultiplier: 0.5
+  horizontalMultiplier: 0.793
+  verticalMultiplier: 0.422
   isActive: 0
   inStabilize: 0
   updateBehaviour: 0
