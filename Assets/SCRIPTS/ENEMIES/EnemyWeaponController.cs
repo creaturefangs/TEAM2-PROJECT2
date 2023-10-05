@@ -35,12 +35,15 @@ public class EnemyWeaponController : MonoBehaviour
     {
         if (enemyHealth.isAlive && !enemyController.isFrozen)
         {
-            if (enemyController.IsPlayerInRange(enemyController.canShootDistance))
+            if (enemyController.IsPlayerInLineOfSight())
             {
-                if (_timeSinceLastShot + weapon.timeBetweenShots <= Time.time)
+                if (enemyController.IsPlayerInRange(enemyController.canShootDistance))
                 {
-                    // Delay between shots has passed, so shoot
-                    Shoot();
+                    if (_timeSinceLastShot + weapon.timeBetweenShots <= Time.time)
+                    {
+                        // Delay between shots has passed, so shoot
+                        Shoot();
+                    }
                 }
             }
         }

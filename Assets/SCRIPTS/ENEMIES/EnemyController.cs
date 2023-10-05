@@ -178,10 +178,9 @@ public class EnemyController : MonoBehaviour, IFreeze
     }
 
 
-    private bool IsPlayerInLineOfSight()
+    public bool IsPlayerInLineOfSight()
     {
-        Vector3 directionToPlayer = player.transform.position - transform.position;
-        if (Physics.Raycast(transform.position, directionToPlayer, out RaycastHit hit, maxPlayerDistance, playerMask))
+        if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, maxPlayerDistance, playerMask))
         {
             if (hit.collider.CompareTag("Player"))
             {
