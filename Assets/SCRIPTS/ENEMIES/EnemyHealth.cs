@@ -3,6 +3,7 @@ using System.Collections;
 using Invector.vCharacterController;
 using UnityEngine;
 using UnityEngine.Events;
+using Random = UnityEngine.Random;
 
 public class EnemyHealth : MonoBehaviour, ITakeDamage
 {
@@ -14,7 +15,7 @@ public class EnemyHealth : MonoBehaviour, ITakeDamage
     public UnityEvent deathEvent;
     private vRagdoll ragdoll;
 
-    [SerializeField] private GameObject bloodPoolPrefab;
+    [SerializeField] private GameObject[] bloodPoolPrefabs;
     
     private void Start()
     {
@@ -56,8 +57,14 @@ public class EnemyHealth : MonoBehaviour, ITakeDamage
     {
         yield return new WaitForSeconds(2.0f);
 
-        GameObject blood = Instantiate(bloodPoolPrefab, enemyController.feetPosition.position, Quaternion.identity);
+        GameObject blood = GetRandomBloodPrefab();
+        Instantiate(blood, enemyController.feetPosition.position, blood.transform.rotation);
 
         Destroy(blood, 10.0f);
+    }
+
+    private GameObject GetRandomBloodPrefab()
+    {
+        return bloodPoolPrefabs[Random.Range(0, bloodPoolPrefabs.Length)];
     }
 }
