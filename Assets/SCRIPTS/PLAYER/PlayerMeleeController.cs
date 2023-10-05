@@ -56,24 +56,52 @@ public class PlayerMeleeController : MonoBehaviour
         //meleeAudioSource.PlayOneShot(punchSound);
     }
 
+    // private void AttackRaycast()
+    // {
+    //     Debug.Log("AttackRaycast");
+    //     if (Physics.Raycast(
+    //             attackPoint.transform.position,
+    //             attackPoint.transform.forward,
+    //             out RaycastHit hitInfo,
+    //             attackDistance,
+    //             enemyMask))
+    //     {
+    //         HitTarget(hitInfo.point);
+    //
+    //         if (hitInfo.collider.CompareTag("Enemy") && hitInfo.transform.TryGetComponent(out ITakeDamage damageTaker))
+    //         {
+    //             damageTaker.TakeDamage(AttackDamage());
+    //             Debug.Log("Hit " + hitInfo.transform.name);
+    //             
+    //             _killStreaks.GrantKillStreaks();
+    //         }
+    //     }
+    // }
+    
     private void AttackRaycast()
     {
-        Debug.Log("AttackRaycast");
-        if (Physics.Raycast(
-                attackPoint.transform.position,
-                attackPoint.transform.forward,
-                out RaycastHit hitInfo,
-                attackDistance,
-                enemyMask))
-        {
-            HitTarget(hitInfo.point);
+        int rayCount = 5; // how many rays to cast out from the attack point
+        float spreadAngle = 45f; // total raycast spread angle
 
-            if (hitInfo.collider.CompareTag("Enemy") && hitInfo.transform.TryGetComponent(out ITakeDamage damageTaker))
+        for (int i = 0; i < rayCount; i++)
+        {
+            float angle = spreadAngle * ((float)i / (rayCount - 1)) - spreadAngle / 2;
+
+            Quaternion rotation = Quaternion.AngleAxis(angle, attackPoint.up);
+
+            Vector3 direction = rotation * attackPoint.forward;
+
+            if (Physics.Raycast(attackPoint.position, direction, out RaycastHit hitInfo, attackDistance, enemyMask))
             {
-                damageTaker.TakeDamage(AttackDamage());
-                Debug.Log("Hit " + hitInfo.transform.name);
+                HitTarget(hitInfo.point);
+
+                if (hitInfo.collider.CompareTag("Enemy") && hitInfo.transform.TryGetComponent(out ITakeDamage damageTaker))
+                {
+                    damageTaker.TakeDamage(AttackDamage());
+                    Debug.Log("Hit " + hitInfo.transform.name);
                 
-                _killStreaks.GrantKillStreaks();
+                    _killStreaks.GrantKillStreaks();
+                }
             }
         }
     }
