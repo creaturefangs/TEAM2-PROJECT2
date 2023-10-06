@@ -1,6 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ItemPickupManager : MonoBehaviour
@@ -8,9 +6,10 @@ public class ItemPickupManager : MonoBehaviour
     [SerializeField] private LayerMask pickupLayerMask;
     [SerializeField] private float pickupDistance = 2.0f;
     [SerializeField] private KeyCode itemPickupKeyCode;
+    
     private PlayerHealth playerHealth;
     private ItemPickupSO itemUnderCursor;
-
+    [SerializeField] private HealthBar healthBar;
     private void Awake()
     {
         playerHealth = GetComponent<PlayerHealth>();
@@ -36,7 +35,7 @@ public class ItemPickupManager : MonoBehaviour
                 
                 if (pickup.CompareTag("Syringe"))
                 {
-                    if (!playerHealth.IsBelowMaxHealth()) return;
+                    if (!playerHealth.IsBelowMaxHealth()) StartCoroutine(healthBar.FlashHealthBarGreen(.75f));
                     pickup.enableDestructionOnPickup = true;
                 }
                 

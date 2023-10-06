@@ -18,7 +18,7 @@ public class PlayerMeleeController : MonoBehaviour
     private bool isAttacking;
     private bool isReadyToAttack = true;
 
-    [SerializeField] private GameObject attackHitEffect;
+    [SerializeField] private GameObject[] attackHitEffects;
     
     //Killstreaks
     private KillstreakManager _killStreaks;
@@ -111,8 +111,8 @@ public class PlayerMeleeController : MonoBehaviour
        // meleeAudioSource.pitch = 1.0f;
        // meleeAudioSource.PlayOneShot(hitSound);
         
-        //GameObject hitEffectObj = Instantiate(attackHitEffect, hitPos, Quaternion.identity);
-       // Destroy(hitEffectObj, .75f); //How long until the hit effect is destroyed after being instantiated
+        GameObject hitEffectObj = Instantiate(GetRandomAttackEffect(), hitPos, Quaternion.identity);
+        Destroy(hitEffectObj, .75f); //How long until the hit effect is destroyed after being instantiated
     }
 
     private void ResetAttack()
@@ -124,5 +124,10 @@ public class PlayerMeleeController : MonoBehaviour
     public float AttackDamage()
     {
         return Random.Range(minMeleeDamage, maxMeleeDamage);
+    }
+
+    private GameObject GetRandomAttackEffect()
+    {
+        return attackHitEffects[Random.Range(0, attackHitEffects.Length)];
     }
 }

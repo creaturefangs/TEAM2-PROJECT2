@@ -52,10 +52,7 @@ public class PlayerHealth : MonoBehaviour, ITakeDamage, IInvincibility
         healthBar.UpdateHealthBar(health);
     }
 
-    public bool IsBelowMaxHealth()
-    {
-        return health < maxHealth;
-    }
+    public bool IsBelowMaxHealth() => health < maxHealth;
     
     public void Die()
     {
