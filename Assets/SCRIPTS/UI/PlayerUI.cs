@@ -56,7 +56,7 @@ public class PlayerUI : MonoBehaviour
 
     public void UpdateKillsUI(int kills, int killsToNextKillStreak)
     {
-        killsText.text = kills.ToString();
-        killsToNextKillStreakText.text = killsToNextKillStreak.ToString();
+        killsText.text = "Kills: " + kills;
+        killsToNextKillStreakText.text = "Kills remaining to next killstreak: " + killsToNextKillStreak;
     }
 }

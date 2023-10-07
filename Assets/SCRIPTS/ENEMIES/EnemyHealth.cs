@@ -12,7 +12,6 @@ public class EnemyHealth : MonoBehaviour, ITakeDamage
     public bool isAlive = true;
     
     private EnemyController enemyController;
-    public UnityEvent deathEvent;
     private vRagdoll ragdoll;
 
     [SerializeField] private GameObject[] bloodPoolPrefabs;
@@ -43,7 +42,6 @@ public class EnemyHealth : MonoBehaviour, ITakeDamage
     {
         isAlive = false;
         enemyController.enemyAgent.speed = 0.0f;
-        deathEvent.Invoke();
         
         GameManager.instance.IncrementPlayerKillCount();
         PlayerUI.instance.UpdateKillsUI(GameManager.instance.killCounter,
