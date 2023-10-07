@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Random = UnityEngine.Random;
@@ -28,6 +29,7 @@ public class PlayerMeleeController : MonoBehaviour
     [SerializeField] private AudioClip punchSound;
     [SerializeField] private AudioClip hitSound;
 
+    private List<ITakeDamage> hitEnemies = new List<ITakeDamage>();
     private void Awake()
     {
         _killStreaks = GetComponent<KillstreakManager>();
@@ -52,34 +54,14 @@ public class PlayerMeleeController : MonoBehaviour
         Invoke(nameof(AttackRaycast), attackDelay);
 
         
-        //meleeAudioSource.pitch = Random.Range(.9f, 1.1f);
-        //meleeAudioSource.PlayOneShot(punchSound);
+        meleeAudioSource.pitch = Random.Range(.9f, 1.1f);
+        meleeAudioSource.PlayOneShot(punchSound);
     }
-
-    // private void AttackRaycast()
-    // {
-    //     Debug.Log("AttackRaycast");
-    //     if (Physics.Raycast(
-    //             attackPoint.transform.position,
-    //             attackPoint.transform.forward,
-    //             out RaycastHit hitInfo,
-    //             attackDistance,
-    //             enemyMask))
-    //     {
-    //         HitTarget(hitInfo.point);
-    //
-    //         if (hitInfo.collider.CompareTag("Enemy") && hitInfo.transform.TryGetComponent(out ITakeDamage damageTaker))
-    //         {
-    //             damageTaker.TakeDamage(AttackDamage());
-    //             Debug.Log("Hit " + hitInfo.transform.name);
-    //             
-    //             _killStreaks.GrantKillStreaks();
-    //         }
-    //     }
-    // }
     
     private void AttackRaycast()
     {
+        hitEnemies.Clear(); //Clear the list at the start of each attack
+
         int rayCount = 5; // how many rays to cast out from the attack point
         float spreadAngle = 45f; // total raycast spread angle
 
@@ -97,9 +79,15 @@ public class PlayerMeleeController : MonoBehaviour
 
                 if (hitInfo.collider.CompareTag("Enemy") && hitInfo.transform.TryGetComponent(out ITakeDamage damageTaker))
                 {
+                    // Check if the enemy has already been hit in the current attack
+                    if (hitEnemies.Contains(damageTaker))
+                        continue; // Skip to the next ray/iteration
+                        
+                    hitEnemies.Add(damageTaker); // Add the new hit enemy to the list
+
                     damageTaker.TakeDamage(AttackDamage());
                     Debug.Log("Hit " + hitInfo.transform.name);
-                
+
                     _killStreaks.GrantKillStreaks();
                 }
             }
@@ -108,8 +96,8 @@ public class PlayerMeleeController : MonoBehaviour
 
     private void HitTarget(Vector3 hitPos)
     {
-       // meleeAudioSource.pitch = 1.0f;
-       // meleeAudioSource.PlayOneShot(hitSound);
+        meleeAudioSource.pitch = 1.0f;
+        meleeAudioSource.PlayOneShot(hitSound);
         
         GameObject hitEffectObj = Instantiate(GetRandomAttackEffect(), hitPos, Quaternion.identity);
         Destroy(hitEffectObj, .75f); //How long until the hit effect is destroyed after being instantiated
