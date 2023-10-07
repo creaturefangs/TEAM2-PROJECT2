@@ -21,6 +21,13 @@ public class PlayerHealth : MonoBehaviour, ITakeDamage, IInvincibility
         healthBar.UpdateHealthBar(health);
     }
 
+    public bool CanTakeHit { get; }
+
+    public void Hit()
+    {
+       //hit
+    }
+
     public void ApplyDamage(float amount) //never directly call this method. use take damage to take damage.
     {
         health -= amount;
