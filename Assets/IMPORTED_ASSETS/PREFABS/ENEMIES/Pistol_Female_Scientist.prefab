@@ -190,17 +190,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 66f838e05d071364d973b43aa353e74d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.47
+      value: 451.3247
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 66f838e05d071364d973b43aa353e74d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.593
+      value: -40.448
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 66f838e05d071364d973b43aa353e74d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -17.41
+      value: 215.75365
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 66f838e05d071364d973b43aa353e74d,
         type: 3}
@@ -210,17 +210,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 66f838e05d071364d973b43aa353e74d,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 66f838e05d071364d973b43aa353e74d,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 66f838e05d071364d973b43aa353e74d,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 66f838e05d071364d973b43aa353e74d,
         type: 3}
@@ -419,7 +419,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 66f838e05d071364d973b43aa353e74d,
         type: 3}
       propertyPath: m_Name
-      value: Pistol_Female_Scientist Variant
+      value: Pistol_Female_Scientist
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 66f838e05d071364d973b43aa353e74d,
         type: 3}
@@ -1355,6 +1355,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
   currentSpeed: 2
   walkSpeed: 2
   speedWhileShooting: 2
@@ -1402,22 +1403,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 0
   isAlive: 1
-  deathEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: IncrementPlayerKillCount
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  bloodPoolPrefabs: []
+  bloodPoolPrefabs:
+  - {fileID: 4934078905004894163, guid: 27041aa4d7808af459564f77994986e2, type: 3}
+  - {fileID: 977144161881447372, guid: 1def50b18757b734cafb4c47046c18f7, type: 3}
 --- !u!95 &1992055229439308472
 Animator:
   serializedVersion: 5
@@ -1657,6 +1645,7 @@ MonoBehaviour:
   - Weapon
   - Ignore Ragdoll
   - BodyPart
+  - Enemy
   horizontalMultiplier: 1
   verticalMultiplier: 0.5
   isActive: 0

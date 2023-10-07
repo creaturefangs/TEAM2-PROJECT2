@@ -10,7 +10,8 @@ public class EnemyHealth : MonoBehaviour, ITakeDamage
     public float currentHealth;
     private float _maxHealth = 100;
     public bool isAlive = true;
-    
+
+    private bool _canTakeDamage = true;
     private EnemyController enemyController;
     private vRagdoll ragdoll;
 
@@ -30,16 +31,20 @@ public class EnemyHealth : MonoBehaviour, ITakeDamage
 
     public void TakeDamage(float amount)
     {
-        ApplyDamage(amount);
-
-        if (currentHealth <= 0)
+        if (_canTakeDamage)
         {
-            Die();
+            ApplyDamage(amount);
+
+            if (currentHealth <= 0)
+            {
+                Die();
+            }
         }
     }
 
     public void Die()
     {
+        _canTakeDamage = false;
         isAlive = false;
         enemyController.enemyAgent.speed = 0.0f;
         

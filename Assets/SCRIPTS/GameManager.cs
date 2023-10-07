@@ -44,11 +44,11 @@ public class GameManager : MonoBehaviour
     public void IncrementPlayerKillCount()
     {
         killCounter++;
-
+        killsToNextKillStreak--;
         if (killsToNextKillStreak <= 0)
         {
             killsToNextKillStreak = 5;
-        }else killsToNextKillStreak--;
+        }
         
         PlayerUI.instance.UpdateKillsUI(killCounter, killsToNextKillStreak);
     }
