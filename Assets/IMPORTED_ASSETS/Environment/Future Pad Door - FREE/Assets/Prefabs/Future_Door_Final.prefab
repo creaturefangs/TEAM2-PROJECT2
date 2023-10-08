@@ -177,6 +177,7 @@ GameObject:
   - component: {fileID: 6185937851195669113}
   - component: {fileID: 70866682969402819}
   - component: {fileID: 2837197752342868409}
+  - component: {fileID: 1313240104106030916}
   m_Layer: 0
   m_Name: Future_Door_Final
   m_TagString: Untagged
@@ -236,6 +237,27 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!65 &1313240104106030916
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6185937851196024409}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.3490084, y: 2.272491, z: 1.6849194}
+  m_Center: {x: 0.0061818226, y: 1.1000555, z: 0.014296926}
 --- !u!1 &6185937851196024411
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,6 +352,7 @@ GameObject:
   - component: {fileID: 6185937851195669117}
   - component: {fileID: 6185937851194899039}
   - component: {fileID: 6185937851193768095}
+  - component: {fileID: 8788713327505074245}
   m_Layer: 0
   m_Name: Left_Door_Final
   m_TagString: Untagged
@@ -403,6 +426,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8788713327505074245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6185937851196024413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d94a21dd9acac4f8a9aa77608ddafdbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translateValue: 0
+  easeTime: 0
+  ease: 0
+  waitTime: 0
 --- !u!1 &6185937851196024415
 GameObject:
   m_ObjectHideFlags: 0
