@@ -1044,6 +1044,45 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8574124310205793101}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1096976449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096976429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab01fc92c35bcd64681457359b1685c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  openCloseEvents: 0
+  openCloseWindow: 1
+  selectedToolbar: 0
+  actionInput:
+    useInput: 1
+    isAxisInUse: 0
+    isUnityInput: 0
+    keyboard: Mouse1
+    keyboardAxis: 0
+    joystick: A
+    joystickAxis: 0
+    mobile: A
+    mobileAxis: 0
+    joystickAxisInvert: 0
+    keyboardAxisInvert: 0
+    mobileAxisInvert: 0
+    timeButtonWasPressed: 0
+    lastTimeTheButtonWasPressed: 0
+    inButtomTimer: 0
+  animationClip: PlayerChargedAttack
+  animationEnd: 1
+  OnPlayAnimation:
+    m_PersistentCalls:
+      m_Calls: []
+  OnEndAnimation:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1191425600
 GameObject:
   m_ObjectHideFlags: 0
@@ -2597,11 +2636,31 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 677441253527538576, guid: 00600692e35bee04ba8ff295f40431fb,
+        type: 3}
+      propertyPath: attackPoint
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1587188755578370610, guid: 00600692e35bee04ba8ff295f40431fb,
+        type: 3}
+      propertyPath: raycastOrigin
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2079697497041896943, guid: 00600692e35bee04ba8ff295f40431fb,
         type: 3}
       propertyPath: m_Cameras.Array.data[0]
       value: 
       objectReference: {fileID: 2047824512}
+    - target: {fileID: 2647896736279974764, guid: 00600692e35bee04ba8ff295f40431fb,
+        type: 3}
+      propertyPath: leftFootTrigger
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2647896736279974764, guid: 00600692e35bee04ba8ff295f40431fb,
+        type: 3}
+      propertyPath: rightFootTrigger
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3460353318209485918, guid: 00600692e35bee04ba8ff295f40431fb,
         type: 3}
       propertyPath: m_Name
@@ -2662,6 +2721,11 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 2047824512}
+    - target: {fileID: 7364250134856251770, guid: 00600692e35bee04ba8ff295f40431fb,
+        type: 3}
+      propertyPath: head
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7547376344856786032, guid: 00600692e35bee04ba8ff295f40431fb,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -2672,10 +2736,15 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8533945506485194707, guid: 00600692e35bee04ba8ff295f40431fb, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3460353318209485918, guid: 00600692e35bee04ba8ff295f40431fb,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1096976449}
   m_SourcePrefab: {fileID: 100100000, guid: 00600692e35bee04ba8ff295f40431fb, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
