@@ -1,9 +1,19 @@
 fileFormatVersion: 2
-guid: d96108a255762cf4ca95cdb789c0f41a
+guid: fb0658c316cf93449832b499d0da9e54
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Beaker2Glass
+    second: {fileID: 2100000, guid: ac7504d4cc2926041b44587db6415239, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Beaker2Lid
+    second: {fileID: 2100000, guid: 2908a5ade17a0c540b4a76c4c9154d6a, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

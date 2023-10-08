@@ -1,9 +1,19 @@
 fileFormatVersion: 2
-guid: 04b07935a6e4cfb48a7fc6cc63ea1e8d
+guid: f954d9637fe943f40a246301bf6e1cc0
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TestTubeBase
+    second: {fileID: 2100000, guid: 597f9ac241425774e9e3b1de97501475, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TestTubeGlass
+    second: {fileID: 2100000, guid: d432533f3b922d9428a73973884395ea, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

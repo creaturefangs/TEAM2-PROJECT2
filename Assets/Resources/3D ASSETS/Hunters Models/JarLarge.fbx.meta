@@ -1,9 +1,19 @@
 fileFormatVersion: 2
-guid: e7137c8ad0690934eba6eb3f96f371bf
+guid: 0289ce6c465a6224eb9aabf9bd3c3881
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: JarLargeGlass
+    second: {fileID: 2100000, guid: 61b81bf28b705d741b94986c6286a627, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: jarLargeLid
+    second: {fileID: 2100000, guid: 49e6d023246ee1641861fa015f51f5f7, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

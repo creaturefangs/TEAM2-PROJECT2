@@ -1,9 +1,19 @@
 fileFormatVersion: 2
-guid: f38202555b54cb947b34e843ad36171e
+guid: 2af8258fe9ee08c47bdc4162436b29cb
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BactaBase
+    second: {fileID: 2100000, guid: 0350a47aa02a94f4c9ccd2a496fa88bd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BactaGlass
+    second: {fileID: 2100000, guid: edd63321a784dee409ff960cfe44875e, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -35,7 +45,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 100
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
