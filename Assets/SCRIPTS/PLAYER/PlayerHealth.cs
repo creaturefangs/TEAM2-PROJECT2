@@ -10,6 +10,7 @@ public class PlayerHealth : MonoBehaviour, ITakeDamage, IInvincibility
     [SerializeField] private HealthBar healthBar;
     public float health;
     public float maxHealth = 100;
+    public float additionalHealth = 0; // if player has earned additional health
     public bool isAlive = true; // player is alive?
 
     [Header("Invincibility")] 
@@ -28,9 +29,26 @@ public class PlayerHealth : MonoBehaviour, ITakeDamage, IInvincibility
        //hit
     }
 
-    public void ApplyDamage(float amount) //never directly call this method. use take damage to take damage.
+    public void ApplyDamage(float amount)
     {
-        health -= amount;
+        if(additionalHealth > 0)
+        {
+            if(additionalHealth >= amount)
+            {
+                additionalHealth -= amount;
+                amount = 0;
+            }
+            else 
+            {
+                amount -= additionalHealth;
+                additionalHealth = 0;
+            }
+            
+            PlayerUI.instance.ShowAdditionalHealth(additionalHealth);
+        }
+
+        health -=  amount;
+        healthBar.UpdateHealthBar(health);
     }
 
     public void TakeDamage(float amount) // never to be directly called. use ITakeDamage component to TakeDamage
@@ -48,23 +66,34 @@ public class PlayerHealth : MonoBehaviour, ITakeDamage, IInvincibility
 
     public void IncreaseHealth(float amount)
     {
-        if (health >= maxHealth)
+        health += amount;
+        if (health > maxHealth)
         {
             health = maxHealth;
-        }
-        else
-        {
-            health += amount;
         }
         healthBar.UpdateHealthBar(health);
     }
 
-    public bool IsBelowMaxHealth() => health < maxHealth;
+    // Health increase through additional health
+    public void IncreaseAdditionalHealth(float amount)
+    {
+        additionalHealth += amount;
+        PlayerUI.instance.ShowAdditionalHealth(additionalHealth);
+        healthBar.UpdateHealthBar(health + additionalHealth);
+    }
+
+    public bool IsBelowMaxHealth() => health + additionalHealth < maxHealth;
     
     public void Die()
     {
+        if(additionalHealth > 0) 
+            return;
+      
         isAlive = false;
         GameManager.instance.LoadCheckpointOnDeath(this.transform);
+        health = maxHealth;
+        additionalHealth = 0;
+        PlayerUI.instance.ShowAdditionalHealth(additionalHealth);
     }
 
     public IEnumerator StartInvincibility()

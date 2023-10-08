@@ -31,6 +31,8 @@ public class PlayerMeleeController : MonoBehaviour
     [SerializeField] private AudioClip hitSoundClip;
 
     private List<ITakeDamage> _hitEnemies = new List<ITakeDamage>();
+    
+    public float DamageBuff { get; set; } = 0;
     private void Awake()
     {
         _killStreaks = GetComponent<KillstreakManager>();
@@ -112,7 +114,8 @@ public class PlayerMeleeController : MonoBehaviour
 
     public float AttackDamage()
     {
-        return Random.Range(minMeleeDamage, maxMeleeDamage);
+        float damage = Random.Range(minMeleeDamage, maxMeleeDamage);
+        return damage + DamageBuff;
     }
 
     private GameObject GetRandomAttackEffect()

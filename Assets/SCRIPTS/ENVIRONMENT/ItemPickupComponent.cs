@@ -10,7 +10,7 @@ public class ItemPickupComponent : MonoBehaviour
     public bool enableDestructionOnPickup = true; //destroy item when its picked up?
     public void OnItemPickup()
     {
-        //ParticleSystem particleObj = Instantiate(particles, transform.position, Quaternion.identity);
-        //Destroy(particleObj, .25f);
+        ParticleSystem particleObj = Instantiate(particles, transform.position, Quaternion.identity);
+        Destroy(particleObj, .25f);
     }
 }

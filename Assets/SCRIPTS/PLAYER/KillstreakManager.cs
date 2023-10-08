@@ -1,7 +1,5 @@
-using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
@@ -28,12 +26,11 @@ public class KillstreakManager : MonoBehaviour
 
     public void GrantKillStreaks()
     {
-        //TODO: Update player texture overlay the more kills they get(blood builds up over time on the player)
         switch (GameManager.instance.killCounter)
         {
             case 5: 
-                _playerHealth.IncreaseHealth(50);
-                PlayerUI.instance.ShowAdditionalHealth(_playerHealth.health);
+                _playerHealth.IncreaseAdditionalHealth(50);
+                PlayerUI.instance.ShowAdditionalHealth(_playerHealth.additionalHealth);
                 break;
             case 10:
                 PlayerUI.instance.EnableUIElement(SceneManager.GetActiveScene().name == "LEVELONE"
@@ -46,12 +43,8 @@ public class KillstreakManager : MonoBehaviour
 
     private IEnumerator StartTemporaryDamageBuff()
     {
-        var attackDamage = _meleeController.AttackDamage();
-        attackDamage += 50.0f;
-        Debug.Log("attackDamage: " + attackDamage);
-        
+        _meleeController.DamageBuff = 50.0f;
         yield return new WaitForSeconds(rageDuration);
-        
-        attackDamage -= 50.0f;
+        _meleeController.DamageBuff = 0;
     }
 }
