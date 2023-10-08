@@ -737,44 +737,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &669100027 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7550314558365766847, guid: 4449161c3766ed745aa6b878fe28af66,
-    type: 3}
-  m_PrefabInstance: {fileID: 1563729378}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &669100032
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 669100027}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6988408abbe24a44dae07f145baa8f0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemData: {fileID: 11400000, guid: eb0608fa68f96e94f8568e5b3bc1b801, type: 2}
-  itemPickupEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 669100032}
-        m_TargetAssemblyTypeName: ItemPickupComponent, Assembly-CSharp
-        m_MethodName: OnItemPickup
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  particles: {fileID: 1855448914312632416, guid: c5e04e869096706428deeef18e763a3d,
-    type: 3}
-  itemUIImage: {fileID: 0}
-  enableDestructionOnPickup: 1
 --- !u!1 &761641746
 GameObject:
   m_ObjectHideFlags: 0
@@ -1594,16 +1556,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1307702294149654293, guid: 4449161c3766ed745aa6b878fe28af66,
-        type: 3}
-      propertyPath: Loop
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2065956092061530617, guid: 4449161c3766ed745aa6b878fe28af66,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 2391255091844315474, guid: 4449161c3766ed745aa6b878fe28af66,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1659,19 +1611,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: redeye
       objectReference: {fileID: 0}
-    - target: {fileID: 7550314558365766847, guid: 4449161c3766ed745aa6b878fe28af66,
-        type: 3}
-      propertyPath: m_TagString
-      value: RedEye
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7550314558365766847, guid: 4449161c3766ed745aa6b878fe28af66,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 669100032}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4449161c3766ed745aa6b878fe28af66, type: 3}
 --- !u!1 &1712140584
 GameObject:
@@ -1778,77 +1721,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
---- !u!1 &1859697301 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1346501719238660687, guid: c3b919f3feb6a5a4fb0a9705db410cfe,
-    type: 3}
-  m_PrefabInstance: {fileID: 7841242235472195562}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &1859697303
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1859697301}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.58730334, y: 0.5949613, z: 0.2503395}
-  m_Center: {x: 0.019675285, y: 0.050391793, z: 0.00029182434}
---- !u!114 &1859697304
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1859697301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6988408abbe24a44dae07f145baa8f0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemData: {fileID: 11400000, guid: 6f5d336f5a23e6f408d87604d435a8b1, type: 2}
-  itemPickupEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1859697304}
-        m_TargetAssemblyTypeName: ItemPickupComponent, Assembly-CSharp
-        m_MethodName: OnItemPickup
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 218562625}
-        m_TargetAssemblyTypeName: PlayerHealth, Assembly-CSharp
-        m_MethodName: IncreaseHealth
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 25
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  particles: {fileID: 1855448914312632416, guid: c5e04e869096706428deeef18e763a3d,
-    type: 3}
-  itemUIImage: {fileID: 0}
-  enableDestructionOnPickup: 0
 --- !u!1 &1897232990
 GameObject:
   m_ObjectHideFlags: 0
@@ -2652,6 +2524,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 643757926584360296, guid: c3b919f3feb6a5a4fb0a9705db410cfe,
+        type: 3}
+      propertyPath: itemPickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 218562625}
     - target: {fileID: 1346501719238660687, guid: c3b919f3feb6a5a4fb0a9705db410cfe,
         type: 3}
       propertyPath: m_Name
@@ -2710,15 +2587,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1346501719238660687, guid: c3b919f3feb6a5a4fb0a9705db410cfe,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1859697303}
-    - targetCorrespondingSourceObject: {fileID: 1346501719238660687, guid: c3b919f3feb6a5a4fb0a9705db410cfe,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1859697304}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3b919f3feb6a5a4fb0a9705db410cfe, type: 3}
 --- !u!1001 &8574124310205793101
 PrefabInstance:

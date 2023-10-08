@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 7512369752308734017}
   - component: {fileID: 2778925809080113496}
   - component: {fileID: 1307702294149654293}
+  - component: {fileID: 1195664399768886747}
   m_Layer: 3
   m_Name: redeye
-  m_TagString: Untagged
+  m_TagString: RedEye
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -157,7 +158,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -239,6 +240,38 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1195664399768886747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7550314558365766847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6988408abbe24a44dae07f145baa8f0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemData: {fileID: 11400000, guid: eb0608fa68f96e94f8568e5b3bc1b801, type: 2}
+  itemPickupEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1195664399768886747}
+        m_TargetAssemblyTypeName: ItemPickupComponent, Assembly-CSharp
+        m_MethodName: OnItemPickup
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  particles: {fileID: 1855448914312632416, guid: c5e04e869096706428deeef18e763a3d,
+    type: 3}
+  itemUIImage: {fileID: 0}
+  enableDestructionOnPickup: 1
 --- !u!1001 &7040272575153711337
 PrefabInstance:
   m_ObjectHideFlags: 0
