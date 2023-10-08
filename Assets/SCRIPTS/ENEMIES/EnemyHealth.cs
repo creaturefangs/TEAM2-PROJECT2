@@ -63,7 +63,7 @@ public class EnemyHealth : MonoBehaviour, ITakeDamage
         GameObject blood = GetRandomBloodPrefab();
         Instantiate(blood, enemyController.feetPosition.position, blood.transform.rotation);
 
-        Destroy(blood, 10.0f);
+       // Destroy(blood, 10.0f);
     }
 
     private GameObject GetRandomBloodPrefab()

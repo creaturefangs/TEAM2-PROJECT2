@@ -190,17 +190,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 66f838e05d071364d973b43aa353e74d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 451.3247
+      value: 3.47
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 66f838e05d071364d973b43aa353e74d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -40.448
+      value: 0.593
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 66f838e05d071364d973b43aa353e74d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 215.75365
+      value: -17.41
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 66f838e05d071364d973b43aa353e74d,
         type: 3}
@@ -210,17 +210,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 66f838e05d071364d973b43aa353e74d,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 66f838e05d071364d973b43aa353e74d,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 66f838e05d071364d973b43aa353e74d,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 66f838e05d071364d973b43aa353e74d,
         type: 3}
@@ -1355,7 +1355,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
   currentSpeed: 2
   walkSpeed: 2
   speedWhileShooting: 2
@@ -1628,7 +1627,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openCloseEvents: 0
   openCloseWindow: 1
-  selectedToolbar: 1
+  selectedToolbar: 0
   startRagdolled: 0
   debugTimeToStayRagdolled: 0
   groundLayer:
@@ -1645,7 +1644,6 @@ MonoBehaviour:
   - Weapon
   - Ignore Ragdoll
   - BodyPart
-  - Enemy
   horizontalMultiplier: 1
   verticalMultiplier: 0.5
   isActive: 0

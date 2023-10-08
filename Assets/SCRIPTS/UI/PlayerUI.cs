@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,10 +16,12 @@ public class PlayerUI : MonoBehaviour
     public TMP_Text additionalHealthText;
     public TMP_Text killsText; //show current kills
     public TMP_Text killsToNextKillStreakText; //show remaining kills to unlock next killstreak
+    public TMP_Text checkpointAlertText; //show that player has reached a checkpoint briefly
     public Image nextKillStreakImage; // WIll show an image of the next killstreak
     public GameObject killStreakUI;
     public GameObject fireRageParticles;
     public GameObject iceRageParticles;
+    
     private void Awake()
     {
         #region PlayerUI singleton
@@ -58,5 +61,12 @@ public class PlayerUI : MonoBehaviour
     {
         killsText.text = "Kills: " + kills;
         killsToNextKillStreakText.text = "Kills remaining to next killstreak: " + killsToNextKillStreak;
+    }
+
+    public IEnumerator ShowCheckpointUnlock(int index)
+    {
+        checkpointAlertText.text = "Checkpoint " + index + " reached!";
+        yield return new WaitForSeconds(2.5f);
+        checkpointAlertText.text = "";
     }
 }

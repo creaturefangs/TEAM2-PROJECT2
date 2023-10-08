@@ -64,6 +64,7 @@ public class PlayerHealth : MonoBehaviour, ITakeDamage, IInvincibility
     public void Die()
     {
         isAlive = false;
+        GameManager.instance.LoadCheckpointOnDeath(this.transform);
     }
 
     public IEnumerator StartInvincibility()

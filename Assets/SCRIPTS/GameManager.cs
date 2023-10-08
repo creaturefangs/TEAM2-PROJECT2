@@ -8,6 +8,9 @@ public class GameManager : MonoBehaviour
     public int killsToNextKillStreak = 5;
     public int maxKillsToNextKillStreak = 5;
     public int levelIndex { get; set; }
+    
+    public Vector3 lastCheckpointPosition { get; set; }
+    
     private void Awake() 
     {
         if (instance == null) 
@@ -57,5 +60,14 @@ public class GameManager : MonoBehaviour
     {
         killCounter = 0;
         PlayerUI.instance.UpdateKillsUI(killCounter, maxKillsToNextKillStreak);
+    }
+
+    /// <summary>
+    /// When the player dies and is brought to the death scene, call this method to bring the player back to their last checkpoint.
+    /// </summary>
+    /// <param name="playerTransform"></param>
+    public void LoadCheckpointOnDeath(Transform playerTransform)
+    {
+        playerTransform.transform.position = lastCheckpointPosition;
     }
 }
