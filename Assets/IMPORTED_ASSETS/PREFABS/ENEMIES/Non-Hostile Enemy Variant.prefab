@@ -606,10 +606,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   walkSpeed: 2.5
   idleTimer: 3
+  fleeDestination: {fileID: 0}
 --- !u!136 &905563629661288528
 CapsuleCollider:
   m_ObjectHideFlags: 0

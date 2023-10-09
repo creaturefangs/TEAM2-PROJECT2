@@ -1176,6 +1176,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9129259899784886057, guid: ee083a821dd79ce4ab0c6b07a1696ad2,
         type: 3}
+      propertyPath: fleeDestination
+      value: 
+      objectReference: {fileID: 212391119}
+    - target: {fileID: 9129259899784886057, guid: ee083a821dd79ce4ab0c6b07a1696ad2,
+        type: 3}
       propertyPath: destinations.Array.size
       value: 5
       objectReference: {fileID: 0}
@@ -2404,6 +2409,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9129259899784886057, guid: ee083a821dd79ce4ab0c6b07a1696ad2,
         type: 3}
+      propertyPath: fleeDestination
+      value: 
+      objectReference: {fileID: 212391119}
+    - target: {fileID: 9129259899784886057, guid: ee083a821dd79ce4ab0c6b07a1696ad2,
+        type: 3}
       propertyPath: destinations.Array.data[0]
       value: 
       objectReference: {fileID: 523460172}
@@ -2817,6 +2827,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 116530498}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &212391118
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 212391119}
+  m_Layer: 0
+  m_Name: NpcFleeDestination
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &212391119
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 212391118}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 84.337, y: -20.54, z: 206.56}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1938751475}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &217374820
 GameObject:
@@ -4591,6 +4632,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Non-Hostile Enemy Variant (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 9129259899784886057, guid: ee083a821dd79ce4ab0c6b07a1696ad2,
+        type: 3}
+      propertyPath: fleeDestination
+      value: 
+      objectReference: {fileID: 212391119}
     - target: {fileID: 9129259899784886057, guid: ee083a821dd79ce4ab0c6b07a1696ad2,
         type: 3}
       propertyPath: destinations.Array.size
@@ -6802,6 +6848,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9129259899784886057, guid: ee083a821dd79ce4ab0c6b07a1696ad2,
         type: 3}
+      propertyPath: fleeDestination
+      value: 
+      objectReference: {fileID: 212391119}
+    - target: {fileID: 9129259899784886057, guid: ee083a821dd79ce4ab0c6b07a1696ad2,
+        type: 3}
       propertyPath: destinations.Array.size
       value: 5
       objectReference: {fileID: 0}
@@ -7128,6 +7179,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9129259899784886057, guid: ee083a821dd79ce4ab0c6b07a1696ad2,
         type: 3}
+      propertyPath: fleeDestination
+      value: 
+      objectReference: {fileID: 212391119}
+    - target: {fileID: 9129259899784886057, guid: ee083a821dd79ce4ab0c6b07a1696ad2,
+        type: 3}
       propertyPath: destinations.Array.data[0]
       value: 
       objectReference: {fileID: 523460172}
@@ -7242,6 +7298,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Non-Hostile Enemy Variant (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 9129259899784886057, guid: ee083a821dd79ce4ab0c6b07a1696ad2,
+        type: 3}
+      propertyPath: fleeDestination
+      value: 
+      objectReference: {fileID: 212391119}
     - target: {fileID: 9129259899784886057, guid: ee083a821dd79ce4ab0c6b07a1696ad2,
         type: 3}
       propertyPath: destinations.Array.size
@@ -9482,9 +9543,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9129259899784886057, guid: ee083a821dd79ce4ab0c6b07a1696ad2,
         type: 3}
-      propertyPath: destinations.Array.size
-      value: 3
-      objectReference: {fileID: 0}
+      propertyPath: fleeDestination
+      value: 
+      objectReference: {fileID: 212391119}
     - target: {fileID: 9129259899784886057, guid: ee083a821dd79ce4ab0c6b07a1696ad2,
         type: 3}
       propertyPath: destinations.Array.data[0]
@@ -9658,6 +9719,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Non-Hostile Enemy Variant (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 9129259899784886057, guid: ee083a821dd79ce4ab0c6b07a1696ad2,
+        type: 3}
+      propertyPath: fleeDestination
+      value: 
+      objectReference: {fileID: 212391119}
     - target: {fileID: 9129259899784886057, guid: ee083a821dd79ce4ab0c6b07a1696ad2,
         type: 3}
       propertyPath: destinations.Array.size
@@ -10135,6 +10201,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9129259899784886057, guid: ee083a821dd79ce4ab0c6b07a1696ad2,
         type: 3}
+      propertyPath: fleeDestination
+      value: 
+      objectReference: {fileID: 212391119}
+    - target: {fileID: 9129259899784886057, guid: ee083a821dd79ce4ab0c6b07a1696ad2,
+        type: 3}
       propertyPath: destinations.Array.data[0]
       value: 
       objectReference: {fileID: 523460172}
@@ -10453,6 +10524,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Non-Hostile Enemy Variant (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 9129259899784886057, guid: ee083a821dd79ce4ab0c6b07a1696ad2,
+        type: 3}
+      propertyPath: fleeDestination
+      value: 
+      objectReference: {fileID: 212391119}
     - target: {fileID: 9129259899784886057, guid: ee083a821dd79ce4ab0c6b07a1696ad2,
         type: 3}
       propertyPath: destinations.Array.size
@@ -12571,6 +12647,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Non-Hostile Enemy Variant (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 9129259899784886057, guid: ee083a821dd79ce4ab0c6b07a1696ad2,
+        type: 3}
+      propertyPath: fleeDestination
+      value: 
+      objectReference: {fileID: 212391119}
     - target: {fileID: 9129259899784886057, guid: ee083a821dd79ce4ab0c6b07a1696ad2,
         type: 3}
       propertyPath: destinations.Array.data[0]
@@ -19239,6 +19320,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9129259899784886057, guid: ee083a821dd79ce4ab0c6b07a1696ad2,
         type: 3}
+      propertyPath: fleeDestination
+      value: 
+      objectReference: {fileID: 212391119}
+    - target: {fileID: 9129259899784886057, guid: ee083a821dd79ce4ab0c6b07a1696ad2,
+        type: 3}
       propertyPath: destinations.Array.size
       value: 5
       objectReference: {fileID: 0}
@@ -23834,6 +23920,7 @@ Transform:
   - {fileID: 1331960900}
   - {fileID: 285903063}
   - {fileID: 1371995636}
+  - {fileID: 212391119}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1939396260

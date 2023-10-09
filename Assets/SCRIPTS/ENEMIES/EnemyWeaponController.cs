@@ -23,6 +23,8 @@ public class EnemyWeaponController : MonoBehaviour
     [SerializeField] private LayerMask playerMask;
     [SerializeField] private AudioSource audioSource;
     private EnemyHealth enemyHealth;
+    
+    
 
     private void Start()
     {
@@ -56,12 +58,15 @@ public class EnemyWeaponController : MonoBehaviour
 
     public void Shoot()
     {
+        bool npcsHaveDespawned = false;
         if (_currentAmmo > 0 && Time.time >= _timeSinceLastShot + weapon.timeBetweenShots)
         {
             _timeSinceLastShot = Time.time;
             _currentAmmo--;
             isShooting = true;
-        
+
+            npcsHaveDespawned = true;
+            
             // Calculate the direction to the player
             Vector3 direction = (enemyController.player.transform.position - transform.position).normalized;
             // Add random offset based on bullet spread
@@ -85,8 +90,23 @@ public class EnemyWeaponController : MonoBehaviour
         {
             StartCoroutine(Reload());
         }
+
+        MakeNpcsFlee(npcsHaveDespawned);
     }
-    
+
+
+    private void MakeNpcsFlee(bool haveDespawned)
+    {
+        if (!haveDespawned)
+        {
+            NPCMovement[] npcs = GameObject.FindObjectsOfType<NPCMovement>();
+
+            foreach (var npc in npcs)
+            {
+                npc.FleeFromGunFire();
+            }
+        }
+    }
 
     private IEnumerator Reload()
     {
