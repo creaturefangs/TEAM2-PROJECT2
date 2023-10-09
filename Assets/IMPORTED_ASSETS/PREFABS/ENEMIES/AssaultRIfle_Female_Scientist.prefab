@@ -1907,21 +1907,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 0
   isAlive: 1
-  deathEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: IncrementPlayerKillCount
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   bloodPoolPrefabs:
   - {fileID: 4934078905004894163, guid: 27041aa4d7808af459564f77994986e2, type: 3}
   - {fileID: 977144161881447372, guid: 1def50b18757b734cafb4c47046c18f7, type: 3}
@@ -2051,7 +2036,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 4891712544516388294}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.32
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -31,6 +32,7 @@ public class KillstreakManager : MonoBehaviour
             case 5: 
                 _playerHealth.IncreaseAdditionalHealth(50);
                 PlayerUI.instance.ShowAdditionalHealth(_playerHealth.additionalHealth);
+                PlayerUI.instance.ShowNextKillstreakImage(PlayerUI.instance.rageAbilityImage);
                 break;
             case 10:
                 PlayerUI.instance.EnableUIElement(SceneManager.GetActiveScene().name == "LEVELONE"

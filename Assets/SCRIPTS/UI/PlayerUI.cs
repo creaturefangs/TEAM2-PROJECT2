@@ -18,6 +18,8 @@ public class PlayerUI : MonoBehaviour
     public TMP_Text killsToNextKillStreakText; //show remaining kills to unlock next killstreak
     public TMP_Text checkpointAlertText; //show that player has reached a checkpoint briefly
     public Image nextKillStreakImage; // WIll show an image of the next killstreak
+    public Sprite additionalHealthImage;
+    public Sprite rageAbilityImage;
     public GameObject killStreakUI;
     public GameObject fireRageParticles;
     public GameObject iceRageParticles;
@@ -68,5 +70,10 @@ public class PlayerUI : MonoBehaviour
         checkpointAlertText.text = "Checkpoint " + index + " reached!";
         yield return new WaitForSeconds(2.5f);
         checkpointAlertText.text = "";
+    }
+
+    public void ShowNextKillstreakImage(Sprite image)
+    {
+        nextKillStreakImage.sprite = image;
     }
 }

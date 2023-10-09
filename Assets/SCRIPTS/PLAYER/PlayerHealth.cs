@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
 public class PlayerHealth : MonoBehaviour, ITakeDamage, IInvincibility
@@ -90,7 +91,8 @@ public class PlayerHealth : MonoBehaviour, ITakeDamage, IInvincibility
             return;
       
         isAlive = false;
-        GameManager.instance.LoadCheckpointOnDeath(this.transform);
+        SceneManager.LoadScene("GAMEOVER");
+        //GameManager.instance.LoadCheckpointOnDeath(this.transform);
         health = maxHealth;
         additionalHealth = 0;
         PlayerUI.instance.ShowAdditionalHealth(additionalHealth);

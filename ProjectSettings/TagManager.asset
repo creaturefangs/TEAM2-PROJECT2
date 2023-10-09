@@ -32,6 +32,9 @@ TagManager:
   - AIAction
   - Syringe
   - RedEye
+  - Level One
+  - Level Two
+  - Level Three
   layers:
   - Default
   - TransparentFX
