@@ -8,8 +8,19 @@ public class Checkpoint : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             GameManager.instance.lastCheckpointPosition = this.transform.position;
-            StartCoroutine(PlayerUI.instance.ShowCheckpointUnlock(checkpointIndex));
-            Destroy(gameObject);
+            PlayerUI.instance.ShowCheckpointUnlock(checkpointIndex);
+            Invoke(nameof(ClearCheckpointText), 2.5f);
+            Invoke(nameof(DestroyCheckpointCollider), 2.5f);
         }
+    }
+
+    private void DestroyCheckpointCollider()
+    {
+        Destroy(gameObject);
+    }
+    
+    private void ClearCheckpointText()
+    {
+        PlayerUI.instance.checkpointAlertText.text = "";
     }
 }

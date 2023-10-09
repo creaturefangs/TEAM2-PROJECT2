@@ -65,11 +65,9 @@ public class PlayerUI : MonoBehaviour
         killsToNextKillStreakText.text = "Kills remaining to next killstreak: " + killsToNextKillStreak;
     }
 
-    public IEnumerator ShowCheckpointUnlock(int index)
+    public void ShowCheckpointUnlock(int index)
     {
         checkpointAlertText.text = "Checkpoint " + index + " reached!";
-        yield return new WaitForSeconds(2.5f);
-        checkpointAlertText.text = "";
     }
 
     public void ShowNextKillstreakImage(Sprite image)
