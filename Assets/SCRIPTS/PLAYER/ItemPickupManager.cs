@@ -10,6 +10,7 @@ public class ItemPickupManager : MonoBehaviour
     private PlayerHealth playerHealth;
     private ItemPickupSO itemUnderCursor;
     [SerializeField] private HealthBar healthBar;
+    private bool prevHealthStatus = true;  
     private void Awake()
     {
         playerHealth = GetComponent<PlayerHealth>();
@@ -30,42 +31,48 @@ public class ItemPickupManager : MonoBehaviour
             if (pickup != null)
             {
                 currentPickupComponent = pickup;
-                isLookingAtItem = true;
-
                 
                 if (pickup.CompareTag("Syringe"))
                 {
-                    if (!playerHealth.IsBelowMaxHealth()) StartCoroutine(healthBar.FlashHealthBarGreen(.75f));
-                    pickup.enableDestructionOnPickup = true;
-                }
-                
-                if (Input.GetKeyDown(itemPickupKeyCode))
-                {
-                    isLookingAtItem = false;
-                
-                    //Invoke an event depending on the item that is picked up
-                    pickup.itemPickupEvent.Invoke();
-
-                    //If destruction is enabled on pickup, destroy the item gameObject
-                    if(pickup.enableDestructionOnPickup)
+                    if (!playerHealth.IsBelowMaxHealth() && prevHealthStatus) // Check if player is not already flashing
                     {
-                        Destroy(pickup.gameObject);
+                        prevHealthStatus = false;
+                        StartCoroutine(healthBar.FlashHealthBarGreen(.8f, 3));  // This will cause the health bar to flash for 3 times with .75s between each flash
+                    }
+                    else if(playerHealth.IsBelowMaxHealth())
+                    {
+                        prevHealthStatus = true;
                     }
 
-                    
-                
-                    currentPickupComponent = null;
+                    if (playerHealth.IsBelowMaxHealth())
+                    {
+                        isLookingAtItem = true;
+                        pickup.enableDestructionOnPickup = true;
+
+                        if (Input.GetKeyDown(itemPickupKeyCode))
+                        {
+                            isLookingAtItem = false;
+
+                            pickup.itemPickupEvent.Invoke();
+
+                            if(pickup.enableDestructionOnPickup)
+                            {
+                                Destroy(pickup.gameObject);
+                            }
+
+                            currentPickupComponent = null;
+                        }
+                    }
+                }
+                else 
+                {
+                    isLookingAtItem = false;
                 }
             }
-            else 
-            {
-                isLookingAtItem = false;
-            }
+
+            PlayerUI.instance.itemPickupText.text = isLookingAtItem
+                ? $"Press {itemPickupKeyCode} to pickup {currentPickupComponent.itemData.itemName}"
+                : "";
         }
-    
-        // Update the text only when the state changes (if looking at an item, show the pickup text, else pickup text is empty
-        PlayerUI.instance.itemPickupText.text = isLookingAtItem
-            ? $"Press {itemPickupKeyCode} to pickup {currentPickupComponent.itemData.itemName}"
-            : "";
     }
 }

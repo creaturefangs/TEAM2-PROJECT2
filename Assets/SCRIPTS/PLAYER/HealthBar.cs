@@ -11,16 +11,17 @@ public class HealthBar : MonoBehaviour
         healthBar.value = currentHealth;
     }
 
-    public IEnumerator FlashHealthBarGreen(float timeBetweenFlashes)
+    public IEnumerator FlashHealthBarGreen(float timeBetweenFlashes, int numberOfFlashes)
     {
-        Color originalHealthBarColor = background.GetComponent<Image>().material.color;
+        Color originalHealthBarColor = background.color;
 
-        background.color = Color.green;
-        yield return new WaitForSeconds(timeBetweenFlashes);
-        background.color = Color.red;
-        yield return new WaitForSeconds(timeBetweenFlashes);
-        background.color = Color.green;
-        yield return new WaitForSeconds(timeBetweenFlashes);
-        background.color = Color.red;
+        for (int i = 0; i < numberOfFlashes; i++)
+        {
+            background.color = Color.green;
+            yield return new WaitForSeconds(timeBetweenFlashes);
+            background.color = originalHealthBarColor;
+            yield return new WaitForSeconds(timeBetweenFlashes);
+        }
+        background.color = originalHealthBarColor;  // Reset the healthbar color
     }
 }
