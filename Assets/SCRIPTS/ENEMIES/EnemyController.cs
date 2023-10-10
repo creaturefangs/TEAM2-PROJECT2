@@ -12,8 +12,8 @@ public class EnemyController : MonoBehaviour, IFreeze
         Shoot
     }
 
-    private EnemyStates currentEnemyState;
-    private EnemyStates previousEnemyState;
+    public EnemyStates currentEnemyState;
+    public EnemyStates previousEnemyState;
     public EnemySO enemy;
     
     //Health Variables
@@ -78,6 +78,8 @@ public class EnemyController : MonoBehaviour, IFreeze
             if (currentEnemyState == EnemyStates.Shoot && IsPlayerInLineOfSight())
             {
                 weaponController.Shoot();
+                // changing position while shooting the player
+                currentEnemyState = EnemyStates.Walk;
             }
         }
     }
@@ -166,7 +168,7 @@ public class EnemyController : MonoBehaviour, IFreeze
         enemyAgent.speed = speedWhileShooting;
     }
     
-    private void FindNextDestination()
+    public void FindNextDestination()
     {
         int randomDestination = Random.Range(0, destinations.Length);
         _currentDestination = destinations[randomDestination];

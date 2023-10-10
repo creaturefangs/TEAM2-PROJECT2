@@ -46,6 +46,17 @@ public class EnemyWeaponController : MonoBehaviour
                         // Delay between shots has passed, so shoot
                         Shoot();
                     }
+                    // Change this to make enemy move while shooting
+                    else
+                    {
+                        enemyController.currentEnemyState = EnemyController.EnemyStates.Walk;
+                        enemyController.FindNextDestination();
+                    }
+                }
+                else
+                {
+                    enemyController.currentEnemyState = EnemyController.EnemyStates.Walk;
+                    enemyController.FindNextDestination();
                 }
             }
         }

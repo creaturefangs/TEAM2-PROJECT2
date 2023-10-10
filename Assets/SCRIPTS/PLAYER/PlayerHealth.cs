@@ -91,11 +91,12 @@ public class PlayerHealth : MonoBehaviour, ITakeDamage, IInvincibility
             return;
       
         isAlive = false;
-        SceneManager.LoadScene("GAMEOVER");
-        //GameManager.instance.LoadCheckpointOnDeath(this.transform);
+        
         health = maxHealth;
         additionalHealth = 0;
         PlayerUI.instance.ShowAdditionalHealth(additionalHealth);
+
+        GameManager.instance.Die();
     }
 
     public IEnumerator StartInvincibility()

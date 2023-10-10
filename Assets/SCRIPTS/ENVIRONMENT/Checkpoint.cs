@@ -10,7 +10,7 @@ public class Checkpoint : MonoBehaviour
             GameManager.instance.lastCheckpointPosition = this.transform.position;
             PlayerUI.instance.ShowCheckpointUnlock(checkpointIndex);
             Invoke(nameof(ClearCheckpointText), 2.5f);
-            Invoke(nameof(DestroyCheckpointCollider), 2.5f);
+            Invoke(nameof(DestroyCheckpointCollider), .1f);
         }
     }
 

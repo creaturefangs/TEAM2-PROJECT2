@@ -123,7 +123,8 @@ public class NPCMovement : MonoBehaviour
 
     public void FleeFromGunFire()
     {
-        SetNpcAnimationState(NPCStates.Flee);
+        currentNPCState = NPCStates.Flee;
+        SetNpcAnimationState(currentNPCState);
         _canIdle = false;
         ClearDestinations();
         npcAgent.SetDestination(fleeDestination.position);

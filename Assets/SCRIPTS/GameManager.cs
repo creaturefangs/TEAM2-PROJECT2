@@ -8,8 +8,10 @@ public class GameManager : MonoBehaviour
     public int killsToNextKillStreak = 5;
     public int maxKillsToNextKillStreak = 5;
     public int levelIndex { get; set; }
-    
+    public int recentLevelIndex { get; set; }
     public Vector3 lastCheckpointPosition { get; set; }
+    
+    private bool _isRespawning = false;
     
     private void Awake() 
     {
@@ -20,6 +22,8 @@ public class GameManager : MonoBehaviour
         }
         else if (instance != this)
             Destroy(gameObject);
+        
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     /// <summary>
@@ -42,6 +46,36 @@ public class GameManager : MonoBehaviour
                 break;
         }
         ResetPlayerKillCount();
+        _isRespawning = true;
+    }
+    
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // check if the player was respawning
+        if (_isRespawning)
+        {
+            // reset respawning
+            _isRespawning = false;
+
+            // ensure that player character exists
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            int attempts = 0;
+            //if player isnt found, try up to 100 attempts to find the player.
+            while(player == null && attempts < 100)
+            {
+                player = GameObject.FindGameObjectWithTag("Player");
+                attempts++;
+            }
+
+            if(player != null)
+            {
+                player.transform.position = lastCheckpointPosition;
+            }
+            else
+            {
+                Debug.LogWarning("Player object not found - possibly because the current scene (" + scene.name + ") does not contain a player object.");
+            }
+        }
     }
 
     public void IncrementPlayerKillCount()
@@ -56,6 +90,16 @@ public class GameManager : MonoBehaviour
         PlayerUI.instance.UpdateKillsUI(killCounter, killsToNextKillStreak);
     }
 
+    
+    
+    public void Die()
+    {
+        recentLevelIndex = levelIndex;
+        SceneManager.LoadScene("GAMEOVER");
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+    
     public void ResetPlayerKillCount()
     {
         killCounter = 0;
