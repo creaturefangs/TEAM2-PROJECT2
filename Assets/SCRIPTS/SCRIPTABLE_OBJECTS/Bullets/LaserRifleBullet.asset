@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 8304101386042946754, guid: 1bc49a218b2b5e14cb863e0272da610f,
     type: 3}
-  damage: 15
+  damage: 8
   maxHitDistance: 50
   bulletSpeed: 112.9

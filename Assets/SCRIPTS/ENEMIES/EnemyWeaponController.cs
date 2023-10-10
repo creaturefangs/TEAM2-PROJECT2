@@ -17,6 +17,9 @@ public class EnemyWeaponController : MonoBehaviour
     private bool isReloading = false;
 #pragma warning restore CS0414 // Field is assigned but its value is never used
     private bool isShooting = false;
+    public float chanceOutOfSight = 0.05f; // 5% chance to shoot when player is not in line of sight
+    private float _lastCheckTime;
+    public float checkInterval = 1.0f; // Check every second
     
     [Header("References")]
     [SerializeField] private EnemyController enemyController;
@@ -37,8 +40,10 @@ public class EnemyWeaponController : MonoBehaviour
     {
         if (enemyHealth.isAlive && !enemyController.isFrozen)
         {
-            if (enemyController.IsPlayerInLineOfSight())
+            if (Time.time >= _lastCheckTime + checkInterval && (enemyController.IsPlayerInLineOfSight() || Random.value < chanceOutOfSight))
             {
+                _lastCheckTime = Time.time; // Update last check time
+
                 if (enemyController.IsPlayerInRange(enemyController.canShootDistance))
                 {
                     if (_timeSinceLastShot + weapon.timeBetweenShots <= Time.time)
@@ -46,7 +51,7 @@ public class EnemyWeaponController : MonoBehaviour
                         // Delay between shots has passed, so shoot
                         Shoot();
                     }
-                    // Change this to make enemy move while shooting
+                    // make enemy move while shooting
                     else
                     {
                         enemyController.currentEnemyState = EnemyController.EnemyStates.Walk;

@@ -20,6 +20,7 @@ public class PlayerUI : MonoBehaviour
     public Image nextKillStreakImage; // WIll show an image of the next killstreak
     public Sprite additionalHealthImage;
     public Sprite rageAbilityImage;
+    public Sprite freezeAbilityImage;
     public GameObject killStreakUI;
     public GameObject fireRageParticles;
     public GameObject iceRageParticles;

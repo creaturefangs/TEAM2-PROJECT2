@@ -13144,8 +13144,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 7.1073914, y: 1, z: 1}
-  m_Center: {x: -0.039585114, y: 0, z: 0}
+  m_Size: {x: 7.1073914, y: 0.35216522, z: 0.38588703}
+  m_Center: {x: -0.039585114, y: -0.3239174, z: -0.3070565}
 --- !u!114 &1003250297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13698,6 +13698,27 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 678228626}
+    - target: {fileID: 6771919001187711569, guid: 00600692e35bee04ba8ff295f40431fb,
+        type: 3}
+      propertyPath: canFreeze
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6771919001187711569, guid: 00600692e35bee04ba8ff295f40431fb,
+        type: 3}
+      propertyPath: freezeTime
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6771919001187711569, guid: 00600692e35bee04ba8ff295f40431fb,
+        type: 3}
+      propertyPath: freezeDistance
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6771919001187711569, guid: 00600692e35bee04ba8ff295f40431fb,
+        type: 3}
+      propertyPath: freezeParticles
+      value: 
+      objectReference: {fileID: 3963869663058087244, guid: 1ad972b0bd868c842bdd924847854876,
+        type: 3}
     - target: {fileID: 7547376344856786032, guid: 00600692e35bee04ba8ff295f40431fb,
         type: 3}
       propertyPath: m_AnchorMax.x

@@ -13,6 +13,7 @@ public class Freeze : MonoBehaviour
     public float slowSpeed = 0.5f; // The slowed-down speed
     public float slowAnimSpeed = 0.5f; // The slowed-down animation speed
 
+    [SerializeField] private GameObject freezeParticles;
     private GameObject[] _enemyControllers;
 
     void Update()
@@ -31,6 +32,8 @@ public class Freeze : MonoBehaviour
             canFreeze = false;
             _enemyControllers = GameObject.FindGameObjectsWithTag("Enemy");
             List<GameObject> enemiesInArea = EnemiesInArea(_enemyControllers);
+
+           
             foreach (var enemy in enemiesInArea)
             {
                 IFreeze iFreeze = enemy.GetComponent<IFreeze>();
@@ -38,6 +41,16 @@ public class Freeze : MonoBehaviour
                 {
                     // Apply freeze effect with desired parameters
                     iFreeze.ApplyFreeze(freezeTime, slowSpeed, slowAnimSpeed);
+
+                    Vector3 freezePosition = new Vector3
+                    (
+                        enemy.transform.position.x,
+                        enemy.transform.position.y + 1.0f,
+                        enemy.transform.position.z
+                    );
+                    GameObject freeze = Instantiate(freezeParticles, freezePosition, Quaternion.identity);
+                    freeze.transform.SetParent(enemy.transform);
+                    Destroy(freeze, freezeTime);
                 }
             }
         }
