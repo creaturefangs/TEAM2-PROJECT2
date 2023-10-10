@@ -13711,7 +13711,7 @@ PrefabInstance:
     - target: {fileID: 8311297813076229888, guid: 00600692e35bee04ba8ff295f40431fb,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -22.427795
+      value: -22.427734
       objectReference: {fileID: 0}
     - target: {fileID: 8311297813076229888, guid: 00600692e35bee04ba8ff295f40431fb,
         type: 3}
@@ -14573,6 +14573,79 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.44, y: 3.06, z: 5.75}
   m_Center: {x: 0, y: 1.22, z: 1.94}
+--- !u!1001 &1157687328
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3287063754981677730, guid: e27b89fb16858894f867cd3d10c42f5c,
+        type: 3}
+      propertyPath: itemPickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 59185821}
+    - target: {fileID: 4259823436835083067, guid: e27b89fb16858894f867cd3d10c42f5c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 460.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 4259823436835083067, guid: e27b89fb16858894f867cd3d10c42f5c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -39.166
+      objectReference: {fileID: 0}
+    - target: {fileID: 4259823436835083067, guid: e27b89fb16858894f867cd3d10c42f5c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 154.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 4259823436835083067, guid: e27b89fb16858894f867cd3d10c42f5c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4259823436835083067, guid: e27b89fb16858894f867cd3d10c42f5c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4259823436835083067, guid: e27b89fb16858894f867cd3d10c42f5c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4259823436835083067, guid: e27b89fb16858894f867cd3d10c42f5c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4259823436835083067, guid: e27b89fb16858894f867cd3d10c42f5c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4259823436835083067, guid: e27b89fb16858894f867cd3d10c42f5c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4259823436835083067, guid: e27b89fb16858894f867cd3d10c42f5c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372379976912209273, guid: e27b89fb16858894f867cd3d10c42f5c,
+        type: 3}
+      propertyPath: m_Name
+      value: SyringeHealth
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e27b89fb16858894f867cd3d10c42f5c, type: 3}
 --- !u!1001 &1167367376
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15603,7 +15676,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.06666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: b56e4adcb586aa547ad84de69f836729, type: 2}
   m_BuildHeightMesh: 0
@@ -27001,3 +27074,4 @@ SceneRoots:
   - {fileID: 753636441}
   - {fileID: 98411932}
   - {fileID: 448374531}
+  - {fileID: 1157687328}

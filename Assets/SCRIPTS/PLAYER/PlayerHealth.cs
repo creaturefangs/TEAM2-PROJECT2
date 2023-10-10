@@ -75,10 +75,15 @@ public class PlayerHealth : MonoBehaviour, ITakeDamage, IInvincibility
         healthBar.UpdateHealthBar(health);
     }
 
-    // Health increase through additional health
     public void IncreaseAdditionalHealth(float amount)
     {
         additionalHealth += amount;
+        // Ensure health + additional health doesnt exceed max health
+        if(health + additionalHealth > maxHealth)
+        {
+            additionalHealth = maxHealth - health;
+        }
+        health += additionalHealth;
         PlayerUI.instance.ShowAdditionalHealth(additionalHealth);
         healthBar.UpdateHealthBar(health + additionalHealth);
     }

@@ -82,12 +82,18 @@ public class GameManager : MonoBehaviour
     {
         killCounter++;
         killsToNextKillStreak--;
+
+        // check if the player has reached a new kill streak
         if (killsToNextKillStreak <= 0)
         {
-            killsToNextKillStreak = 5;
+            PlayerUI.instance.UpdateKillsUI(killCounter, maxKillsToNextKillStreak);
+            GameObject.FindGameObjectWithTag("Player").GetComponent<KillstreakManager>().GrantKillStreaks();
+            killsToNextKillStreak = maxKillsToNextKillStreak;
         }
-        
-        PlayerUI.instance.UpdateKillsUI(killCounter, killsToNextKillStreak);
+        else
+        {
+            PlayerUI.instance.UpdateKillsUI(killCounter, killsToNextKillStreak);
+        }
     }
 
     

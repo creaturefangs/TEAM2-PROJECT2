@@ -91,7 +91,8 @@ public class PlayerMeleeController : MonoBehaviour
                     damageTaker.TakeDamage(AttackDamage());
                     Debug.Log("Hit " + hitInfo.transform.name);
 
-                    _killStreaks.GrantKillStreaks();
+                    //Moved to GameManager
+                    //_killStreaks.GrantKillStreaks();
                 }
             }
         }
