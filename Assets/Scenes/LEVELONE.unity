@@ -2400,23 +2400,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1331960900}
     m_Modifications:
-    - target: {fileID: -7347038563675541169, guid: ee083a821dd79ce4ab0c6b07a1696ad2,
-        type: 3}
-      propertyPath: bloodPoolPrefabs.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: -7347038563675541169, guid: ee083a821dd79ce4ab0c6b07a1696ad2,
-        type: 3}
-      propertyPath: bloodPoolPrefabs.Array.data[0]
-      value: 
-      objectReference: {fileID: 4934078905004894163, guid: 27041aa4d7808af459564f77994986e2,
-        type: 3}
-    - target: {fileID: -7347038563675541169, guid: ee083a821dd79ce4ab0c6b07a1696ad2,
-        type: 3}
-      propertyPath: bloodPoolPrefabs.Array.data[1]
-      value: 
-      objectReference: {fileID: 977144161881447372, guid: 1def50b18757b734cafb4c47046c18f7,
-        type: 3}
     - target: {fileID: 8574039370871574747, guid: ee083a821dd79ce4ab0c6b07a1696ad2,
         type: 3}
       propertyPath: m_LocalPosition.x
