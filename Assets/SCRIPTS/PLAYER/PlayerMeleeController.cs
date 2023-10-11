@@ -15,15 +15,15 @@ public class PlayerMeleeController : MonoBehaviour
     [SerializeField] private float minMeleeDamage = 30.0f;
     [SerializeField] private float maxMeleeDamage = 75.0f;
    
+    [SerializeField] private int rayCount = 5; // how many rays to cast out from the attack point
+    [SerializeField] private float spreadAngle = 45f; // total raycast spread angle
+    
     [SerializeField] private LayerMask enemyMask;
 
     private bool isAttacking;
     private bool isReadyToAttack = true;
 
     [SerializeField] private GameObject[] attackHitEffects;
-    
-    //Killstreaks
-    private KillstreakManager _killStreaks;
 
     [Header("Audio")] //Source should be on the MeleeAttackPoint (Child of player->3dModel->armature->hips->spine->spine1
     [SerializeField] private AudioSource meleeAudioSource;
@@ -33,11 +33,7 @@ public class PlayerMeleeController : MonoBehaviour
     private List<ITakeDamage> _hitEnemies = new List<ITakeDamage>();
     
     public float DamageBuff { get; set; } = 0;
-    private void Awake()
-    {
-        _killStreaks = GetComponent<KillstreakManager>();
-    }
-
+    
     private void Update()
     {
         if (Mouse.current.leftButton.wasPressedThisFrame)
@@ -65,9 +61,6 @@ public class PlayerMeleeController : MonoBehaviour
     {
         _hitEnemies.Clear(); //Clear the list at the start of each attack
 
-        int rayCount = 5; // how many rays to cast out from the attack point
-        float spreadAngle = 45f; // total raycast spread angle
-
         for (int i = 0; i < rayCount; i++)
         {
             float angle = spreadAngle * ((float)i / (rayCount - 1)) - spreadAngle / 2;
@@ -89,7 +82,6 @@ public class PlayerMeleeController : MonoBehaviour
                     _hitEnemies.Add(damageTaker); // Add the new hit enemy to the list
 
                     damageTaker.TakeDamage(AttackDamage());
-                    Debug.Log("Hit " + hitInfo.transform.name);
 
                     //Moved to GameManager
                     //_killStreaks.GrantKillStreaks();

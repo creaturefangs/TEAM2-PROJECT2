@@ -477,7 +477,38 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 9129259899784886057}
+    - targetCorrespondingSourceObject: {fileID: 7006043246997033271, guid: 282b0f06c553da54ab383532467f4e13,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 647703624496698287}
   m_SourcePrefab: {fileID: 100100000, guid: 282b0f06c553da54ab383532467f4e13, type: 3}
+--- !u!1 &1174829457332413959 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7006043246997033271, guid: 282b0f06c553da54ab383532467f4e13,
+    type: 3}
+  m_PrefabInstance: {fileID: 8176181889954936624}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &647703624496698287
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1174829457332413959}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.42596436, y: 1.8070154, z: 0.5375717}
+  m_Center: {x: -0.0034305155, y: 0.81620157, z: 0.028722856}
 --- !u!1 &9058651785953266273 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 282b0f06c553da54ab383532467f4e13,
@@ -603,5 +634,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   walkSpeed: 2.5
+  fleeSpeed: 3.5
   idleTimer: 3
   fleeDestination: {fileID: 0}

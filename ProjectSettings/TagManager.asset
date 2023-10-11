@@ -35,6 +35,7 @@ TagManager:
   - Level One
   - Level Two
   - Level Three
+  - NPCDespawn
   layers:
   - Default
   - TransparentFX

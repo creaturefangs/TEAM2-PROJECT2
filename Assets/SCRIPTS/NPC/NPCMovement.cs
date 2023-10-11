@@ -21,6 +21,7 @@ public class NPCMovement : MonoBehaviour
     private NavMeshAgent npcAgent;
     [SerializeField] private Transform[] destinations;
     [SerializeField] private float walkSpeed = 2.5f;
+    [SerializeField] private float fleeSpeed = 3.5f;
     [SerializeField] private float idleTimer = 3.0f;
     [SerializeField] private Transform fleeDestination;
     private bool _idling = false;
@@ -48,8 +49,16 @@ public class NPCMovement : MonoBehaviour
         }
     }
 
+    // Despawn NPCS when the collide with the NPCDespawn collider
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("NPCDespawn"))
+        {
+            Destroy(gameObject);
+        }
+    }
 
-    
+
     private void Move()
     {
         switch (currentNPCState)
@@ -63,6 +72,9 @@ public class NPCMovement : MonoBehaviour
             npcAgent.isStopped = false;
             npcAgent.speed = walkSpeed;
             break;
+            case NPCStates.Flee:
+                npcAgent.speed = fleeSpeed;
+                break;
             default: Debug.Log("Error in NPCMovement/Move.");
                 break;
         }

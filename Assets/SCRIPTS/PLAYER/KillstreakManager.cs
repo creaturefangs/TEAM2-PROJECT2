@@ -18,6 +18,12 @@ public class KillstreakManager : MonoBehaviour
         _freeze = GetComponent<Freeze>();
     }
 
+    private void Start()
+    {
+        PlayerUI.instance.UpdateKillsUI(GameManager.instance.killCounter,
+            GameManager.instance.maxKillsToNextKillStreak);
+    }
+
     private void Update()
     {
         if (Keyboard.current.tabKey.wasPressedThisFrame && !PlayerUI.instance.pauseManager.gameIsPaused)
@@ -41,7 +47,7 @@ public class KillstreakManager : MonoBehaviour
                 PlayerUI.instance.EnableUIElement(SceneManager.GetActiveScene().name == "LEVELONE"
                     ? PlayerUI.instance.fireRageParticles
                     : PlayerUI.instance.iceRageParticles);
-                StartCoroutine(StartTemporaryDamageBuff());
+                StartDamageBuff();
                 PlayerUI.instance.ShowNextKillstreakImage(PlayerUI.instance.freezeAbilityImage);
                 break;
             //Freeze ability - freeze enemies in area
@@ -52,10 +58,8 @@ public class KillstreakManager : MonoBehaviour
         }
     }
 
-    private IEnumerator StartTemporaryDamageBuff()
+    private void StartDamageBuff()
     {
         _meleeController.DamageBuff = 50.0f;
-        yield return new WaitForSeconds(rageDuration);
-        _meleeController.DamageBuff = 0;
     }
 }

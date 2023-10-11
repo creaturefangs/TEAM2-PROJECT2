@@ -9,7 +9,7 @@ public class WeaponSO : ScriptableObject
     public string weaponName; //MOSTLY FOR DEBUG PURPOSES
     public AudioClip gunshotSoundClip;
     [Range(5, 31)] public int maxMagazineCapacity;
-    [Range(.5f, 3.5f)] public float timeBetweenShots;
+    [Range(.5f, 6f)] public float timeBetweenShots;
     [Range(1.5f, 3.5f)] public float reloadTime;
     
     [Tooltip("The deviation range for weapon accuracy")]
