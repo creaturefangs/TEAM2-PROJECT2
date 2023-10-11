@@ -1352,6 +1352,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e57e46522dfc0449afcd7dbb8e4e4b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentEnemyState: 0
+  previousEnemyState: 0
   enemy: {fileID: 11400000, guid: a990157f711b39c43b8801febfa48d07, type: 2}
   enemyAgent: {fileID: 4300296041310502811}
   weaponController: {fileID: 4681333530471899757}
@@ -1389,6 +1391,8 @@ MonoBehaviour:
   weapon: {fileID: 11400000, guid: 2cf8ba4c85f337045842e950ac35c9aa, type: 2}
   firePosition: {fileID: 1141215376702725353}
   lookRotationSpeed: 17.5
+  chanceOutOfSight: 0.05
+  checkInterval: 1
   enemyController: {fileID: 7011425835998254920}
   playerMask:
     serializedVersion: 2
@@ -1421,7 +1425,7 @@ Animator:
   m_GameObject: {fileID: 3822682045760253379}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 66f838e05d071364d973b43aa353e74d, type: 3}
-  m_Controller: {fileID: 9100000, guid: 14d06d6feb556774295230314b38ef98, type: 2}
+  m_Controller: {fileID: 9100000, guid: 55af9fde450e8034ca96ffef403df88c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

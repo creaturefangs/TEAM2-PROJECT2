@@ -126,13 +126,18 @@ public class EnemyWeaponController : MonoBehaviour
 
     private IEnumerator Reload()
     {
+        enemyController.enemyAnimator.SetBool("isReloading", true);
         isReloading = true;
         //TODO: Start a reloading animation here
-        
+    
         yield return new WaitForSeconds(weapon.reloadTime);
-        
+
         isReloading = false;
         _currentAmmo = weapon.maxMagazineCapacity;
+        enemyController.enemyAnimator.SetBool("isReloading", false);
+
+        //transition the enemy state back to Walk after reloading
+        enemyController.currentEnemyState = EnemyController.EnemyStates.Walk;
     }
 
     private void RotateAroundPlayer()

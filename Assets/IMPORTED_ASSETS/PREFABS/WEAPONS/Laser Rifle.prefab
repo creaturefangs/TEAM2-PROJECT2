@@ -42,72 +42,72 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 990c763d9cf80354181aa92c20858b04,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.27522
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 990c763d9cf80354181aa92c20858b04,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.27522
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 990c763d9cf80354181aa92c20858b04,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.27522
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 990c763d9cf80354181aa92c20858b04,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.6857
+      value: -0.204
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 990c763d9cf80354181aa92c20858b04,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.0127478
+      value: 0.247
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 990c763d9cf80354181aa92c20858b04,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.9169792
+      value: -0.03
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 990c763d9cf80354181aa92c20858b04,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.0000029473326
+      value: 0.41518658
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 990c763d9cf80354181aa92c20858b04,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.00000013513942
+      value: 0.54149425
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 990c763d9cf80354181aa92c20858b04,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.9959099
+      value: -0.47373328
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 990c763d9cf80354181aa92c20858b04,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0903518
+      value: 0.55675936
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 990c763d9cf80354181aa92c20858b04,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 10.368
+      value: 77.729
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 990c763d9cf80354181aa92c20858b04,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -180
+      value: -260.445
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 990c763d9cf80354181aa92c20858b04,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: -166.191
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 990c763d9cf80354181aa92c20858b04,
         type: 3}
       propertyPath: m_Name
-      value: LaserRifle Variant
+      value: Laser Rifle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
