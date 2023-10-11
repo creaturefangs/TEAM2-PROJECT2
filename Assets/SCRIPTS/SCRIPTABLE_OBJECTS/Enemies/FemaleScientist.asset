@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c8960a22b5a9f7429f744daa2bfd486, type: 3}
   m_Name: FemaleScientist
   m_EditorClassIdentifier: 
-  name: Lab Agent
+  enemyName: Scientist
   maxHealth: 100

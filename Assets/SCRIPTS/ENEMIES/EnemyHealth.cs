@@ -19,9 +19,10 @@ public class EnemyHealth : MonoBehaviour, ITakeDamage
     
     private void Start()
     {
-        currentHealth = _maxHealth;
         enemyController = GetComponent<EnemyController>();
         ragdoll = GetComponent<vRagdoll>();
+        
+        currentHealth = enemyController.enemy.maxHealth;
     }
 
     public void ApplyDamage(float amount)

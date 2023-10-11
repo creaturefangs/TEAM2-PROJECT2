@@ -1,0 +1,314 @@
+fileFormatVersion: 2
+guid: a0aed0a0a0221524a99097583df1c615
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group_swat1_group_swat1_group2_swat1_CircleMat
+    second: {fileID: 2100000, guid: a40575606b9b493489768978b58f3b08, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group_swat1_group_swat1_group2_swat1_Plane1Mat
+    second: {fileID: 2100000, guid: 148d785bbb79eb845bb0ea68aa4a78c2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group_swat1_group_swat1_group2_swat1_PlaneMat
+    second: {fileID: 2100000, guid: 763ce2ee2a75a484384d55774fd40cda, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group_swat1_group_swat1_group2_swat1_boot_lpFBXASC046001Mat
+    second: {fileID: 2100000, guid: 328f3eed1a5c3ca479aaad24f0a0146d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group_swat1_group_swat1_group2_swat1_boot_lpMat
+    second: {fileID: 2100000, guid: dc019adcc365e65489593c3ee815ad0d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group_swat1_group_swat1_group2_swat1_helmet_MeshFBXASC046008Mat
+    second: {fileID: 2100000, guid: 12bc7b853543a1c46a27a92cae8f43ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group_swat1_group_swat1_group2_swat1_humanFBXASC046BodyFBXASC046001_humanBodyMeshFBXASC046002Mat
+    second: {fileID: 2100000, guid: d3afc028000ee274f86f4155a1c57086, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group_swat1_group_swat1_group2_swat1_humanFBXASC046HighPolyEyes_humanFBXASC046HighPolyEyesMeshFBXASC046001Mat
+    second: {fileID: 2100000, guid: aab331978e2671e48b311de3486a23f0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group_swat1_group_swat1_group2_swat1_magazineFBXASC046001_MeshFBXASC046001Mat
+    second: {fileID: 2100000, guid: 932656f056f4a9c42a232035272eb7ea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group_swat1_group_swat1_group2_swat1_magazineFBXASC046002_MeshFBXASC046003Mat
+    second: {fileID: 2100000, guid: 6987872ce25f4c24e87be9d0d71ab108, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group_swat1_group_swat1_group2_swat1_magazineFBXASC046003_MeshFBXASC046004Mat
+    second: {fileID: 2100000, guid: eda971540738a6340bf6e9ba61c03522, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group_swat1_group_swat1_group2_swat1_magazine_MeshFBXASC046002Mat
+    second: {fileID: 2100000, guid: 47e9a09f9c69c9145a12c32c4ebe45ba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group_swat1_group_swat1_group2_swat1_mask_meshId0_nameMat
+    second: {fileID: 2100000, guid: 219c29fa9229adf409c62dedba505b21, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group_swat1_group_swat1_group2_swat1_night_vision_goggles_MeshFBXASC046010Mat
+    second: {fileID: 2100000, guid: 18655de1e8fd62446a39e1a1886ed7c9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group_swat1_group_swat1_group2_swat1_pouchFBXASC046001_meshId0_nameFBXASC046001Mat
+    second: {fileID: 2100000, guid: 79c3daffac6b0094e90b9b1c125e24ab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group_swat1_group_swat1_group2_swat1_pouchFBXASC046002_meshId0_nameFBXASC046003Mat
+    second: {fileID: 2100000, guid: 99a8da07df88434408719dc383bcc67e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group_swat1_group_swat1_group2_swat1_pouchFBXASC046003_meshId0_nameFBXASC046004Mat
+    second: {fileID: 2100000, guid: cd845b791acf16e4385c5a34f8d46d96, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group_swat1_group_swat1_group2_swat1_pouch_meshId0_nameFBXASC046005Mat
+    second: {fileID: 2100000, guid: b9313261a9d36644790757632f116fb1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group_swat1_group_swat1_group2_swat1_sol_10_lowMat
+    second: {fileID: 2100000, guid: 5169cad4b78bfad4397bd392c705436e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group_swat1_group_swat1_group2_swat1_sol_11_lowMat
+    second: {fileID: 2100000, guid: adc4e935f01676345885673b1a8d1d71, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group_swat1_group_swat1_group2_swat1_sol_13_lowMat
+    second: {fileID: 2100000, guid: 4d6a0eea1c40f8b4fa857fc3acee8dfe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group_swat1_group_swat1_group2_swat1_sol_20_lowMat
+    second: {fileID: 2100000, guid: ad22cdfabeee6d8469fcaec2819dab87, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group_swat1_group_swat1_group2_swat1_sol_21_lowMat
+    second: {fileID: 2100000, guid: 23b5a0b0c4849a2468d0f21cfab735af, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group_swat1_group_swat1_group2_swat1_sol_22_lowMat
+    second: {fileID: 2100000, guid: 664ccb86df00dac4ab8abaade74bb683, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group_swat1_group_swat1_group2_swat1_sol_23_lowMat
+    second: {fileID: 2100000, guid: f776558f54fb79f49b6364fdab7d0f48, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group_swat1_group_swat1_group2_swat1_sol_24_lowFBXASC046001Mat
+    second: {fileID: 2100000, guid: 081b51eecb3a88644b1613b5b7cde9d7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group_swat1_group_swat1_group2_swat1_sol_24_lowFBXASC046002Mat
+    second: {fileID: 2100000, guid: 890a911a94cf59541a82cf30a302bfec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group_swat1_group_swat1_group2_swat1_sol_24_lowMat
+    second: {fileID: 2100000, guid: a1909db0dfc06074b8e61031d478c83a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group_swat1_group_swat1_group2_swat1_sol_25_lowMat
+    second: {fileID: 2100000, guid: 978077d98da06c646bf75e621dc79872, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group_swat1_group_swat1_group2_swat1_sol_29_lowMat
+    second: {fileID: 2100000, guid: e9fdd5828537ca54fa6c98138a8ab9d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group_swat1_group_swat1_group2_swat1_sol_30_lowMat
+    second: {fileID: 2100000, guid: 5a19ebf8639e9414fb1c3cb4a67e84e9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group_swat1_group_swat1_group2_swat1_sol_4_lowMat
+    second: {fileID: 2100000, guid: 4fee6088d27ec844ca9a01dc1f70afdf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group_swat1_group_swat1_group2_swat1_sol_5_lowMat
+    second: {fileID: 2100000, guid: 4577bf4751536b048ab69dda85e55292, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group_swat1_group_swat1_group2_swat1_sol_6_lowMat
+    second: {fileID: 2100000, guid: 59e52c72d5e5aaa478eb689362603909, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group_swat1_group_swat1_group2_swat1_sol_7_lowFBXASC046001_sol_7_lowFBXASC046003Mat
+    second: {fileID: 2100000, guid: c8db647daa84c714ab8193166cf57d17, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group_swat1_group_swat1_group2_swat1_sol_7_lowFBXASC046002Mat
+    second: {fileID: 2100000, guid: 200e2e076aa074641ae9999f67cfe9aa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group_swat1_group_swat1_group2_swat1_sol_8_low_sol_8_lowFBXASC046001Mat
+    second: {fileID: 2100000, guid: 16c570eccda48f3499acb15755ffea3a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group_swat1_sol_39_low_swat1_group_swat1_group2Mat
+    second: {fileID: 2100000, guid: c16e3cc6b48062b44b0fee1ced7f6ae0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: swat1_rifle_Gun_GRP_swat1_group1_group_swat1_rifle_Scope_GEO2Mat
+    second: {fileID: 2100000, guid: b10fe2e715ef614468f205b82b771196, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: swat1_rifle_Gun_GRP_swat1_group1_group_swat1_rifle_glass_GEO1Mat
+    second: {fileID: 2100000, guid: 9947451e917d3be4a9fe1b9a306d1f63, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: swat1_rifle_glass_GEO_swat1_rifle_Gun_GRP_swat1_group1_groupMat
+    second: {fileID: 2100000, guid: bcae05be13e72844bb43432049b6f5a1, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.01
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 0.01
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
