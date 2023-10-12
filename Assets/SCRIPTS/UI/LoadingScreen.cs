@@ -17,7 +17,7 @@ public class LoadingScreen : MonoBehaviour
 
     IEnumerator LoadAsyncScene()
     {
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("LEVELONE");
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("INTROCUTSCENE");
         asyncLoad.allowSceneActivation = false;
 
         while (!asyncLoad.isDone)
