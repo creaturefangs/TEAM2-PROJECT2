@@ -28,11 +28,11 @@ public class DoorManager : MonoBehaviour
             //have the door open after a certain number of enemies are dead
         }
 
-        if ( other.CompareTag("Player") && !isOpen && )
-        {
-            doorTxt.text = "The door won't budge.";
-            isOpen = false;
-        }
+        //if (other.CompareTag("Player") && !isOpen )
+        //{
+        //    doorTxt.text = "The door won't budge.";
+        //    isOpen = false;
+        //}
     }
 }
 
