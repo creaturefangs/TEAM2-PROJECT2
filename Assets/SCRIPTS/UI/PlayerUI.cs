@@ -21,6 +21,7 @@ public class PlayerUI : MonoBehaviour
     public TMP_Text killsText; //show current kills
     public TMP_Text killsToNextKillStreakText; //show remaining kills to unlock next killstreak
     public TMP_Text checkpointAlertText; //show that player has reached a checkpoint briefly
+    public TMP_Text killStreakTutorialText;
     public Image nextKillStreakImage; // WIll show an image of the next killstreak
     public Sprite additionalHealthImage;
     public Sprite rageAbilityImage;

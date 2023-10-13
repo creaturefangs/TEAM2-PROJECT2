@@ -36,42 +36,41 @@ public class KillstreakManager : MonoBehaviour
         switch (GameManager.instance.killCounter)
         {
             //Increased health
-            case 4: 
+            case 4:
+                StartCoroutine(ShowKillStreakTutorialTextPrompt("You've been granted extra health."));
+                
                 _playerHealth.IncreaseAdditionalHealth(50);
                 PlayerUI.instance.ShowAdditionalHealth(_playerHealth.additionalHealth);
                 PlayerUI.instance.ShowNextKillStreakImage(PlayerUI.instance.rageAbilityImage);
                 break;
             //Rage ability - Increased damage
             case 8:
-                // PlayerUI.instance.EnableUIElement(SceneManager.GetActiveScene().name == "LEVELONE"
-                //     ? PlayerUI.instance.fireRageParticles
-                //     : PlayerUI.instance.iceRageParticles);
-                // increase damage temporarily
+                StartCoroutine(ShowKillStreakTutorialTextPrompt(
+                    "You earned the rage ability. You now deal extra damage and have earned extra health."));
+                
+                _playerHealth.IncreaseAdditionalHealth(50);
+                PlayerUI.instance.ShowAdditionalHealth(_playerHealth.additionalHealth);
+                StartCoroutine(StartDamageBuff());
                 SpawnRageParticle();
+                
                 PlayerUI.instance.EnableUIElement(PlayerUI.instance.fireRageUIParticles);
                 PlayerUI.instance.EnableUIElement(PlayerUI.instance.fireRageUIBorder);
                 StartCoroutine(PlayerUI.instance.DisableUIElement(PlayerUI.instance.fireRageUIParticles, rageDuration));
                 StartCoroutine(PlayerUI.instance.DisableUIElement(PlayerUI.instance.fireRageUIBorder, rageDuration));
-                StartCoroutine(StartDamageBuff());
-                //increase damage permanently
-                //StartDamageBuff();
-                _playerHealth.IncreaseAdditionalHealth(50);
-                PlayerUI.instance.ShowAdditionalHealth(_playerHealth.additionalHealth);
+                
                 PlayerUI.instance.ShowNextKillStreakImage(PlayerUI.instance.freezeAbilityImage);
                 break;
             //Freeze ability - freeze enemies in area
             case 12:
+                StartCoroutine(ShowKillStreakTutorialTextPrompt(
+                    "You earned the freeze ability. Press [R] to freeze enemies in your area temporarily"));
+                
                 _freeze.canFreeze = true;
                 PlayerUI.instance.nextKillStreakImage.gameObject.SetActive(false);
                 break;
         }
     }
-
-    // private void StartDamageBuff()
-    // {
-    //     _meleeController.DamageBuff = 50.0f;
-    // }
-
+    
     private IEnumerator StartDamageBuff()
     {
         _meleeController.DamageBuff = 50.0f;
@@ -88,5 +87,12 @@ public class KillstreakManager : MonoBehaviour
         fire.transform.SetParent(PlayerUI.instance.feetPosition);
 
         Destroy(fire, rageDuration);
+    }
+
+    private IEnumerator ShowKillStreakTutorialTextPrompt(string tutorialText)
+    {
+        PlayerUI.instance.killStreakTutorialText.text = tutorialText;
+        yield return new WaitForSeconds(4.0f);
+        PlayerUI.instance.killStreakTutorialText.text = "";
     }
 }
