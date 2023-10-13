@@ -47,8 +47,9 @@ public class KillstreakManager : MonoBehaviour
                 //     ? PlayerUI.instance.fireRageParticles
                 //     : PlayerUI.instance.iceRageParticles);
                 // increase damage temporarily
-                PlayerUI.instance.EnableUIElement(PlayerUI.instance.fireRageParticles);
-                StartCoroutine(PlayerUI.instance.DisableUIElement(PlayerUI.instance.fireRageParticles, rageDuration));
+                SpawnRageParticle();
+                PlayerUI.instance.EnableUIElement(PlayerUI.instance.fireRageUIParticles);
+                StartCoroutine(PlayerUI.instance.DisableUIElement(PlayerUI.instance.fireRageUIParticles, rageDuration));
                 StartCoroutine(StartDamageBuff());
                 //increase damage permanently
                 //StartDamageBuff();
@@ -74,5 +75,16 @@ public class KillstreakManager : MonoBehaviour
         _meleeController.DamageBuff = 50.0f;
         yield return new WaitForSeconds(rageDuration);
         _meleeController.DamageBuff = 0.0f;
+    }
+
+    public void SpawnRageParticle()
+    {
+        GameObject fire = Instantiate(PlayerUI.instance.rageAbilityParticles, PlayerUI.instance.feetPosition.position,
+            Quaternion.identity);
+
+        fire.transform.localScale = new Vector3(.1f, .1f, .1f);
+        fire.transform.SetParent(PlayerUI.instance.feetPosition);
+
+        Destroy(fire, rageDuration);
     }
 }

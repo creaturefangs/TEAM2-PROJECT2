@@ -1,6 +1,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class PlayerUI : MonoBehaviour
@@ -8,8 +9,11 @@ public class PlayerUI : MonoBehaviour
     public static PlayerUI instance; //persist Player UI instance through game, to access, call PlayerUI.instance.Method/Variable
     [HideInInspector] public PauseManager pauseManager;
     public Transform raycastOrigin;
+    public Transform feetPosition;
+    public GameObject rageAbilityParticles;
     [Header("UI Elements related to powerups/abilities")]
     public GameObject freezeImage;
+    
     
     [Header("Player UI Elements")]
     public TMP_Text itemPickupText;
@@ -22,7 +26,7 @@ public class PlayerUI : MonoBehaviour
     public Sprite rageAbilityImage;
     public Sprite freezeAbilityImage;
     public GameObject killStreakUI;
-    public GameObject fireRageParticles;
+    public GameObject fireRageUIParticles;
     public GameObject iceRageParticles;
     
     private void Awake()

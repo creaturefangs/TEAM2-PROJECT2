@@ -956,6 +956,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseManager: {fileID: 351512983297275511}
   raycastOrigin: {fileID: 404661892280480114}
+  feetPosition: {fileID: 3822806628036342419}
+  rageAbilityParticles: {fileID: 1901245927194888, guid: bb98861c48ad2024ca93498c7dd93a6c,
+    type: 3}
   freezeImage: {fileID: 0}
   itemPickupText: {fileID: 3363263882793415314}
   additionalHealthText: {fileID: 4912478421539827347}
@@ -968,7 +971,7 @@ MonoBehaviour:
   rageAbilityImage: {fileID: 21300000, guid: 93b028bcb39102e459668a32c98b6207, type: 3}
   freezeAbilityImage: {fileID: 21300000, guid: 096af0b276405064589ac2fd273fbb21, type: 3}
   killStreakUI: {fileID: 3640200361725456514}
-  fireRageParticles: {fileID: 1446786511792753818}
+  fireRageUIParticles: {fileID: 1446786511792753818}
   iceRageParticles: {fileID: 0}
 --- !u!114 &351512983297275511
 MonoBehaviour:
@@ -2023,6 +2026,7 @@ Transform:
   - {fileID: 7252247453196097944}
   - {fileID: 1817569673089587785}
   - {fileID: 1660022985486374160}
+  - {fileID: 3822806628036342419}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 179.99998, z: 0}
 --- !u!95 &315920838326186922
@@ -3491,6 +3495,41 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &5411791733207769482
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3822806628036342419}
+  m_Layer: 8
+  m_Name: FeetPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &3822806628036342419
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5411791733207769482}
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.00000028088027}
+  m_LocalPosition: {x: 0, y: 0, z: -0.041168217}
+  m_LocalScale: {x: 0.10691672, y: 0.10691672, z: 0.10691672}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3693450682467707276}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.007080078, y: -0.0107421875}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &5444066650411844367
 GameObject:
   m_ObjectHideFlags: 0
