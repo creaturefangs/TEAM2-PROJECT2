@@ -51,6 +51,7 @@ public class KillstreakManager : MonoBehaviour
                 _playerHealth.IncreaseAdditionalHealth(50);
                 PlayerUI.instance.ShowAdditionalHealth(_playerHealth.additionalHealth);
                 StartCoroutine(StartDamageBuff());
+                Debug.Log("AttackDamage" + _meleeController.AttackDamage());
                 SpawnRageParticle();
                 
                 PlayerUI.instance.EnableUIElement(PlayerUI.instance.fireRageUIParticles);
@@ -92,7 +93,7 @@ public class KillstreakManager : MonoBehaviour
     private IEnumerator ShowKillStreakTutorialTextPrompt(string tutorialText)
     {
         PlayerUI.instance.killStreakTutorialText.text = tutorialText;
-        yield return new WaitForSeconds(4.0f);
+        yield return new WaitForSeconds(5.0f);
         PlayerUI.instance.killStreakTutorialText.text = "";
     }
 }
