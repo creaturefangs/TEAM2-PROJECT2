@@ -27,6 +27,7 @@ public class PlayerUI : MonoBehaviour
     public Sprite freezeAbilityImage;
     public GameObject killStreakUI;
     public GameObject fireRageUIParticles;
+    public GameObject fireRageUIBorder;
     public GameObject iceRageParticles;
     
     private void Awake()
