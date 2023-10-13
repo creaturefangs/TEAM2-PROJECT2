@@ -962,10 +962,11 @@ MonoBehaviour:
   killsText: {fileID: 145155675876983490}
   killsToNextKillStreakText: {fileID: 6876247396468647580}
   checkpointAlertText: {fileID: 4383636128339926140}
-  nextKillStreakImage: {fileID: 0}
+  nextKillStreakImage: {fileID: 7499568854237326989}
   additionalHealthImage: {fileID: 21300000, guid: ea85f6bcbb287e044a89d69f44b4fee0,
     type: 3}
-  rageAbilityImage: {fileID: 0}
+  rageAbilityImage: {fileID: 21300000, guid: 93b028bcb39102e459668a32c98b6207, type: 3}
+  freezeAbilityImage: {fileID: 21300000, guid: 096af0b276405064589ac2fd273fbb21, type: 3}
   killStreakUI: {fileID: 3640200361725456514}
   fireRageParticles: {fileID: 1446786511792753818}
   iceRageParticles: {fileID: 0}
@@ -2852,6 +2853,7 @@ MonoBehaviour:
   freezeTime: 5
   slowSpeed: 0.5
   slowAnimSpeed: 0.5
+  freezeParticles: {fileID: 0}
 --- !u!114 &2189595231281167777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2870,6 +2872,7 @@ MonoBehaviour:
   additionalHealth: 0
   isAlive: 1
   invincibilityTimeout: 5
+  _isInvincible: 0
 --- !u!114 &6538745257638749634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2945,6 +2948,8 @@ MonoBehaviour:
   attackSpeed: 1
   minMeleeDamage: 30
   maxMeleeDamage: 75
+  rayCount: 5
+  spreadAngle: 45
   enemyMask:
     serializedVersion: 2
     m_Bits: 512

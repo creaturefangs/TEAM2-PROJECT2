@@ -15,10 +15,9 @@ public class EnemyAudioController : MonoBehaviour
     {
         return clips[Random.Range(0, clips.Length)];
     }
-
+    
     public void PlayAudioClip(AudioClip clip)
     {
         enemyAudio.PlayOneShot(clip);
-        Debug.Log("Playing " + clip.name + " when enemy died");
     }
 }

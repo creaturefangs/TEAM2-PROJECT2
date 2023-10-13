@@ -55,6 +55,18 @@ public class PlayerUI : MonoBehaviour
         element.SetActive(!element.activeSelf);
     }
 
+    /// <summary>
+    /// Disable a ui element after a period of time, should be a publicly declared GameObject in PlayerUI
+    /// </summary>
+    /// <param name="element"></param>
+    /// <param name="disableTimer"></param>
+    /// <returns></returns>
+    public IEnumerator DisableUIElement(GameObject element, float disableTimer)
+    {
+        yield return new WaitForSeconds(disableTimer);
+        element.SetActive(false);
+    }
+
     public void ShowAdditionalHealth(float amount)
     {
         additionalHealthText.text = " + " + amount.ToString("0");
@@ -71,7 +83,7 @@ public class PlayerUI : MonoBehaviour
         checkpointAlertText.text = "Checkpoint " + index + " reached!";
     }
 
-    public void ShowNextKillstreakImage(Sprite image)
+    public void ShowNextKillStreakImage(Sprite image)
     {
         nextKillStreakImage.sprite = image;
     }

@@ -16,11 +16,17 @@ public class PlayerHealth : MonoBehaviour, ITakeDamage, IInvincibility
 
     [Header("Invincibility")] 
     [SerializeField] private float invincibilityTimeout = 5.0f; //how long player is invincible for
-    private bool _isInvincible = false;
+    
+    [Tooltip("Mainly for easier testing! Enable to take no damage from enemies :)")]
+    public bool _isInvincible = false;
+
+    private PlayerMeleeController melee;
     private void Start()
     {
         health = maxHealth;
         healthBar.UpdateHealthBar(health);
+
+        melee = GetComponent<PlayerMeleeController>();
     }
 
     public bool CanTakeHit { get; }
@@ -114,5 +120,10 @@ public class PlayerHealth : MonoBehaviour, ITakeDamage, IInvincibility
     public void DisableInvincibility()
     {
         _isInvincible = false;
+    }
+    
+    public void EnableMaxDamage()
+    {
+        throw new NotImplementedException();
     }
 }
