@@ -5,8 +5,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance { get; set; }
     public int killCounter = 0;
-    public int killsToNextKillStreak = 5;
-    public int maxKillsToNextKillStreak = 5;
+    public int killsToNextKillStreak = 4;
+    public int maxKillsToNextKillStreak = 4;
     public int levelIndex { get; set; }
     public int recentLevelIndex { get; set; }
     public Vector3 lastCheckpointPosition { get; set; }

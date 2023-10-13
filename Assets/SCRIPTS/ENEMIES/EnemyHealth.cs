@@ -8,7 +8,6 @@ using Random = UnityEngine.Random;
 public class EnemyHealth : MonoBehaviour, ITakeDamage
 {
     public float currentHealth;
-    private float _maxHealth = 100;
     public bool isAlive = true;
 
     private bool _canTakeDamage = true;
@@ -16,11 +15,14 @@ public class EnemyHealth : MonoBehaviour, ITakeDamage
     private vRagdoll ragdoll;
 
     [SerializeField] private GameObject[] bloodPoolPrefabs;
-    
+
+
+    private EnemyAudioController enemyAudio;
     private void Start()
     {
         enemyController = GetComponent<EnemyController>();
         ragdoll = GetComponent<vRagdoll>();
+        enemyAudio = GetComponent<EnemyAudioController>();
         
         currentHealth = enemyController.enemy.maxHealth;
     }
@@ -54,6 +56,9 @@ public class EnemyHealth : MonoBehaviour, ITakeDamage
             GameManager.instance.killsToNextKillStreak);
         transform.root.SendMessage ("ActivateRagdoll", SendMessageOptions.DontRequireReceiver);
 
+        //play a random death sound
+        enemyAudio.PlayAudioClip(enemyAudio.GetRandomEnemyAudioClip(enemyAudio.deathClips));
+        
         StartCoroutine(BloodPoolAfterDeath());
     }
 

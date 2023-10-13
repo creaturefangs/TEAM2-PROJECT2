@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -37,29 +36,41 @@ public class KillstreakManager : MonoBehaviour
         switch (GameManager.instance.killCounter)
         {
             //Increased health
-            case 5: 
+            case 4: 
                 _playerHealth.IncreaseAdditionalHealth(50);
                 PlayerUI.instance.ShowAdditionalHealth(_playerHealth.additionalHealth);
                 PlayerUI.instance.ShowNextKillstreakImage(PlayerUI.instance.rageAbilityImage);
                 break;
             //Rage ability - Increased damage
-            case 10:
+            case 8:
                 PlayerUI.instance.EnableUIElement(SceneManager.GetActiveScene().name == "LEVELONE"
                     ? PlayerUI.instance.fireRageParticles
                     : PlayerUI.instance.iceRageParticles);
-                StartDamageBuff();
+                // increase damage temporarily
+                StartCoroutine(StartDamageBuff());
+                //increase damage permanently
+                //StartDamageBuff();
+                _playerHealth.IncreaseAdditionalHealth(50);
+                PlayerUI.instance.ShowAdditionalHealth(_playerHealth.additionalHealth);
                 PlayerUI.instance.ShowNextKillstreakImage(PlayerUI.instance.freezeAbilityImage);
                 break;
             //Freeze ability - freeze enemies in area
-            case 15:
+            case 12:
                 _freeze.canFreeze = true;
                 PlayerUI.instance.ShowNextKillstreakImage(null);
                 break;
         }
     }
 
-    private void StartDamageBuff()
+    // private void StartDamageBuff()
+    // {
+    //     _meleeController.DamageBuff = 50.0f;
+    // }
+
+    private IEnumerator StartDamageBuff()
     {
         _meleeController.DamageBuff = 50.0f;
+        yield return new WaitForSeconds(rageDuration);
+        _meleeController.DamageBuff = 0.0f;
     }
 }
