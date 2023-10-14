@@ -51,7 +51,7 @@ public class KillstreakManager : MonoBehaviour
                 _playerHealth.IncreaseAdditionalHealth(50);
                 PlayerUI.instance.ShowAdditionalHealth(_playerHealth.additionalHealth);
                 StartCoroutine(StartDamageBuff());
-                Debug.Log("AttackDamage" + _meleeController.AttackDamage());
+
                 SpawnRageParticle();
                 
                 PlayerUI.instance.EnableUIElement(PlayerUI.instance.fireRageUIParticles);
@@ -69,12 +69,23 @@ public class KillstreakManager : MonoBehaviour
                 _freeze.canFreeze = true;
                 PlayerUI.instance.nextKillStreakImage.gameObject.SetActive(false);
                 break;
+            case 13:
+                if (SceneManager.GetSceneByName("LEVELTHREE").isLoaded)
+                {
+                    ExitDoor exitDoor = GameObject.FindObjectOfType<ExitDoor>();
+                    exitDoor.UnlockExitDoor();
+                        
+                    
+                    Debug.Log("Can now open exit door.");
+                }
+
+                break;
         }
     }
     
     private IEnumerator StartDamageBuff()
     {
-        _meleeController.DamageBuff = 50.0f;
+        _meleeController.DamageBuff = 75.0f;
         yield return new WaitForSeconds(rageDuration);
         _meleeController.DamageBuff = 0.0f;
     }

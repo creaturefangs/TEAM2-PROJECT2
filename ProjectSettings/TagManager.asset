@@ -36,6 +36,7 @@ TagManager:
   - Level Two
   - Level Three
   - NPCDespawn
+  - ExitDoor
   layers:
   - Default
   - TransparentFX
@@ -56,7 +57,7 @@ TagManager:
   - BlockAIRayCast
   - Pushable
   - CoverPoint
-  - 
+  - Door
   - 
   - 
   - 

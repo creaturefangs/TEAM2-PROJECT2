@@ -11,6 +11,8 @@ public class PlayerUI : MonoBehaviour
     public Transform raycastOrigin;
     public Transform feetPosition;
     public GameObject rageAbilityParticles;
+    
+    
     [Header("UI Elements related to powerups/abilities")]
     public GameObject freezeImage;
     
@@ -21,8 +23,9 @@ public class PlayerUI : MonoBehaviour
     public TMP_Text killsText; //show current kills
     public TMP_Text killsToNextKillStreakText; //show remaining kills to unlock next killstreak
     public TMP_Text checkpointAlertText; //show that player has reached a checkpoint briefly
-    public TMP_Text killStreakTutorialText;
-    public Image nextKillStreakImage; // WIll show an image of the next killstreak
+    public TMP_Text killStreakTutorialText; //briefly show what the player earns with each killstreak
+    public TMP_Text doorInteractionText; //Only to be used in level three
+    public Image nextKillStreakImage; // Will show an image of the next killstreak
     public Sprite additionalHealthImage;
     public Sprite rageAbilityImage;
     public Sprite freezeAbilityImage;

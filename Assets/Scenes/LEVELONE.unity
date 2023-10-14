@@ -14896,8 +14896,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   killCounter: 0
-  killsToNextKillStreak: 5
-  maxKillsToNextKillStreak: 5
+  killsToNextKillStreak: 4
+  maxKillsToNextKillStreak: 4
 --- !u!4 &1176596548
 Transform:
   m_ObjectHideFlags: 0
@@ -25183,7 +25183,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4507040156124988, guid: 66f512b6ac13c4d5e8e8d8bb546fe702, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -20.807
+      value: -20.833496
       objectReference: {fileID: 0}
     - target: {fileID: 4507040156124988, guid: 66f512b6ac13c4d5e8e8d8bb546fe702, type: 3}
       propertyPath: m_LocalPosition.z
