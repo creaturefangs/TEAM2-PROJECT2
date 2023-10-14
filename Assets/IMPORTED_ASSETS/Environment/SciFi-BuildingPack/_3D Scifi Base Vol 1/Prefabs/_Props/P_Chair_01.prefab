@@ -92,6 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4254047269813836}
+  - component: {fileID: 5270877099245305138}
   m_Layer: 0
   m_Name: P_Chair_01
   m_TagString: Untagged
@@ -115,6 +116,22 @@ Transform:
   - {fileID: 4140131278318274}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &5270877099245305138
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232636396973664}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1347929000136318
 GameObject:
   m_ObjectHideFlags: 0
@@ -126,7 +143,8 @@ GameObject:
   - component: {fileID: 4140131278318274}
   - component: {fileID: 33231595288708694}
   - component: {fileID: 23939714982824218}
-  - component: {fileID: 65297222922116558}
+  - component: {fileID: 3725271607766316681}
+  - component: {fileID: 8646154555547426513}
   m_Layer: 0
   m_Name: Chair_01
   m_TagString: Untagged
@@ -201,7 +219,34 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &65297222922116558
+--- !u!54 &3725271607766316681
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1347929000136318}
+  serializedVersion: 4
+  m_Mass: 0.01
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &8646154555547426513
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -220,5 +265,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.2000003, y: 1.2000008, z: 1.1387639}
-  m_Center: {x: -0.002319336, y: -0.0020142198, z: 0.57144934}
+  m_Size: {x: 1.1830009, y: 1.225183, z: 1.6778979}
+  m_Center: {x: -0.00608386, y: -0.006240998, z: 0.84087884}

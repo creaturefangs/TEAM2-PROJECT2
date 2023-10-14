@@ -75,7 +75,6 @@ GameObject:
   - component: {fileID: 4393376568899580}
   - component: {fileID: 33710576861934770}
   - component: {fileID: 23182531651909928}
-  - component: {fileID: 64260786476448634}
   m_Layer: 0
   m_Name: Glass_Tube_01
   m_TagString: Untagged
@@ -149,28 +148,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &64260786476448634
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1015167184482798}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: c18ed7265bccf447bb86ec4e324010cd, type: 3}
 --- !u!1 &1019396440825384
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,7 +224,6 @@ GameObject:
   - component: {fileID: 4512399899915946}
   - component: {fileID: 33110803511555042}
   - component: {fileID: 23932350485392264}
-  - component: {fileID: 64816051784387030}
   m_Layer: 0
   m_Name: Glass_Tube_01
   m_TagString: Untagged
@@ -321,28 +297,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &64816051784387030
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1057684096040750}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: c18ed7265bccf447bb86ec4e324010cd, type: 3}
 --- !u!1 &1058885853439008
 GameObject:
   m_ObjectHideFlags: 0
@@ -731,6 +685,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4605159789690710}
+  - component: {fileID: 5840058061361794089}
   m_Layer: 0
   m_Name: P_Glass_Tube_01
   m_TagString: Untagged
@@ -757,6 +712,27 @@ Transform:
   - {fileID: 4559701824421182}
   m_Father: {fileID: 4743146051531064}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+--- !u!65 &5840058061361794089
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1189865846602366}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5.9603543, y: 11.723076, z: 9.826185}
+  m_Center: {x: 2.9324014, y: -0.34610462, z: -1.0178511}
 --- !u!1 &1207323658379156
 GameObject:
   m_ObjectHideFlags: 0
@@ -1586,6 +1562,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4071003241629988}
   - component: {fileID: 108228060551014378}
+  - component: {fileID: 4248605671585636628}
   m_Layer: 0
   m_Name: Point light
   m_TagString: Untagged
@@ -1670,6 +1647,29 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &4248605671585636628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363590477163784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &1379146727489124
 GameObject:
   m_ObjectHideFlags: 0
@@ -1819,6 +1819,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4224979005379316}
+  - component: {fileID: 1385819175015143706}
   m_Layer: 0
   m_Name: P_Reactor_05
   m_TagString: Untagged
@@ -1836,7 +1837,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5227199, y: 0.52272, z: 0.5227199}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4371231076945948}
@@ -1850,6 +1851,22 @@ Transform:
   - {fileID: 4308784365222098}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &1385819175015143706
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403439683195280}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 5.375, y: 0.5, z: 2.595}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1432341494809966
 GameObject:
   m_ObjectHideFlags: 0
@@ -2064,7 +2081,6 @@ GameObject:
   - component: {fileID: 4877737987321602}
   - component: {fileID: 33386840186864402}
   - component: {fileID: 23451739218636506}
-  - component: {fileID: 64154943742287174}
   m_Layer: 0
   m_Name: Glass_Tube_01
   m_TagString: Untagged
@@ -2138,28 +2154,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &64154943742287174
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1546769289744992}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: c18ed7265bccf447bb86ec4e324010cd, type: 3}
 --- !u!1 &1554798185568224
 GameObject:
   m_ObjectHideFlags: 0
@@ -2203,7 +2197,6 @@ GameObject:
   - component: {fileID: 4989805945932542}
   - component: {fileID: 33319587702924868}
   - component: {fileID: 23638943553734562}
-  - component: {fileID: 64959902599213536}
   m_Layer: 0
   m_Name: Glass_Tube_01
   m_TagString: Untagged
@@ -2277,28 +2270,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &64959902599213536
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1567155817517498}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: c18ed7265bccf447bb86ec4e324010cd, type: 3}
 --- !u!1 &1574217920721770
 GameObject:
   m_ObjectHideFlags: 0
@@ -2441,7 +2412,6 @@ GameObject:
   - component: {fileID: 4798303916423306}
   - component: {fileID: 33032813898222788}
   - component: {fileID: 23362688143314020}
-  - component: {fileID: 64579308829584056}
   m_Layer: 0
   m_Name: Glass_Tube_01
   m_TagString: Untagged
@@ -2515,28 +2485,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &64579308829584056
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1642166448924436}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: c18ed7265bccf447bb86ec4e324010cd, type: 3}
 --- !u!1 &1660684981141824
 GameObject:
   m_ObjectHideFlags: 0
@@ -2548,7 +2496,6 @@ GameObject:
   - component: {fileID: 4180927653682532}
   - component: {fileID: 33630549783781086}
   - component: {fileID: 23850195115556614}
-  - component: {fileID: 64105870945783944}
   m_Layer: 0
   m_Name: Glass_Tube_01
   m_TagString: Untagged
@@ -2622,28 +2569,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &64105870945783944
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1660684981141824}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: c18ed7265bccf447bb86ec4e324010cd, type: 3}
 --- !u!1 &1678239659119108
 GameObject:
   m_ObjectHideFlags: 0
@@ -3342,6 +3267,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4337849087486116}
+  - component: {fileID: 5586309078337097250}
   m_Layer: 0
   m_Name: P_Glass_Tube_01
   m_TagString: Untagged
@@ -3368,6 +3294,27 @@ Transform:
   - {fileID: 4180927653682532}
   m_Father: {fileID: 4743146051531064}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &5586309078337097250
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1792240561567676}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5.9603543, y: 11.723076, z: 9.826185}
+  m_Center: {x: 2.9324014, y: -0.34610462, z: -1.0178511}
 --- !u!1 &1811565753486212
 GameObject:
   m_ObjectHideFlags: 0
@@ -8404,6 +8351,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4743999503683274}
   - component: {fileID: 108787051042109544}
+  - component: {fileID: 4937510017614775243}
   m_Layer: 0
   m_Name: Point light
   m_TagString: Untagged
@@ -8488,6 +8436,29 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &4937510017614775243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894489897467120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &1919913042023864
 GameObject:
   m_ObjectHideFlags: 0
@@ -8499,7 +8470,6 @@ GameObject:
   - component: {fileID: 4559701824421182}
   - component: {fileID: 33546420221674842}
   - component: {fileID: 23750538773039646}
-  - component: {fileID: 64934044997021850}
   m_Layer: 0
   m_Name: Glass_Tube_01
   m_TagString: Untagged
@@ -8573,28 +8543,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &64934044997021850
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1919913042023864}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: c18ed7265bccf447bb86ec4e324010cd, type: 3}
 --- !u!1 &1931952225820106
 GameObject:
   m_ObjectHideFlags: 0
@@ -9153,7 +9101,6 @@ GameObject:
   - component: {fileID: 4544566198945918}
   - component: {fileID: 33359308023975188}
   - component: {fileID: 23452542599295954}
-  - component: {fileID: 64351748457132792}
   m_Layer: 0
   m_Name: Glass_Tube_01
   m_TagString: Untagged
@@ -9227,28 +9174,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &64351748457132792
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1991930366575792}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: c18ed7265bccf447bb86ec4e324010cd, type: 3}
 --- !u!1 &1992608855693504
 GameObject:
   m_ObjectHideFlags: 0

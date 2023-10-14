@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4402754716797362}
+  - component: {fileID: 5944820741927702355}
+  - component: {fileID: 2365085827144320326}
   m_Layer: 0
   m_Name: SM_catheter
   m_TagString: Untagged
@@ -35,6 +37,54 @@ Transform:
   - {fileID: 4773885596059348}
   m_Father: {fileID: 4106627052095192}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &5944820741927702355
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542541242194496}
+  serializedVersion: 4
+  m_Mass: 0.01
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &2365085827144320326
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542541242194496}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 2.043644, z: 1}
+  m_Center: {x: 0, y: 1.0280857, z: 0}
 --- !u!1 &1600435974171026
 GameObject:
   m_ObjectHideFlags: 0
@@ -212,8 +262,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4106627052095192}
   - component: {fileID: 205862043425292188}
-  - component: {fileID: 562463226435201244}
-  - component: {fileID: 4280315060984430319}
+  - component: {fileID: 7358641540123544464}
   m_Layer: 0
   m_Name: SM_catheter
   m_TagString: Untagged
@@ -270,7 +319,7 @@ LODGroup:
     renderers:
     - renderer: {fileID: 23765621946482254}
   m_Enabled: 1
---- !u!208 &562463226435201244
+--- !u!208 &7358641540123544464
 NavMeshObstacle:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -286,27 +335,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
---- !u!65 &4280315060984430319
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1737924692339848}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 2.1183739, z: 1}
-  m_Center: {x: 0, y: 0.9743557, z: 0}
 --- !u!1 &1861748390633522
 GameObject:
   m_ObjectHideFlags: 0
