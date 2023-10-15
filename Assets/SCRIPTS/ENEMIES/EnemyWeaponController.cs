@@ -121,9 +121,20 @@ public class EnemyWeaponController : MonoBehaviour
             {
                 npc.FleeFromGunFire();
             }
+
+            StartCoroutine(DestroyNpcsIfFleeFails(npcs));
         }
     }
 
+    private IEnumerator DestroyNpcsIfFleeFails(NPCMovement[] npcs)
+    {
+        yield return new WaitForSeconds(20.0f);
+        for (int i = 0; i < npcs.Length; i++)
+        {
+            Destroy(npcs[i]);
+        }
+    }
+    
     private IEnumerator Reload()
     {
         enemyController.enemyAnimator.SetBool("isReloading", true);
