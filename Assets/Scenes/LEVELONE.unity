@@ -13677,21 +13677,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 677441253527538576, guid: 00600692e35bee04ba8ff295f40431fb,
-        type: 3}
-      propertyPath: rayCount
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 677441253527538576, guid: 00600692e35bee04ba8ff295f40431fb,
-        type: 3}
-      propertyPath: spreadAngle
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 2079697497041896943, guid: 00600692e35bee04ba8ff295f40431fb,
         type: 3}
       propertyPath: m_Cameras.Array.data[0]
       value: 
       objectReference: {fileID: 678228626}
+    - target: {fileID: 2439107656050092548, guid: 00600692e35bee04ba8ff295f40431fb,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 124.313995
+      objectReference: {fileID: 0}
     - target: {fileID: 2647896736279974764, guid: 00600692e35bee04ba8ff295f40431fb,
         type: 3}
       propertyPath: leftFootTrigger
@@ -13772,32 +13767,51 @@ PrefabInstance:
       propertyPath: OnStep.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4893073120294322555, guid: 00600692e35bee04ba8ff295f40431fb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.000014550984
+      objectReference: {fileID: 0}
+    - target: {fileID: 4893073120294322555, guid: 00600692e35bee04ba8ff295f40431fb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.03599996
+      objectReference: {fileID: 0}
+    - target: {fileID: 4893073120294322555, guid: 00600692e35bee04ba8ff295f40431fb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.14600056
+      objectReference: {fileID: 0}
+    - target: {fileID: 4893073120294322555, guid: 00600692e35bee04ba8ff295f40431fb,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9886874
+      objectReference: {fileID: 0}
+    - target: {fileID: 4893073120294322555, guid: 00600692e35bee04ba8ff295f40431fb,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.14999127
+      objectReference: {fileID: 0}
+    - target: {fileID: 4893073120294322555, guid: 00600692e35bee04ba8ff295f40431fb,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.000000048428756
+      objectReference: {fileID: 0}
+    - target: {fileID: 4893073120294322555, guid: 00600692e35bee04ba8ff295f40431fb,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.000000044761673
+      objectReference: {fileID: 0}
+    - target: {fileID: 4893073120294322555, guid: 00600692e35bee04ba8ff295f40431fb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -17.253
+      objectReference: {fileID: 0}
     - target: {fileID: 6416468797487948815, guid: 00600692e35bee04ba8ff295f40431fb,
         type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 678228626}
-    - target: {fileID: 6771919001187711569, guid: 00600692e35bee04ba8ff295f40431fb,
-        type: 3}
-      propertyPath: canFreeze
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6771919001187711569, guid: 00600692e35bee04ba8ff295f40431fb,
-        type: 3}
-      propertyPath: freezeTime
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6771919001187711569, guid: 00600692e35bee04ba8ff295f40431fb,
-        type: 3}
-      propertyPath: freezeDistance
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 6771919001187711569, guid: 00600692e35bee04ba8ff295f40431fb,
-        type: 3}
-      propertyPath: freezeParticles
-      value: 
-      objectReference: {fileID: 3963869663058087244, guid: 1ad972b0bd868c842bdd924847854876,
-        type: 3}
     - target: {fileID: 7547376344856786032, guid: 00600692e35bee04ba8ff295f40431fb,
         type: 3}
       propertyPath: m_AnchorMax.x

@@ -3518,8 +3518,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 97.97162, y: -0.000022888184}
-  m_SizeDelta: {x: 97.969, y: 84.35}
+  m_AnchoredPosition: {x: 124.314, y: -0.000022888184}
+  m_SizeDelta: {x: 224.242, y: 84.35}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &3317421569000897838
 CanvasRenderer:
@@ -3551,15 +3551,16 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c2fc3429a29877449ade0f600d2eb998, type: 2}
+  m_sharedMaterial: {fileID: 2790728704749864332, guid: c2fc3429a29877449ade0f600d2eb998,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278255390
+  m_fontColor: {r: 0.11671209, g: 1, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3576,14 +3577,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 4
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -4569,12 +4570,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21304a828edec574dac21e871d08f7d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  freezeDistance: 10
-  canFreeze: 0
-  freezeTime: 5
+  freezeDistance: 15
+  canFreeze: 1
+  freezeTime: 10
   slowSpeed: 0.5
   slowAnimSpeed: 0.5
-  freezeParticles: {fileID: 0}
+  freezeParticles: {fileID: 3963869663058087244, guid: 1ad972b0bd868c842bdd924847854876,
+    type: 3}
 --- !u!114 &2189595231281167777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4669,8 +4671,8 @@ MonoBehaviour:
   attackSpeed: 1
   minMeleeDamage: 30
   maxMeleeDamage: 75
-  rayCount: 5
-  spreadAngle: 45
+  rayCount: 12
+  spreadAngle: 75
   enemyMask:
     serializedVersion: 2
     m_Bits: 512

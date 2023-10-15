@@ -111,12 +111,15 @@ public class NPCMovement : MonoBehaviour
             currentNPCState = NPCStates.Idle;
             _idling = true;
             yield return new WaitForSeconds(idleTimer);
-        
-            npcAgent.speed = walkSpeed;
-            npcAgent.SetDestination(GetRandomDestination().position);
-            SetNpcAnimationState(NPCStates.Walk);
-            currentNPCState = NPCStates.Walk;
-            _idling = false;
+
+            if (currentNPCState != NPCStates.Flee)
+            {
+                npcAgent.speed = walkSpeed;
+                npcAgent.SetDestination(GetRandomDestination().position);
+                SetNpcAnimationState(NPCStates.Walk);
+                currentNPCState = NPCStates.Walk;
+                _idling = false;
+            }
         }
     }
 
