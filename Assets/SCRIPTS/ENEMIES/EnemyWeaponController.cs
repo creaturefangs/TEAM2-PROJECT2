@@ -128,7 +128,7 @@ public class EnemyWeaponController : MonoBehaviour
 
     private IEnumerator DestroyNpcsIfFleeFails(NPCMovement[] npcs)
     {
-        yield return new WaitForSeconds(20.0f);
+        yield return new WaitForSeconds(12.0f);
         for (int i = 0; i < npcs.Length; i++)
         {
             Destroy(npcs[i]);
