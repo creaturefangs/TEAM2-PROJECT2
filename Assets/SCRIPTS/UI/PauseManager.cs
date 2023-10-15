@@ -4,8 +4,10 @@ using UnityEngine.SceneManagement;
 public class PauseManager : MonoBehaviour
 {
     public bool gameIsPaused = false;
-    public GameObject pauseMenuUI;
-    public GameObject playerUI;
+    [SerializeField] private GameObject pauseMenuUI;
+    [SerializeField] private GameObject[] pauseMenuButtons;
+    [SerializeField] private GameObject playerUI;
+    [SerializeField] private GameObject helpMenu;
     public AudioSource pauseSFX;
 
     void Start()
@@ -56,6 +58,28 @@ public class PauseManager : MonoBehaviour
         AudioListener.pause = true;
     }
 
+    public void SetHelpMenuActiveState()
+    {
+        if (helpMenu.activeSelf)
+        {
+            EnablePauseButtons(true);
+            helpMenu.SetActive(false);
+        }
+        else
+        {
+            helpMenu.SetActive(true);
+            EnablePauseButtons(false);
+        }
+    }
+
+    private void EnablePauseButtons(bool enabled)
+    {
+        foreach (var button in pauseMenuButtons)
+        {
+            button.SetActive(enabled);
+        }
+    }
+    
     public void LoadMenu()
     {
         gameIsPaused = false;
