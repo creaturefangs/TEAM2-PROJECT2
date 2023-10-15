@@ -12,11 +12,8 @@ EditorBuildSettings:
     path: Assets/Scenes/HELPMENU.unity
     guid: 465fcf775697f9541995d15b0a4667bc
   - enabled: 1
-    path: Assets/Scenes/LOADSCENE.unity
+    path: Assets/Scenes/LOADSCENES/LOADSCENE.unity
     guid: f10971f8ad5846a45bfe5a51f5885a80
-  - enabled: 1
-    path: Assets/Scenes/LEVELONE.unity
-    guid: 6bcf2e068e2758b45b47123933e5cffe
   - enabled: 1
     path: Assets/Scenes/CREDITS.unity
     guid: 81d07a62795f6ce468078649e6bbf2d3
@@ -29,9 +26,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TESTLEVEL.unity
     guid: 7c699f0f4f912c048bebdc8763ba8b36
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/PROPSSCENE.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/LEVELONE.unity
+    guid: 6bcf2e068e2758b45b47123933e5cffe
   - enabled: 1
     path: Assets/Scenes/LEVELTWO.unity
     guid: a7b40c2fff3bf324fa55f415ec2e8163
