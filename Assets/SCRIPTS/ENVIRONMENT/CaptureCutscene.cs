@@ -11,9 +11,6 @@ public class CaptureCutscene : MonoBehaviour
     public GameObject player;
     public GameObject playerCamera; //renamed just in case of confusion :D
     public GameObject cutsceneCamera;
-    public float changeTime;
-    public string sceneName;
-
 
     void Start()
     {
@@ -30,12 +27,6 @@ public class CaptureCutscene : MonoBehaviour
             player.SetActive(false);
             playerCamera.SetActive(false);
             cutsceneCamera.SetActive(true);
-
-            changeTime -= Time.deltaTime;
-            if (changeTime <= 0)
-            {
-                SceneManager.LoadScene(sceneName);
-            }
 
         }
     }

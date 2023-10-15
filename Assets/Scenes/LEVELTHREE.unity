@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.009000825, g: 0.013103142, b: 0.020450806, a: 1}
+  m_IndirectSpecularColor: {r: 0.009012707, g: 0.013102867, b: 0.020503506, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,8 +97,10 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: b6dbb168afc3fbd408ae86060a46cf48,
+    type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 5224f548c02bd1f42b5d59c0fb1187cf,
+    type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -16955,7 +16957,6 @@ Transform:
   - {fileID: 975108717}
   - {fileID: 168233560}
   - {fileID: 1321373527}
-  - {fileID: 1888073246}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1668188437
@@ -21842,12 +21843,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBeOpened: 1
   unlockDoorClip: {fileID: 8300000, guid: 8a948c3aeec4d694288b02390e258362, type: 3}
---- !u!4 &1888073246 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400004, guid: b469b0bb9e6314c91ab401004cadcfbd,
-    type: 3}
-  m_PrefabInstance: {fileID: 1888073241}
-  m_PrefabAsset: {fileID: 0}
 --- !u!65 &1888073249
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25022,3 +25017,4 @@ SceneRoots:
   - {fileID: 1704737517}
   - {fileID: 1001556734}
   - {fileID: 1427137089}
+  - {fileID: 1888073241}
