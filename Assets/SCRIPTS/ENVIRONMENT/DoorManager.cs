@@ -19,7 +19,7 @@ public class DoorManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && other.CompareTag("Npc") && !isOpen) //added npcs so they can open doors and not get stuck :)
+        if (other.CompareTag("Player") && !isOpen)
         {
             // Play the "DoorOpen" animation.
             doorAnimator.SetBool("Open", true);
