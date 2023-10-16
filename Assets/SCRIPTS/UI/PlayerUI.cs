@@ -25,6 +25,7 @@ public class PlayerUI : MonoBehaviour
     public TMP_Text checkpointAlertText; //show that player has reached a checkpoint briefly
     public TMP_Text killStreakTutorialText; //briefly show what the player earns with each killstreak
     public TMP_Text doorInteractionText; //Only to be used in level three
+    public TMP_Text cageText;
     public Image nextKillStreakImage; // Will show an image of the next killstreak
     public Sprite additionalHealthImage;
     public Sprite rageAbilityImage;
@@ -95,5 +96,12 @@ public class PlayerUI : MonoBehaviour
     public void ShowNextKillStreakImage(Sprite image)
     {
         nextKillStreakImage.sprite = image;
+    }
+
+    public IEnumerator OpenCageTutorial()
+    {
+        cageText.text = "Press [F] to escape the cage";
+        yield return new WaitForSeconds(4.0f);
+        cageText.text = "";
     }
 }

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: SwatMan
   m_EditorClassIdentifier: 
   enemyName: Swat
-  maxHealth: 200
+  maxHealth: 150

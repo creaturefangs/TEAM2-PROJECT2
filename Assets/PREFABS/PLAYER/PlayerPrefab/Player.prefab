@@ -2118,6 +2118,7 @@ MonoBehaviour:
   checkpointAlertText: {fileID: 4383636128339926140}
   killStreakTutorialText: {fileID: 2267692547675789852}
   doorInteractionText: {fileID: 0}
+  cageText: {fileID: 0}
   nextKillStreakImage: {fileID: 7499568854237326989}
   additionalHealthImage: {fileID: 21300000, guid: ea85f6bcbb287e044a89d69f44b4fee0,
     type: 3}
@@ -7637,7 +7638,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2f62ced4dd0108740b0ebb5c1b68d521, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9d866f5f89681c949b4b46e9791ee5c7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

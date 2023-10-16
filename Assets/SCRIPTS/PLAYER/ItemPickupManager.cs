@@ -1,7 +1,8 @@
     using Unity.VisualScripting;
 using UnityEngine;
+    using UnityEngine.InputSystem;
 
-public class ItemPickupManager : MonoBehaviour
+    public class ItemPickupManager : MonoBehaviour
 {
     [SerializeField] private LayerMask pickupLayerMask;
     [SerializeField] private float pickupDistance = 2.0f;
@@ -31,7 +32,25 @@ public class ItemPickupManager : MonoBehaviour
             if (pickup != null)
             {
                 currentPickupComponent = pickup;
+
+
+                if (pickup.CompareTag("Cage"))
+                {
+                    isLookingAtItem = true;
+                    StartCoroutine(PlayerUI.instance.OpenCageTutorial());
+                    if (Input.GetKeyDown(itemPickupKeyCode))
+                    {
+                        pickup.itemPickupEvent.Invoke();
+                        pickup.tag = "Untagged";
+                    }
+                }
+                else
+                {
+                    isLookingAtItem = false;
+                }
                 
+                
+                #region Syringes
                 if (pickup.CompareTag("Syringe"))
                 {
                     if (!playerHealth.IsBelowMaxHealth() && prevHealthStatus) // Check if player is not already flashing
@@ -64,6 +83,7 @@ public class ItemPickupManager : MonoBehaviour
                         }
                     }
                 }
+                #endregion
                 else 
                 {
                     isLookingAtItem = false;
@@ -75,4 +95,6 @@ public class ItemPickupManager : MonoBehaviour
                 : "";
         }
     }
+    
+    
 }

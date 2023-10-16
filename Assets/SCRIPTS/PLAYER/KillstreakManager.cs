@@ -43,6 +43,18 @@ public class KillstreakManager : MonoBehaviour
                 PlayerUI.instance.ShowAdditionalHealth(_playerHealth.additionalHealth);
                 PlayerUI.instance.ShowNextKillStreakImage(PlayerUI.instance.rageAbilityImage);
                 break;
+            //Unlock the exit in level three only
+            case 7:
+                if (SceneManager.GetSceneByName("LEVELTHREE").isLoaded)
+                {
+                    ExitDoor exitDoor = GameObject.FindObjectOfType<ExitDoor>();
+                    exitDoor.UnlockExitDoor();
+                        
+                    
+                    Debug.Log("Can now open exit door.");
+                }
+
+                break;
             //Rage ability - Increased damage
             case 8:
                 StartCoroutine(ShowKillStreakTutorialTextPrompt(
@@ -61,6 +73,7 @@ public class KillstreakManager : MonoBehaviour
                 
                 PlayerUI.instance.ShowNextKillStreakImage(PlayerUI.instance.freezeAbilityImage);
                 break;
+           
             //Freeze ability - freeze enemies in area
             case 12:
                 StartCoroutine(ShowKillStreakTutorialTextPrompt(
@@ -69,17 +82,7 @@ public class KillstreakManager : MonoBehaviour
                 _freeze.canFreeze = true;
                 PlayerUI.instance.nextKillStreakImage.gameObject.SetActive(false);
                 break;
-            case 13:
-                if (SceneManager.GetSceneByName("LEVELTHREE").isLoaded)
-                {
-                    ExitDoor exitDoor = GameObject.FindObjectOfType<ExitDoor>();
-                    exitDoor.UnlockExitDoor();
-                        
-                    
-                    Debug.Log("Can now open exit door.");
-                }
-
-                break;
+            
         }
     }
     
