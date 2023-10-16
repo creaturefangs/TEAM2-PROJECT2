@@ -1,42 +1,42 @@
-using System;
-using System.Collections.Generic;
+// C# 9.0 code
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Serialization;
+using System.Collections.Generic;
 using Random = UnityEngine.Random;
 
 public class PlayerMeleeController : MonoBehaviour
 {
     [SerializeField] private Transform attackPoint;
     [SerializeField] private float attackDistance = 3.0f;
+    [SerializeField] private LayerMask enemyMask;
+    [SerializeField] private Collider attackCollider;
+
     [SerializeField] private float attackDelay = .4f;
     [SerializeField] private float attackSpeed = 1.0f;
-
     [SerializeField] private float minMeleeDamage = 30.0f;
     [SerializeField] private float maxMeleeDamage = 75.0f;
    
-    [SerializeField] private int rayCount = 5; // how many rays to cast out from the attack point
-    [SerializeField] private float spreadAngle = 45f; // total raycast spread angle
-    
-    [SerializeField] private LayerMask enemyMask;
-
     private bool isAttacking;
     private bool isReadyToAttack = true;
 
     [SerializeField] private GameObject[] attackHitEffects;
 
-    [Header("Audio")] //Source should be on the MeleeAttackPoint (Child of player->3dModel->armature->hips->spine->spine1
     [SerializeField] private AudioSource meleeAudioSource;
     [SerializeField] private AudioClip punchSoundClip;
     [SerializeField] private AudioClip hitSoundClip;
 
     private List<ITakeDamage> _hitEnemies = new List<ITakeDamage>();
-    
+
     public float DamageBuff { get; set; } = 0;
-    
+
+    private void Awake() 
+    {
+        attackCollider.enabled = false;
+    }
+
     private void Update()
     {
-        if (Mouse.current.leftButton.wasPressedThisFrame)
+        if (Mouse.current.leftButton.wasPressedThisFrame && isReadyToAttack)
         {
             Attack();
         }
@@ -44,52 +44,37 @@ public class PlayerMeleeController : MonoBehaviour
 
     private void Attack()
     {
-        if (!isReadyToAttack || isAttacking) return;
-
         isReadyToAttack = false;
         isAttacking = true;
 
         Invoke(nameof(ResetAttack), attackSpeed);
-        Invoke(nameof(AttackRaycast), attackDelay);
+        Invoke(nameof(EnableAttackCollider), attackDelay);
 
-        
         meleeAudioSource.pitch = Random.Range(.9f, 1.1f);
         meleeAudioSource.PlayOneShot(punchSoundClip);
     }
     
-    private void AttackRaycast()
+    private void EnableAttackCollider()
     {
-        _hitEnemies.Clear(); //Clear the list at the start of each attack
-
-        for (int i = 0; i < rayCount; i++)
-        {
-            float angle = spreadAngle * ((float)i / (rayCount - 1)) - spreadAngle / 2;
-
-            Quaternion rotation = Quaternion.AngleAxis(angle, attackPoint.up);
-
-            Vector3 direction = rotation * attackPoint.forward;
-
-            if (Physics.Raycast(attackPoint.position, direction, out RaycastHit hitInfo, attackDistance, enemyMask))
-            {
-                HitTarget(hitInfo.point);
-
-                if (hitInfo.collider.CompareTag("Enemy") && hitInfo.transform.TryGetComponent(out ITakeDamage damageTaker))
-                {
-                    // Check if the enemy has already been hit in the current attack
-                    if (_hitEnemies.Contains(damageTaker))
-                        continue; // Skip to the next ray/iteration
-                        
-                    _hitEnemies.Add(damageTaker); // Add the new hit enemy to the list
-
-                    damageTaker.TakeDamage(AttackDamage());
-
-                    //Moved to GameManager
-                    //_killStreaks.GrantKillStreaks();
-                }
-            }
-        }
+        attackCollider.enabled = true;
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (((1 << other.gameObject.layer) & enemyMask) != 0) // if the other object is in the enemy layermask
+        {
+            ITakeDamage damageTaker = other.GetComponent<ITakeDamage>();
+            
+            // Check if the enemy has already been hit in the current attack
+            if (!_hitEnemies.Contains(damageTaker))
+            {
+                _hitEnemies.Add(damageTaker); // Add the new hit enemy to the list
+                damageTaker.TakeDamage(AttackDamage());
+                HitTarget(other.transform.position);
+            }     
+        }
+    }
+    
     private void HitTarget(Vector3 hitPos)
     {
         meleeAudioSource.pitch = 1.0f;
@@ -103,6 +88,8 @@ public class PlayerMeleeController : MonoBehaviour
     {
         isAttacking = false;
         isReadyToAttack = true;
+        attackCollider.enabled = false;
+        _hitEnemies.Clear(); //Clear the list at the end of each attack
     }
 
     public float AttackDamage()

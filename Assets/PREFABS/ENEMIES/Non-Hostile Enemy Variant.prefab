@@ -16,17 +16,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 282b0f06c553da54ab383532467f4e13,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -20.35
+      value: 758.3871
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 282b0f06c553da54ab383532467f4e13,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -19.943497
+      value: -67.157
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 282b0f06c553da54ab383532467f4e13,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 152.71252
+      value: 590.6747
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 282b0f06c553da54ab383532467f4e13,
         type: 3}
@@ -281,7 +281,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 282b0f06c553da54ab383532467f4e13,
         type: 3}
       propertyPath: m_TagString
-      value: Enemy
+      value: Npc
       objectReference: {fileID: 0}
     - target: {fileID: 947169222074899295, guid: 282b0f06c553da54ab383532467f4e13,
         type: 3}
@@ -507,8 +507,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.42596436, y: 1.8070154, z: 0.5375717}
-  m_Center: {x: -0.0034305155, y: 0.81620157, z: 0.028722856}
+  m_Size: {x: 0.42596436, y: 0.5311432, z: 1.6696088}
+  m_Center: {x: -0.0034297716, y: 0.83540374, z: -0.8602032}
 --- !u!1 &9058651785953266273 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 282b0f06c553da54ab383532467f4e13,
@@ -630,6 +630,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destinations:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

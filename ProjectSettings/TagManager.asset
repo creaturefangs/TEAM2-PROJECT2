@@ -38,6 +38,7 @@ TagManager:
   - NPCDespawn
   - ExitDoor
   - Cage
+  - Npc
   layers:
   - Default
   - TransparentFX

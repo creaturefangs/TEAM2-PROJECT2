@@ -1647,12 +1647,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
---- !u!4 &338788084 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4893073120294322555, guid: 00600692e35bee04ba8ff295f40431fb,
-    type: 3}
-  m_PrefabInstance: {fileID: 8574124310205793101}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &373666794
 GameObject:
   m_ObjectHideFlags: 0
@@ -11928,21 +11922,6 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.04915727
       objectReference: {fileID: 0}
-    - target: {fileID: 677441253527538576, guid: 00600692e35bee04ba8ff295f40431fb,
-        type: 3}
-      propertyPath: attackPoint
-      value: 
-      objectReference: {fileID: 338788084}
-    - target: {fileID: 677441253527538576, guid: 00600692e35bee04ba8ff295f40431fb,
-        type: 3}
-      propertyPath: maxMeleeDamage
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 677441253527538576, guid: 00600692e35bee04ba8ff295f40431fb,
-        type: 3}
-      propertyPath: minMeleeDamage
-      value: 35
-      objectReference: {fileID: 0}
     - target: {fileID: 831085636323033955, guid: 00600692e35bee04ba8ff295f40431fb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12627,6 +12606,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3460353318209485918, guid: 00600692e35bee04ba8ff295f40431fb,
+        type: 3}
+      propertyPath: m_TagString
+      value: Respawn
       objectReference: {fileID: 0}
     - target: {fileID: 3464971479149239572, guid: 00600692e35bee04ba8ff295f40431fb,
         type: 3}
