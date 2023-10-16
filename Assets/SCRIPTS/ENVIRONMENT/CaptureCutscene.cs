@@ -23,7 +23,7 @@ public class CaptureCutscene : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             cutsceneDirector.Play();
-            player.SetActive(false);
+            //player.SetActive(false);
             playerCamera.SetActive(false);
             cutsceneCamera.SetActive(true);
 
