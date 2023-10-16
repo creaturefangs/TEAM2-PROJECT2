@@ -2461,6 +2461,11 @@ PrefabInstance:
       objectReference: {fileID: 212391119}
     - target: {fileID: 9129259899784886057, guid: ee083a821dd79ce4ab0c6b07a1696ad2,
         type: 3}
+      propertyPath: destinations.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9129259899784886057, guid: ee083a821dd79ce4ab0c6b07a1696ad2,
+        type: 3}
       propertyPath: destinations.Array.data[0]
       value: 
       objectReference: {fileID: 523460172}
@@ -7487,6 +7492,11 @@ PrefabInstance:
       objectReference: {fileID: 212391119}
     - target: {fileID: 9129259899784886057, guid: ee083a821dd79ce4ab0c6b07a1696ad2,
         type: 3}
+      propertyPath: destinations.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9129259899784886057, guid: ee083a821dd79ce4ab0c6b07a1696ad2,
+        type: 3}
       propertyPath: destinations.Array.data[0]
       value: 
       objectReference: {fileID: 523460172}
@@ -9790,6 +9800,11 @@ PrefabInstance:
       objectReference: {fileID: 212391119}
     - target: {fileID: 9129259899784886057, guid: ee083a821dd79ce4ab0c6b07a1696ad2,
         type: 3}
+      propertyPath: destinations.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9129259899784886057, guid: ee083a821dd79ce4ab0c6b07a1696ad2,
+        type: 3}
       propertyPath: destinations.Array.data[0]
       value: 
       objectReference: {fileID: 1393564653}
@@ -10478,6 +10493,11 @@ PrefabInstance:
       propertyPath: fleeDestination
       value: 
       objectReference: {fileID: 212391119}
+    - target: {fileID: 9129259899784886057, guid: ee083a821dd79ce4ab0c6b07a1696ad2,
+        type: 3}
+      propertyPath: destinations.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 9129259899784886057, guid: ee083a821dd79ce4ab0c6b07a1696ad2,
         type: 3}
       propertyPath: destinations.Array.data[0]
@@ -12803,6 +12823,11 @@ PrefabInstance:
       propertyPath: fleeDestination
       value: 
       objectReference: {fileID: 212391119}
+    - target: {fileID: 9129259899784886057, guid: ee083a821dd79ce4ab0c6b07a1696ad2,
+        type: 3}
+      propertyPath: destinations.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 9129259899784886057, guid: ee083a821dd79ce4ab0c6b07a1696ad2,
         type: 3}
       propertyPath: destinations.Array.data[0]
