@@ -10,14 +10,14 @@ public class ExitDoor : MonoBehaviour
     private void Awake()
     {
         _animator = GetComponent<Animator>();
-        _animator.enabled = false;
+        //_animator.enabled = false;
 
         _doorAudio = GetComponent<AudioSource>();
     }
 
     public void UnlockExitDoor()
     {
-        _animator.enabled = true;
+        //_animator.enabled = true;
         canBeOpened = true;
 
         _doorAudio.PlayOneShot(unlockDoorClip);

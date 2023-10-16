@@ -30,19 +30,26 @@ public class OpenExitDoor : MonoBehaviour
     {
         bool isLookingAtExitDoor = false;
 
-        if (Physics.Raycast(
-                PlayerUI.instance.raycastOrigin.position,
-                PlayerUI.instance.raycastOrigin.forward,
-                out RaycastHit hitInfo,
-                InteractionDistance,
-                doorLayer))
+        if (exitDoor.canBeOpened)
         {
-            if (hitInfo.collider.CompareTag("ExitDoor"))
+            if (Physics.Raycast(
+                    PlayerUI.instance.raycastOrigin.position,
+                    PlayerUI.instance.raycastOrigin.forward,
+                    out RaycastHit hitInfo,
+                    InteractionDistance,
+                    doorLayer))
             {
-                isLookingAtExitDoor = true;
-                if (Keyboard.current.eKey.wasPressedThisFrame)
+                if (hitInfo.collider.CompareTag("ExitDoor"))
                 {
-                    exitDoor.OpenExitDoor();
+                    isLookingAtExitDoor = true;
+                    if (Keyboard.current.eKey.wasPressedThisFrame)
+                    {
+                        exitDoor.OpenExitDoor();
+                    }
+                }
+                else
+                {
+                    isLookingAtExitDoor = false;
                 }
             }
             else
@@ -50,11 +57,7 @@ public class OpenExitDoor : MonoBehaviour
                 isLookingAtExitDoor = false;
             }
         }
-        else
-        {
-            isLookingAtExitDoor = false;
-        }
-
+        
         PlayerUI.instance.doorInteractionText.text = isLookingAtExitDoor ? "Press [E] to open the exit door." : "";
     }
 }
