@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b23a9dfd62d035245a40ded60d92345c, type: 3}
+  m_Name: Cage
+  m_EditorClassIdentifier: 
+  itemTag: Cage
+  itemName: Cage
+  itemPrefab: {fileID: 6575220975672311009, guid: 7e9ea74f99a9b9340bd0e9bd416fdbb4,
+    type: 3}

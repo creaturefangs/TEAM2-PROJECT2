@@ -37,6 +37,7 @@ TagManager:
   - Level Three
   - NPCDespawn
   - ExitDoor
+  - Cage
   layers:
   - Default
   - TransparentFX
