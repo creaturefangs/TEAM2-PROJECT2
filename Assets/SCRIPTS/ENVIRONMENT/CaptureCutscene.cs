@@ -16,7 +16,6 @@ public class CaptureCutscene : MonoBehaviour
     {
         GameObject camera = GameObject.Find("ThirdPersonCamera");
         cutsceneCamera.SetActive(false);
-        
     }
 
     private void OnTriggerEnter(Collider other)
