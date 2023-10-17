@@ -2117,7 +2117,6 @@ MonoBehaviour:
   checkpointAlertText: {fileID: 4383636128339926140}
   killStreakTutorialText: {fileID: 2267692547675789852}
   doorInteractionText: {fileID: 0}
-  cageText: {fileID: 0}
   playerHudKillsText: {fileID: 8600354402350480993}
   nextKillStreakImage: {fileID: 7499568854237326989}
   additionalHealthImage: {fileID: 21300000, guid: ea85f6bcbb287e044a89d69f44b4fee0,
@@ -4671,11 +4670,16 @@ MonoBehaviour:
   enemyMask:
     serializedVersion: 2
     m_Bits: 512
-  attackCollider: {fileID: 288807558891954855}
+  rightAttackCollider: {fileID: 288807558891954855}
+  leftAttackCollider: {fileID: 0}
   attackDelay: 0.4
   attackSpeed: 1
   minMeleeDamage: 35
   maxMeleeDamage: 70
+  heavyAttackDelay: 1.25
+  heavyAttackSpeed: 0.5
+  minHeavyMeleeDamage: 50
+  maxHeavyMeleeDamage: 80
   attackHitEffects:
   - {fileID: 4553406529116880728, guid: ff271ebc2f83eb948a8f574d8edbd193, type: 3}
   - {fileID: 2946267615465280455, guid: 2ccb0906f5f38954aa8513cf48953267, type: 3}

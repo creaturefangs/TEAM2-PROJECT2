@@ -1,4 +1,6 @@
 // C# 9.0 code
+
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections.Generic;
@@ -9,14 +11,21 @@ public class PlayerMeleeController : MonoBehaviour
     [SerializeField] private Transform attackPoint;
     [SerializeField] private float attackDistance = 3.0f;
     [SerializeField] private LayerMask enemyMask;
-    [SerializeField] private Collider attackCollider;
+    [SerializeField] private Collider rightAttackCollider;
+    [SerializeField] private Collider leftAttackCollider;
 
     [SerializeField] private float attackDelay = .4f;
     [SerializeField] private float attackSpeed = 1.0f;
     [SerializeField] private float minMeleeDamage = 30.0f;
     [SerializeField] private float maxMeleeDamage = 75.0f;
-   
+
+    [SerializeField] private float heavyAttackDelay = .6f;
+    [SerializeField] private float heavyAttackSpeed = 2.0f;
+    [SerializeField] private float minHeavyMeleeDamage = 50.0f;
+    [SerializeField] private float maxHeavyMeleeDamage = 80.0f;
+
     private bool isAttacking;
+    private bool isHeavyAttacking;
     private bool isReadyToAttack = true;
 
     [SerializeField] private GameObject[] attackHitEffects;
@@ -31,31 +40,44 @@ public class PlayerMeleeController : MonoBehaviour
 
     private void Awake() 
     {
-        attackCollider.enabled = false;
+        rightAttackCollider.enabled = false;
+        leftAttackCollider.enabled = false;
     }
 
     private void Update()
     {
         if (Mouse.current.leftButton.wasPressedThisFrame && isReadyToAttack)
         {
-            Attack();
+            isAttacking = true;
+            Attack(rightAttackCollider, attackSpeed, attackDelay);
+        }
+        else if (Mouse.current.rightButton.wasPressedThisFrame && isReadyToAttack)
+        {
+            isHeavyAttacking = true;
+            Attack(leftAttackCollider, heavyAttackSpeed, heavyAttackDelay);
         }
     }
 
-    private void Attack()
+    private void Attack(Collider attackCollider, float speed, float delay)
     {
         isReadyToAttack = false;
-        isAttacking = true;
 
-        Invoke(nameof(ResetAttack), attackSpeed);
-        Invoke(nameof(EnableAttackCollider), attackDelay);
-
+        Invoke(nameof(ResetAttack), speed);
+        StartCoroutine(EnableAttackCollider(attackCollider, delay));
+    
+        // Play the punch sound after the attack delay
+        Invoke(nameof(PlayPunchSound), delay - delay * .5f);
+    }
+    
+    private void PlayPunchSound()
+    {
         meleeAudioSource.pitch = Random.Range(.9f, 1.1f);
         meleeAudioSource.PlayOneShot(punchSoundClip);
     }
-    
-    private void EnableAttackCollider()
+
+    private IEnumerator EnableAttackCollider(Collider attackCollider, float delay)
     {
+        yield return new WaitForSeconds(delay);
         attackCollider.enabled = true;
     }
 
@@ -69,12 +91,12 @@ public class PlayerMeleeController : MonoBehaviour
             if (!_hitEnemies.Contains(damageTaker))
             {
                 _hitEnemies.Add(damageTaker); // Add the new hit enemy to the list
-                damageTaker.TakeDamage(AttackDamage());
+                damageTaker.TakeDamage(AttackDamage(isHeavyAttacking));
                 HitTarget(other.transform.position);
             }     
         }
     }
-    
+
     private void HitTarget(Vector3 hitPos)
     {
         meleeAudioSource.pitch = 1.0f;
@@ -87,17 +109,21 @@ public class PlayerMeleeController : MonoBehaviour
     private void ResetAttack()
     {
         isAttacking = false;
+        isHeavyAttacking = false;
         isReadyToAttack = true;
-        attackCollider.enabled = false;
+        rightAttackCollider.enabled = false;
+        leftAttackCollider.enabled = false;
         _hitEnemies.Clear(); //Clear the list at the end of each attack
     }
 
-    public float AttackDamage()
+    public float AttackDamage(bool isHeavyAttack)
     {
-        float damage = Random.Range(minMeleeDamage, maxMeleeDamage);
+        float minDamage = isHeavyAttack ? minHeavyMeleeDamage : minMeleeDamage;
+        float maxDamage = isHeavyAttack ? maxHeavyMeleeDamage : maxMeleeDamage;
+        float damage = Random.Range(minDamage, maxDamage);
         return damage + DamageBuff;
     }
-
+    
     private GameObject GetRandomAttackEffect()
     {
         return attackHitEffects[Random.Range(0, attackHitEffects.Length)];
