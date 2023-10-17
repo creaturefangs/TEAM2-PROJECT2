@@ -26,7 +26,7 @@ public class PlayerUI : MonoBehaviour
     public TMP_Text killStreakTutorialText; //briefly show what the player earns with each killstreak
     public TMP_Text doorInteractionText; //Only to be used in level three
     public TMP_Text cageText;
-    public TMP_Text enemyKilledText; // For use when the player kills an enemy. Will show current kills then show to press tab to open killstreak UI
+    public TMP_Text playerHudKillsText; //show kills below players character image in ui
     public Image nextKillStreakImage; // Will show an image of the next killstreak
     public Sprite additionalHealthImage;
     public Sprite rageAbilityImage;
@@ -85,8 +85,12 @@ public class PlayerUI : MonoBehaviour
 
     public void UpdateKillsUI(int kills, int killsToNextKillStreak)
     {
+        //killstreak ui kills
         killsText.text = "Kills: " + kills;
         killsToNextKillStreakText.text = "Kills remaining to next killstreak: " + killsToNextKillStreak;
+        
+        //player hud kills
+        playerHudKillsText.text = kills + "\n" + "Kills";
     }
 
     public void ShowCheckpointUnlock(int index)
@@ -106,10 +110,8 @@ public class PlayerUI : MonoBehaviour
         cageText.text = "";
     }
 
-    public IEnumerator OnEnemyDeathShowKills()
+    public void UpdatePlayerKills(int kills)
     {
-        enemyKilledText.text = "Keep track of your killstreak by pressing [TAB]";
-        yield return new WaitForSeconds(3.0f);
-        enemyKilledText.text = "";
+        playerHudKillsText.text = "Kills: " + kills;
     }
 }

@@ -5,6 +5,12 @@ public class LevelChange : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
+        if (other.CompareTag("Level One") || other.CompareTag("Level Two") || other.CompareTag("Level Three"))
+        {
+            //Reset kills when changing levels
+            GameManager.instance.ResetPlayerKillCount();
+        }
+        
         if (other.CompareTag("Level One"))
         {
             GameManager.instance.recentLevelIndex++; // increment level index

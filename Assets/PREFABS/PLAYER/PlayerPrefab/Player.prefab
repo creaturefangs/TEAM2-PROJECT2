@@ -2022,7 +2022,6 @@ RectTransform:
   - {fileID: 8448823998341988961}
   - {fileID: 2189226638982104302}
   - {fileID: 3938833703361929329}
-  - {fileID: 2314941517363703155}
   m_Father: {fileID: 3693450682467707276}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2119,7 +2118,7 @@ MonoBehaviour:
   killStreakTutorialText: {fileID: 2267692547675789852}
   doorInteractionText: {fileID: 0}
   cageText: {fileID: 0}
-  enemyKilledText: {fileID: 8600354402350480993}
+  playerHudKillsText: {fileID: 8600354402350480993}
   nextKillStreakImage: {fileID: 7499568854237326989}
   additionalHealthImage: {fileID: 21300000, guid: ea85f6bcbb287e044a89d69f44b4fee0,
     type: 3}
@@ -3260,7 +3259,7 @@ RectTransform:
   m_Father: {fileID: 9204103884295264428}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 5.351013, y: 0}
   m_SizeDelta: {x: 20.7019, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4866,7 +4865,7 @@ GameObject:
   - component: {fileID: 8336850127097416192}
   - component: {fileID: 8600354402350480993}
   m_Layer: 8
-  m_Name: EnemyKilledText
+  m_Name: HUDKillsText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4879,18 +4878,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3739424756994655573}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.00003157612}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.000025285175}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1817569673089587785}
+  m_Father: {fileID: 3260174303496247995}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00018310547, y: 0}
-  m_SizeDelta: {x: 1060.5, y: 132.5}
-  m_Pivot: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0.00012207031, y: -242.16492}
+  m_SizeDelta: {x: 287.183, y: 177.97}
+  m_Pivot: {x: 0, y: 1}
 --- !u!222 &8336850127097416192
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4919,18 +4918,18 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Keep track of your killstreak by pressing [TAB]
+  m_text: 0\nKills
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 926fa1f4e66cae240839ebf3623dc210, type: 2}
-  m_sharedMaterial: {fileID: -1346404110477272630, guid: 926fa1f4e66cae240839ebf3623dc210,
+  m_fontAsset: {fileID: 11400000, guid: 1c8b0a8fc955dad4196fa7fe45e5bc30, type: 2}
+  m_sharedMaterial: {fileID: -5590002419640591430, guid: 1c8b0a8fc955dad4196fa7fe45e5bc30,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4287171584
-  m_fontColor: {r: 0, g: 0.047058824, b: 0.5372549, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4953,9 +4952,9 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 3
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 1024
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -5513,6 +5512,7 @@ RectTransform:
   - {fileID: 1906329128111625845}
   - {fileID: 8806171527008885911}
   - {fileID: 7820599201514996067}
+  - {fileID: 2314941517363703155}
   m_Father: {fileID: 1817569673089587785}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -7040,7 +7040,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press [F] TO PICKUP SYRINGE
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c2fc3429a29877449ade0f600d2eb998, type: 2}
   m_sharedMaterial: {fileID: 2790728704749864332, guid: c2fc3429a29877449ade0f600d2eb998,

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -25,7 +26,7 @@ public class GameManager : MonoBehaviour
         
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
-
+    
     /// <summary>
     /// When player completes a level, call GameManager.instance.IncrementLevelCount(), then call GameManager.instance.LoadLevel(GameManager.instance.levelIndex)
     /// </summary>
