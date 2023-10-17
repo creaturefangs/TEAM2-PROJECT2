@@ -22,7 +22,7 @@ public class ItemPickupManager : MonoBehaviour
     {
         ItemPickupComponent currentPickupComponent = null;
         bool isLookingAtItem = false;
-
+        bool isLookingAtCage = false;
         if (Physics.Raycast(
                 PlayerUI.instance.raycastOrigin.position,
                 PlayerUI.instance.raycastOrigin.forward,
@@ -38,7 +38,7 @@ public class ItemPickupManager : MonoBehaviour
 
                 if (pickup.CompareTag("Cage"))
                 {
-                    isLookingAtItem = true;
+                    isLookingAtCage = true;
                     //StartCoroutine(PlayerUI.instance.OpenCageTutorial());
                     if (Input.GetKeyDown(itemPickupKeyCode))
                     {
@@ -85,6 +85,10 @@ public class ItemPickupManager : MonoBehaviour
 
         PlayerUI.instance.itemPickupText.text = isLookingAtItem && currentPickupComponent != null
             ? $"Press {itemPickupKeyCode} to pickup {currentPickupComponent.itemData.itemName}"
+            : "";
+        
+        PlayerUI.instance.itemPickupText.text = isLookingAtCage && currentPickupComponent != null
+            ? $"Press {itemPickupKeyCode} to open {currentPickupComponent.itemData.itemName}"
             : "";
     }
     
