@@ -33,6 +33,7 @@ public class KillstreakManager : MonoBehaviour
 
     public void GrantKillStreaks()
     {
+        Debug.Log("Current kill count: " + GameManager.instance.killCounter);
         switch (GameManager.instance.killCounter)
         {
             //Increased health
@@ -43,18 +44,7 @@ public class KillstreakManager : MonoBehaviour
                 PlayerUI.instance.ShowAdditionalHealth(_playerHealth.additionalHealth);
                 PlayerUI.instance.ShowNextKillStreakImage(PlayerUI.instance.rageAbilityImage);
                 break;
-            //Unlock the exit in level three only
-            case 7:
-                if (SceneManager.GetSceneByName("LEVELTHREE").isLoaded)
-                {
-                    ExitDoor exitDoor = GameObject.FindObjectOfType<ExitDoor>();
-                    exitDoor.UnlockExitDoor();
-                        
-                    
-                    Debug.Log("Can now open exit door.");
-                }
-
-                break;
+            
             //Rage ability - Increased damage
             case 8:
                 StartCoroutine(ShowKillStreakTutorialTextPrompt(
@@ -73,7 +63,17 @@ public class KillstreakManager : MonoBehaviour
                 
                 PlayerUI.instance.ShowNextKillStreakImage(PlayerUI.instance.freezeAbilityImage);
                 break;
-           
+            //Unlock the exit in level three only
+            case 9:
+                ExitDoor exitDoor = GameObject.FindGameObjectWithTag("ExitDoor").GetComponent<ExitDoor>();
+
+                if (exitDoor != null)
+                {
+                    exitDoor.UnlockExitDoor();
+                    Debug.Log("Can now open exit door.");
+                }
+                
+                break;
             //Freeze ability - freeze enemies in area
             case 12:
                 StartCoroutine(ShowKillStreakTutorialTextPrompt(

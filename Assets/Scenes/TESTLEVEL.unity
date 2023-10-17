@@ -12610,7 +12610,7 @@ PrefabInstance:
     - target: {fileID: 3460353318209485918, guid: 00600692e35bee04ba8ff295f40431fb,
         type: 3}
       propertyPath: m_TagString
-      value: Respawn
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 3464971479149239572, guid: 00600692e35bee04ba8ff295f40431fb,
         type: 3}

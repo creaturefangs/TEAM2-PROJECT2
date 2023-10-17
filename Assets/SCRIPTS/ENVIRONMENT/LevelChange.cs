@@ -8,7 +8,8 @@ public class LevelChange : MonoBehaviour
         if (other.CompareTag("Level One") || other.CompareTag("Level Two") || other.CompareTag("Level Three"))
         {
             //Reset kills when changing levels
-            GameManager.instance.ResetPlayerKillCount();
+            //Was causing bugs with killstreaks. Commented out now as it shouldn't be needed.
+            //GameManager.instance.ResetPlayerKillCount();
         }
         
         if (other.CompareTag("Level One"))
