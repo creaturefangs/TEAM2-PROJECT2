@@ -56,6 +56,9 @@ public class EnemyHealth : MonoBehaviour, ITakeDamage
             GameManager.instance.killsToNextKillStreak);
         transform.root.SendMessage ("ActivateRagdoll", SendMessageOptions.DontRequireReceiver);
 
+        //prompt player to press to tab check killstreak
+        StartCoroutine(PlayerUI.instance.OnEnemyDeathShowKills());
+        
         //play a random death sound
         enemyAudio.PlayAudioClip(enemyAudio.GetRandomEnemyAudioClip(enemyAudio.deathClips));
         
