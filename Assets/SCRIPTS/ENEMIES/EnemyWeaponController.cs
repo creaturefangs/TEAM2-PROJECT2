@@ -94,9 +94,12 @@ public class EnemyWeaponController : MonoBehaviour
             GameObject bulletObj = Instantiate(weapon.bullet.bulletPrefab, firePosition.position, firePosition.rotation);
             bulletObj.GetComponent<Bullet>().direction = direction;
             Destroy(bulletObj, weapon.reloadTime + .75f);
-        
-            GameObject flash = Instantiate(weapon.muzzleFlash, firePosition.position, firePosition.rotation);
-            Destroy(flash, .5f);
+
+            if (weapon.enableMuzzleFlash)
+            {
+                GameObject flash = Instantiate(weapon.muzzleFlash, firePosition.position, firePosition.rotation);
+                Destroy(flash, weapon.timeToDestroyMuzzleFlash);
+            }
             
             //Gunshot sound
             audioSource.PlayOneShot(weapon.gunshotSoundClip);

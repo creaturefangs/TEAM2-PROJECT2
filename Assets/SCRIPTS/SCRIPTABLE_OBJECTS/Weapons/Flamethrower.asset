@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e7ef74e7b8c11947836826e68d6948f, type: 3}
+  m_Name: Flamethrower
+  m_EditorClassIdentifier: 
+  weaponPrefab: {fileID: 3661419247863823050, guid: 28465f0e3a8fe8e428e73474d093d718,
+    type: 3}
+  muzzleFlash: {fileID: 1979869803963528563, guid: a0eb908545f8a7548bc808b329bbe223,
+    type: 3}
+  bullet: {fileID: 11400000, guid: 5607577a3732eea4f925686baa43d8c9, type: 2}
+  weaponName: Flamethrower
+  gunshotSoundClip: {fileID: 8300000, guid: 3638ff7cb197ce7479bc7b697f167d1c, type: 3}
+  maxMagazineCapacity: 6
+  timeBetweenShots: 4
+  reloadTime: 3.49
+  enableMuzzleFlash: 0
+  timeToDestroyMuzzleFlash: 2.5
+  bulletSpread: 0
