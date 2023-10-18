@@ -49,4 +49,9 @@ public class MainMenuButtons : MonoBehaviour
     {
         SceneManager.LoadScene("SETTINGSSCENE");
     }
+    
+    public void OpenURL(string URLname)
+    {
+        Application.OpenURL(URLname);
+    }
 }
