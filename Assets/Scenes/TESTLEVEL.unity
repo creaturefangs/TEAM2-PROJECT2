@@ -11872,21 +11872,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2957352114972355885, guid: 7c6eb3d41dc4b3248a775111bdf72adb,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.3182
-      objectReference: {fileID: 0}
-    - target: {fileID: 2957352114972355885, guid: 7c6eb3d41dc4b3248a775111bdf72adb,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.3182
-      objectReference: {fileID: 0}
-    - target: {fileID: 2957352114972355885, guid: 7c6eb3d41dc4b3248a775111bdf72adb,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.3182
-      objectReference: {fileID: 0}
-    - target: {fileID: 2957352114972355885, guid: 7c6eb3d41dc4b3248a775111bdf72adb,
-        type: 3}
       propertyPath: m_LocalPosition.x
       value: -10.453
       objectReference: {fileID: 0}
@@ -12890,6 +12875,11 @@ PrefabInstance:
         type: 3}
       propertyPath: _isInvincible
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2314941517363703155, guid: 00600692e35bee04ba8ff295f40431fb,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2335948159793238199, guid: 00600692e35bee04ba8ff295f40431fb,
         type: 3}
