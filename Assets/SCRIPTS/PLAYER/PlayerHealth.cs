@@ -31,9 +31,12 @@ public class PlayerHealth : MonoBehaviour, ITakeDamage, IInvincibility
 
     public bool CanTakeHit { get; }
 
-    public void Hit()
+    private void OnTriggerEnter(Collider other)
     {
-       //hit
+        if (other.CompareTag("Flamethrower"))
+        {
+            TakeDamage(20);
+        }
     }
 
     public void ApplyDamage(float amount)

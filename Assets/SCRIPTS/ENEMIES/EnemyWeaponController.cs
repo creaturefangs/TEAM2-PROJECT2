@@ -91,9 +91,19 @@ public class EnemyWeaponController : MonoBehaviour
                 Random.Range(-weapon.bulletSpread, weapon.bulletSpread),
                 0);
 
+            
+            
             GameObject bulletObj = Instantiate(weapon.bullet.bulletPrefab, firePosition.position, firePosition.rotation);
-            bulletObj.GetComponent<Bullet>().direction = direction;
-            Destroy(bulletObj, weapon.reloadTime + .75f);
+            if (weapon.bullet.isBullet && bulletObj.GetComponent<Bullet>())
+            {
+                
+                bulletObj.GetComponent<Bullet>().direction = direction;
+                if (bulletObj != null)
+                {
+                    Destroy(bulletObj, weapon.reloadTime + .75f);
+                }
+            }
+            
 
             if (weapon.enableMuzzleFlash)
             {

@@ -39,6 +39,7 @@ TagManager:
   - ExitDoor
   - Cage
   - Npc
+  - Flamethrower
   layers:
   - Default
   - TransparentFX

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d5633e595707ef4c97d386accecceec, type: 3}
   m_Name: Flamethrower_Fire
   m_EditorClassIdentifier: 
+  isBullet: 1
   bulletPrefab: {fileID: 5134460933271853594, guid: e910fa0075457dd498c08af61fcd3cd9,
     type: 3}
   damage: 20.22

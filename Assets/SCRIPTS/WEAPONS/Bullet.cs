@@ -17,7 +17,10 @@ public class Bullet : MonoBehaviour
 
     private void Start()
     {
-        bulletRigidbody.velocity = direction * bullet.bulletSpeed;
+        if (bullet.isBullet)
+        {
+            bulletRigidbody.velocity = direction * bullet.bulletSpeed;
+        }
     }
 
     private void OnTriggerEnter(Collider other)

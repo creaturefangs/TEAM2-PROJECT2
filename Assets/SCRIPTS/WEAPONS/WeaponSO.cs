@@ -12,6 +12,7 @@ public class WeaponSO : ScriptableObject
     [Range(.5f, 6f)] public float timeBetweenShots;
     [Range(1.5f, 3.5f)] public float reloadTime;
 
+    
     public bool enableMuzzleFlash = true; // enable muzzle flash?
     public float timeToDestroyMuzzleFlash = .5f;
     
