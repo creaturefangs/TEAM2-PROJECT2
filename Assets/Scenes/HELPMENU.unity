@@ -464,6 +464,8 @@ GameObject:
   - component: {fileID: 442307295}
   - component: {fileID: 442307299}
   - component: {fileID: 442307300}
+  - component: {fileID: 442307302}
+  - component: {fileID: 442307301}
   m_Layer: 5
   m_Name: HelpCanvas
   m_TagString: Untagged
@@ -587,6 +589,117 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!82 &442307301
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 442307294}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &442307302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 442307294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71f0aeb3f29e57f48a4d97447188911d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  btnSFX: {fileID: 442307301}
+  hoverSFX: {fileID: 8300000, guid: 6c96f17621974ab469d71b6645c210ae, type: 3}
+  clickSFX: {fileID: 8300000, guid: 2ec14d07946c7fe429f08fc058e5b2f8, type: 3}
 --- !u!1 &581286617
 GameObject:
   m_ObjectHideFlags: 0
@@ -621,8 +734,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 456.7647, y: -249.34363}
-  m_SizeDelta: {x: 858.14, y: 443.6777}
+  m_AnchoredPosition: {x: 452.22, y: -232}
+  m_SizeDelta: {x: 858.14, y: 391.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &581286619
 MonoBehaviour:
@@ -693,8 +806,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 456.7638, y: 232.1708}
-  m_SizeDelta: {x: 858.1384, y: 359.28}
+  m_AnchoredPosition: {x: 454.49, y: 229.38}
+  m_SizeDelta: {x: 853.6, y: 329.42}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1189065838
 MonoBehaviour:
@@ -954,8 +1067,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Movement :  [W, A , S, D] \nAttack:  [Left Mouse] \nCrouch: [C]\nJump:
-    [Spacebar]\n[ESC] Pause mennu\n[TAB] Character Panel"
+  m_text: "Movement :  [W, A , S, D] \nFast Attack:  [Left Mouse]\nHeavy Attack:
+    [Right Mouse]\nCrouch: [C]\nRun: [Left Shift]\nJump: [Spacebar]\n[ESC] Pause
+    menu\n[TAB] Character Panel"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1c8b0a8fc955dad4196fa7fe45e5bc30, type: 2}
   m_sharedMaterial: {fileID: -5590002419640591430, guid: 1c8b0a8fc955dad4196fa7fe45e5bc30,
@@ -983,8 +1097,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 34.33
+  m_fontSizeBase: 34.33
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -995,7 +1109,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: 115.1
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -1361,7 +1475,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: To access the help menu during gameplay, press [ESC] for the pause menu.
+  m_text: "Press [ESC] to acesss the controls from the Pause Menu.\nPress [TAB] to
+    to see your killstreak, health, and next streak buff.\nBlue syringes are health
+    boosters. \nRed Eyes are rage boosters. "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1c8b0a8fc955dad4196fa7fe45e5bc30, type: 2}
   m_sharedMaterial: {fileID: -5590002419640591430, guid: 1c8b0a8fc955dad4196fa7fe45e5bc30,
@@ -1389,8 +1505,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 28.8
+  m_fontSizeBase: 28.8
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1611,7 +1727,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 18.241455, y: 540.0311}
+  m_AnchoredPosition: {x: 18.241455, y: 525}
   m_SizeDelta: {x: -969.56287, y: -1006.4412}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1959020650
@@ -1694,7 +1810,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.8054, y: -34.500004}
+  m_AnchoredPosition: {x: 4.8054, y: -25}
   m_SizeDelta: {x: 1952.0127, y: 1111.3662}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2066953485
@@ -1879,8 +1995,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 45
+  m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
@@ -2061,8 +2177,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 45
+  m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
@@ -2123,7 +2239,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: de43bec0b6e9f8c45b41dc18aa68eed5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6dbbb4f43b1fdc6458b217ab8a656289, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2153,7 +2269,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: de43bec0b6e9f8c45b41dc18aa68eed5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6dbbb4f43b1fdc6458b217ab8a656289, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2183,7 +2299,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: de43bec0b6e9f8c45b41dc18aa68eed5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6dbbb4f43b1fdc6458b217ab8a656289, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3091,7 +3207,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 678.6516, y: -459.9725}
+  m_AnchoredPosition: {x: 672, y: -459.9725}
   m_SizeDelta: {x: 404.2318, y: 100.03}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &8513289298904179266
@@ -3132,8 +3248,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 260.30905, y: -459.9725}
-  m_SizeDelta: {x: 386, y: 100.03}
+  m_AnchoredPosition: {x: 255.33, y: -459.97}
+  m_SizeDelta: {x: 422.99, y: 92.932}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &8513289300260042265
 Animator:
