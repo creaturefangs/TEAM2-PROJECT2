@@ -513,7 +513,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 7071848994070105831}
-    m_Position: {x: 370, y: 110, z: 0}
+    m_Position: {x: 400, y: 130, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -22980,7 +22980,7 @@ AnimatorStateMachine:
     m_Position: {x: 320, y: 130, z: 0}
   - serializedVersion: 1
     m_StateMachine: {fileID: 1107232568357287390}
-    m_Position: {x: 324, y: 228, z: 0}
+    m_Position: {x: 320, y: 230, z: 0}
   m_AnyStateTransitions: []
   m_EntryTransitions:
   - {fileID: 1109618518866697304}
@@ -24253,7 +24253,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PlayerChargedAttack
+  m_Name: TestHeavy
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -24267,7 +24267,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: b252ff77f8073a34d9ed188abadfceed, type: 2}
+  m_Motion: {fileID: 7400000, guid: 3841a15d0d6ccc149a7de72da5abd539, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -24380,7 +24380,7 @@ AnimatorStateTransition:
   m_TransitionDuration: 0.25
   m_TransitionOffset: 0
   m_ExitTime: 1
-  m_HasExitTime: 1
+  m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1

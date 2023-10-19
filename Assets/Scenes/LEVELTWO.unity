@@ -25305,6 +25305,11 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.18301578
       objectReference: {fileID: 0}
+    - target: {fileID: 8533945506485194707, guid: 00600692e35bee04ba8ff295f40431fb,
+        type: 3}
+      propertyPath: animationClip
+      value: TestHeavy
+      objectReference: {fileID: 0}
     - target: {fileID: 8557890033733497313, guid: 00600692e35bee04ba8ff295f40431fb,
         type: 3}
       propertyPath: m_LocalPosition.x
