@@ -15,6 +15,6 @@ MonoBehaviour:
   isBullet: 1
   bulletPrefab: {fileID: 5134460933271853594, guid: e910fa0075457dd498c08af61fcd3cd9,
     type: 3}
-  damage: 20.22
-  maxHitDistance: 46.6
+  damage: 13.17
+  maxHitDistance: 30.3
   bulletSpeed: 50.4

@@ -63,7 +63,8 @@ public class EnemyController : MonoBehaviour, IFreeze
         enemyAgent.SetDestination(_currentDestination.position);
     
         // Find player on start
-        player = GameObject.FindGameObjectWithTag("Player");
+        if(player == null)
+            player = GameObject.FindGameObjectWithTag("Player");
 
         enemyHealth = GetComponent<EnemyHealth>();
     }

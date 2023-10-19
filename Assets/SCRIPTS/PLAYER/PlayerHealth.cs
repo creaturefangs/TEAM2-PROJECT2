@@ -33,10 +33,23 @@ public class PlayerHealth : MonoBehaviour, ITakeDamage, IInvincibility
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.CompareTag("Syringe"))
+        {
+            if (IsBelowMaxHealth())
+            {
+                ItemPickupComponent pickup = other.GetComponent<ItemPickupComponent>();
+                pickup.itemPickupEvent.Invoke();
+            
+                Destroy(other.gameObject);
+            }
+        }
+        
         if (other.CompareTag("Flamethrower"))
         {
             TakeDamage(20);
         }
+        
+        
     }
 
     public void ApplyDamage(float amount)

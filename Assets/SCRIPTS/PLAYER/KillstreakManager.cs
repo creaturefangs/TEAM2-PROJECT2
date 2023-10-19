@@ -20,6 +20,7 @@ public class KillstreakManager : MonoBehaviour
     {
         PlayerUI.instance.UpdateKillsUI(GameManager.instance.killCounter,
             GameManager.instance.maxKillsToNextKillStreak);
+        
     }
 
     private void Update()
@@ -32,7 +33,7 @@ public class KillstreakManager : MonoBehaviour
 
     public void GrantKillStreaks()
     {
-        Debug.Log("Current kill count: " + GameManager.instance.killCounter);
+        Debug.Log("GrantKillStreaks method called.");
         switch (GameManager.instance.killCounter)
         {
             //Increased health
@@ -66,9 +67,11 @@ public class KillstreakManager : MonoBehaviour
             case 9:
                 ExitDoor exitDoor = GameObject.FindGameObjectWithTag("ExitDoor").GetComponent<ExitDoor>();
 
-                if (exitDoor != null)
+                if (exitDoor == null) Debug.Log("exit door not found.");  
+                else if(exitDoor != null)
                 {
-                    exitDoor.UnlockExitDoor();
+                    //exitDoor.canBeOpened = true;
+                    //exitDoor.UnlockExitDoor();
                     Debug.Log("Can now open exit door.");
                 }
                 

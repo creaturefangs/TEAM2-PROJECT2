@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class ExitDoor : MonoBehaviour
 {
-    public bool canBeOpened = false;
     private Animator _animator;
     private AudioSource _doorAudio;
     [SerializeField] private AudioClip unlockDoorClip;
@@ -10,25 +9,25 @@ public class ExitDoor : MonoBehaviour
     private void Awake()
     {
         _animator = GetComponent<Animator>();
-        //_animator.enabled = false;
-
         _doorAudio = GetComponent<AudioSource>();
     }
 
-    public void UnlockExitDoor()
+    private void OnEnable()
     {
-        //_animator.enabled = true;
-        canBeOpened = true;
+        // Subscribe to the event when the script is enabled.
+        GameManager.OnPlayerReached9Kills += OpenExitDoor;
+    }
 
-        _doorAudio.PlayOneShot(unlockDoorClip);
+    private void OnDisable()
+    {
+        // Unsubscribe from the event when the script is disabled to prevent memory leaks.
+        GameManager.OnPlayerReached9Kills -= OpenExitDoor;
     }
 
     public void OpenExitDoor()
     {
-        if (canBeOpened)
-        {
-            //Change to whatever the animator needs to open the door.
-            _animator.SetTrigger("Open");
-        }
+        // Implement the logic to open the door (e.g., set a trigger in the animator).
+        _animator.SetTrigger("Open");
+        _doorAudio.PlayOneShot(unlockDoorClip);
     }
 }

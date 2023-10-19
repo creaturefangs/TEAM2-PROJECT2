@@ -1,5 +1,3 @@
-// C# 9.0 code
-
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -8,8 +6,8 @@ using Random = UnityEngine.Random;
 
 public class PlayerMeleeController : MonoBehaviour
 {
-    [SerializeField] private Transform attackPoint;
-    [SerializeField] private float attackDistance = 3.0f;
+    //[SerializeField] private Transform attackPoint;
+    //[SerializeField] private float attackDistance = 3.0f;
     [SerializeField] private LayerMask enemyMask;
     [SerializeField] private Collider rightAttackCollider;
     [SerializeField] private Collider leftAttackCollider;
@@ -24,7 +22,9 @@ public class PlayerMeleeController : MonoBehaviour
     [SerializeField] private float minHeavyMeleeDamage = 50.0f;
     [SerializeField] private float maxHeavyMeleeDamage = 80.0f;
 
+#pragma warning disable CS0414 // Field is assigned but its value is never used
     private bool isAttacking;
+#pragma warning restore CS0414 // Field is assigned but its value is never used
     private bool isHeavyAttacking;
     private bool isReadyToAttack = true;
 

@@ -1,3 +1,5 @@
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,6 +14,8 @@ public class GameManager : MonoBehaviour
     public Vector3 lastCheckpointPosition { get; set; }
     
     private bool _isRespawning = false;
+    
+    public static event Action OnPlayerReached9Kills;
     
     private void Awake() 
     {
@@ -82,8 +86,8 @@ public class GameManager : MonoBehaviour
     {
         killCounter++;
         killsToNextKillStreak--;
+        Debug.Log("Kill count: " + killCounter);
 
-        // check if the player has reached a new kill streak
         if (killsToNextKillStreak <= 0)
         {
             PlayerUI.instance.UpdateKillsUI(killCounter, maxKillsToNextKillStreak);
@@ -93,6 +97,13 @@ public class GameManager : MonoBehaviour
         else
         {
             PlayerUI.instance.UpdateKillsUI(killCounter, killsToNextKillStreak);
+        }
+
+        // Check if the player has reached 9 kills.
+        if (killCounter >= 9)
+        {
+            // Raise the event to notify the exit door.
+            OnPlayerReached9Kills?.Invoke();
         }
     }
 
@@ -119,5 +130,14 @@ public class GameManager : MonoBehaviour
     public void LoadCheckpointOnDeath(Transform playerTransform)
     {
         playerTransform.transform.position = lastCheckpointPosition;
+    }
+
+    public void UnlockFinalLevelThreeExit()
+    {
+        LevelThreeExitTrigger exit = GameObject.FindGameObjectWithTag("Level Three").GetComponent<LevelThreeExitTrigger>();
+        if (exit != null)
+        {
+            exit.OnBossDeathEnableCollider();
+        }
     }
 }

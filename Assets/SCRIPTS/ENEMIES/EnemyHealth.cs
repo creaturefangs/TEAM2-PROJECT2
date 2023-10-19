@@ -61,6 +61,11 @@ public class EnemyHealth : MonoBehaviour, ITakeDamage
         enemyAudio.PlayAudioClip(enemyAudio.GetRandomEnemyAudioClip(enemyAudio.deathClips));
         
         StartCoroutine(BloodPoolAfterDeath());
+
+        if (this.name == "Boss")
+        {
+            GameManager.instance.UnlockFinalLevelThreeExit();
+        }
     }
 
     private IEnumerator BloodPoolAfterDeath()
