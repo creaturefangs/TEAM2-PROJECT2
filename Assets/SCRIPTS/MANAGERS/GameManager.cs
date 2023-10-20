@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour
     public int killCounter = 0;
     public int killsToNextKillStreak = 4;
     public int maxKillsToNextKillStreak = 4;
+    
+    
+    public string recentSceneName { get; set; }
     public int levelIndex { get; set; }
     public int recentLevelIndex { get; set; }
     public Vector3 lastCheckpointPosition { get; set; }
