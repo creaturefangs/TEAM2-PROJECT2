@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4366298674253894}
   - component: {fileID: 205547893876761384}
-  - component: {fileID: 6403660268940750082}
   - component: {fileID: 5740815265624329198}
   - component: {fileID: 2586747950839725906}
+  - component: {fileID: 6656226889705420397}
   m_Layer: 0
   m_Name: SM_bed (1)
   m_TagString: Untagged
@@ -69,22 +69,6 @@ LODGroup:
     renderers:
     - renderer: {fileID: 23453997863353550}
   m_Enabled: 1
---- !u!208 &6403660268940750082
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1060043886818980}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
-  m_MoveThreshold: 0.1
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: 0.5
 --- !u!65 &5740815265624329198
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -133,6 +117,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!208 &6656226889705420397
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1060043886818980}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.75, y: 0.5, z: 1.07}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.4, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1095205304172566
 GameObject:
   m_ObjectHideFlags: 0

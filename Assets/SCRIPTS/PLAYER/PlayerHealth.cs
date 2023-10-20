@@ -39,7 +39,7 @@ public class PlayerHealth : MonoBehaviour, ITakeDamage, IInvincibility
             {
                 ItemPickupComponent pickup = other.GetComponent<ItemPickupComponent>();
                 pickup.itemPickupEvent.Invoke();
-            
+                pickup.enableDestructionOnPickup = true;
                 Destroy(other.gameObject);
             }
         }
@@ -48,8 +48,6 @@ public class PlayerHealth : MonoBehaviour, ITakeDamage, IInvincibility
         {
             TakeDamage(20);
         }
-        
-        
     }
 
     public void ApplyDamage(float amount)

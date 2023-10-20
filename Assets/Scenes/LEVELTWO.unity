@@ -3874,7 +3874,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 54967717135466112, guid: 432778808f5bc4f18b75113d4f299254, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -7552,6 +7553,11 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.007984026
       objectReference: {fileID: 0}
+    - target: {fileID: 9047701862079030148, guid: 983ed74e224532f45a6e4661772c4ceb,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1761464674}
     - target: {fileID: 9179238367572614502, guid: 983ed74e224532f45a6e4661772c4ceb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -22511,6 +22517,11 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.007984026
       objectReference: {fileID: 0}
+    - target: {fileID: 9047701862079030148, guid: 983ed74e224532f45a6e4661772c4ceb,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1761464674}
     - target: {fileID: 9179238367572614502, guid: 983ed74e224532f45a6e4661772c4ceb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -25667,7 +25678,7 @@ PrefabInstance:
     - target: {fileID: 3693450682467707276, guid: 00600692e35bee04ba8ff295f40431fb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -67.82922
+      value: -67.594
       objectReference: {fileID: 0}
     - target: {fileID: 3693450682467707276, guid: 00600692e35bee04ba8ff295f40431fb,
         type: 3}
@@ -26730,7 +26741,11 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1391191741}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3460353318209485918, guid: 00600692e35bee04ba8ff295f40431fb,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1761464695}
   m_SourcePrefab: {fileID: 100100000, guid: 00600692e35bee04ba8ff295f40431fb, type: 3}
 --- !u!1 &945772776 stripped
 GameObject:
@@ -30067,6 +30082,52 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1888649530}
     m_Modifications:
+    - target: {fileID: 3287063754981677730, guid: e27b89fb16858894f867cd3d10c42f5c,
+        type: 3}
+      propertyPath: itemPickupEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3287063754981677730, guid: e27b89fb16858894f867cd3d10c42f5c,
+        type: 3}
+      propertyPath: itemPickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3287063754981677730, guid: e27b89fb16858894f867cd3d10c42f5c,
+        type: 3}
+      propertyPath: itemPickupEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3287063754981677730, guid: e27b89fb16858894f867cd3d10c42f5c,
+        type: 3}
+      propertyPath: itemPickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 3650666538506238858, guid: c3b919f3feb6a5a4fb0a9705db410cfe,
+        type: 3}
+    - target: {fileID: 3287063754981677730, guid: e27b89fb16858894f867cd3d10c42f5c,
+        type: 3}
+      propertyPath: itemPickupEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 945772777}
+    - target: {fileID: 3287063754981677730, guid: e27b89fb16858894f867cd3d10c42f5c,
+        type: 3}
+      propertyPath: itemPickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 3287063754981677730, guid: e27b89fb16858894f867cd3d10c42f5c,
+        type: 3}
+      propertyPath: itemPickupEvent.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: IncreaseHealth
+      objectReference: {fileID: 0}
+    - target: {fileID: 3287063754981677730, guid: e27b89fb16858894f867cd3d10c42f5c,
+        type: 3}
+      propertyPath: itemPickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UnityEngine.AudioSource, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3287063754981677730, guid: e27b89fb16858894f867cd3d10c42f5c,
+        type: 3}
+      propertyPath: itemPickupEvent.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: PlayerHealth, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 4259823436835083067, guid: e27b89fb16858894f867cd3d10c42f5c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -34550,7 +34611,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4762281011724072550, guid: e7988f5abbf6d443fb0e777d1ac996ac, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -43620,7 +43682,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4762281011724072550, guid: e7988f5abbf6d443fb0e777d1ac996ac, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -45946,6 +46009,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 945772775}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1761464695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761464674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f01f794b1c611f44be62458fa297681, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1762513083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47280,6 +47355,52 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1888649530}
     m_Modifications:
+    - target: {fileID: 3287063754981677730, guid: e27b89fb16858894f867cd3d10c42f5c,
+        type: 3}
+      propertyPath: itemPickupEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3287063754981677730, guid: e27b89fb16858894f867cd3d10c42f5c,
+        type: 3}
+      propertyPath: itemPickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3287063754981677730, guid: e27b89fb16858894f867cd3d10c42f5c,
+        type: 3}
+      propertyPath: itemPickupEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3287063754981677730, guid: e27b89fb16858894f867cd3d10c42f5c,
+        type: 3}
+      propertyPath: itemPickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 3650666538506238858, guid: c3b919f3feb6a5a4fb0a9705db410cfe,
+        type: 3}
+    - target: {fileID: 3287063754981677730, guid: e27b89fb16858894f867cd3d10c42f5c,
+        type: 3}
+      propertyPath: itemPickupEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 945772777}
+    - target: {fileID: 3287063754981677730, guid: e27b89fb16858894f867cd3d10c42f5c,
+        type: 3}
+      propertyPath: itemPickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 3287063754981677730, guid: e27b89fb16858894f867cd3d10c42f5c,
+        type: 3}
+      propertyPath: itemPickupEvent.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: IncreaseHealth
+      objectReference: {fileID: 0}
+    - target: {fileID: 3287063754981677730, guid: e27b89fb16858894f867cd3d10c42f5c,
+        type: 3}
+      propertyPath: itemPickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UnityEngine.AudioSource, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3287063754981677730, guid: e27b89fb16858894f867cd3d10c42f5c,
+        type: 3}
+      propertyPath: itemPickupEvent.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: PlayerHealth, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 4259823436835083067, guid: e27b89fb16858894f867cd3d10c42f5c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -49192,7 +49313,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4762281011724072550, guid: e7988f5abbf6d443fb0e777d1ac996ac, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

@@ -141,7 +141,7 @@ public class EnemyWeaponController : MonoBehaviour
 
     private IEnumerator DestroyNpcsIfFleeFails(NPCMovement[] npcs)
     {
-        yield return new WaitForSeconds(12.0f); // destroy all npcs after 12 seconds if feel fails.
+        yield return new WaitForSeconds(30.0f); // destroy all npcs after 30 seconds if feel fails.
         foreach (var npc in npcs)
         {
             if (npc != null)
