@@ -1402,6 +1402,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   audioSource: {fileID: 8351690733590441871}
+  alertAudio: {fileID: 0}
+  intruderAlertClip: {fileID: 8300000, guid: 36d73c1f601e82f4c898aa1ee5535b6a, type: 3}
 --- !u!114 &9020613708030457937
 MonoBehaviour:
   m_ObjectHideFlags: 0

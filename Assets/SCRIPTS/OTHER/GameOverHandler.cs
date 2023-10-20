@@ -12,6 +12,17 @@ public class GameOverHandler : MonoBehaviour
 
     private void HandleTryAgainClicked()
     {
-        GameManager.instance.LoadLevel(GameManager.instance.recentLevelIndex);
+        string recentSceneName = GameManager.instance.recentSceneName;
+        if (!string.IsNullOrEmpty(recentSceneName))
+        {
+            GameManager.instance.LoadLevel(recentSceneName);
+        }
+        else
+        {
+            // Handle the case when recentSceneName is empty or not set.
+            // You can load a default level or return to the main menu.
+            // Example:
+            // GameManager.instance.LoadLevel("MAINMENU");
+        }
     }
 }

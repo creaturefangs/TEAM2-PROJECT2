@@ -26,8 +26,9 @@ public class EnemyWeaponController : MonoBehaviour
     [SerializeField] private LayerMask playerMask;
     [SerializeField] private AudioSource audioSource;
     private EnemyHealth enemyHealth;
-    
-    
+
+    [SerializeField] private AudioSource alertAudio;
+    [SerializeField] private AudioClip intruderAlertClip;
 
     private void Start()
     {
@@ -136,6 +137,11 @@ public class EnemyWeaponController : MonoBehaviour
             }
 
             StartCoroutine(DestroyNpcsIfFleeFails(npcs));
+
+            if (alertAudio != null)
+            {
+                alertAudio.PlayOneShot(intruderAlertClip);
+            }
         }
     }
 

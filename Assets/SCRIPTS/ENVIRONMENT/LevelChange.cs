@@ -9,33 +9,28 @@ public class LevelChange : MonoBehaviour
         {
             GameManager.instance.ResetPlayerKillCount();
             GameManager.instance.recentLevelIndex++; // increment level index
-            GameManager.instance.recentSceneName = "LEVELTWO"; // saving level name
-            
-            SceneManager.LoadScene("LEVELTWO");
-            
-            GameManager.instance.lastCheckpointPosition = transform.position; //reset player position when changing levels
+            GameManager.instance.LoadLevel("LEVELTWO"); // Load the next level
+            GameManager.instance.lastCheckpointPosition = new Vector3(770.3599f, -67.594f, 433.8945f)/* Level Two spawn position */;
         }
 
         if (other.CompareTag("Level Two"))
         {
             GameManager.instance.ResetPlayerKillCount();
             GameManager.instance.recentLevelIndex++; // increment level index
-            GameManager.instance.recentSceneName = "LEVELTHREE"; // saving level name
             
-            SceneManager.LoadScene("LEVELTHREE");
+            GameManager.instance.LoadLevel("LEVELTHREE"); // Load the next level
             
-            GameManager.instance.lastCheckpointPosition = transform.position; //reset player position when changing levels
+            GameManager.instance.lastCheckpointPosition = new Vector3(-345.59f, -539.78f, 493.1f); /* Level Three spawn position */
         }
 
         if (other.CompareTag("Level Three"))
         {
             GameManager.instance.ResetPlayerKillCount();
             GameManager.instance.recentLevelIndex++; // increment level index
-            GameManager.instance.recentSceneName = "LEVELFOUR"; // saving level name
             
-            SceneManager.LoadScene("LEVELFOUR");
+            GameManager.instance.LoadLevel("LEVELFOUR"); // Load the next level
             
-            GameManager.instance.lastCheckpointPosition = transform.position; //reset player position when changing levels
+            GameManager.instance.lastCheckpointPosition = new Vector3(817.5f, 11.31f, 493.1f); /* Level four spawn position */
         }
     }
 }

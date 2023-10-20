@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -18,7 +19,18 @@ public class GameManager : MonoBehaviour
     
     private bool _isRespawning = false;
     
+    private Dictionary<string, int> levelIndexMap = new Dictionary<string, int>
+    {
+        { "LEVELONE", 0 },
+        { "LEVELTWO", 1 },
+        { "LEVELTHREE", 2 },
+        { "LEVELFOUR", 3 },
+        { "MAINMENU", -1 } // Update this as needed
+    };
+    
     public static event Action OnPlayerReached9Kills;
+    
+    
     
     private void Awake() 
     {
@@ -37,23 +49,20 @@ public class GameManager : MonoBehaviour
     /// When player completes a level, call GameManager.instance.IncrementLevelCount(), then call GameManager.instance.LoadLevel(GameManager.instance.levelIndex)
     /// </summary>
     /// <param name="currentLevel"></param>
-    public void LoadLevel(int currentLevel)
+    public void LoadLevel(string levelName)
     {
-        switch (levelIndex)
+        if (levelIndexMap.ContainsKey(levelName))
         {
-            case 0: SceneManager.LoadScene("LEVELONE");
-                break;
-            case 1: SceneManager.LoadScene("LEVELTWO");
-                            break;
-            case 2: SceneManager.LoadScene("LEVELTHREE");
-                            break;
-            case 3: SceneManager.LoadScene("LEVELFOUR");
-                break;
-            default: SceneManager.LoadScene("MAINMENU");
-                break;
+            levelIndex = levelIndexMap[levelName];
+            recentSceneName = levelName; // Add this line
+            SceneManager.LoadScene(levelName);
+            ResetPlayerKillCount();
+            _isRespawning = true;
         }
-        ResetPlayerKillCount();
-        _isRespawning = true;
+        else
+        {
+            Debug.LogError("Level name not found in levelIndexMap: " + levelName);
+        }
     }
     
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)

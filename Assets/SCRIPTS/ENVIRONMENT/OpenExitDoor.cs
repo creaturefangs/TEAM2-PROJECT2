@@ -57,9 +57,20 @@ public class OpenExitDoor : MonoBehaviour
                 if (hitInfo.collider.CompareTag("ExitDoor"))
                 {
                     isLookingAtExitDoor = true;
+                
                     if (Keyboard.current.eKey.wasPressedThisFrame)
                     {
-                        exitDoor.OpenExitDoor();
+                        // Check kill count before proceeding
+                        if (GameManager.instance.killCounter < 9)
+                        {
+                            // Show a new text prompt to the player, and hide it after 5 seconds
+                            PlayerUI.instance.doorInteractionText.text = "You must kill all enemies before proceeding!";
+                            StartCoroutine(PlayerUI.instance.DisableUIElement(PlayerUI.instance.doorInteractionText.gameObject, 5f));
+                        }
+                        else // If the kill count is 9 or more, proceed to open the door
+                        {
+                            exitDoor.OpenExitDoor();
+                        }
                     }
                 }
                 else
@@ -72,7 +83,14 @@ public class OpenExitDoor : MonoBehaviour
                 isLookingAtExitDoor = false;
             }
         }
-        
-        PlayerUI.instance.doorInteractionText.text = isLookingAtExitDoor ? "Press [E] to open the exit door." : "";
+
+        if (!isLookingAtExitDoor || GameManager.instance.killCounter < 9)
+        {
+            PlayerUI.instance.doorInteractionText.text = "";
+        }
+        else
+        {
+            PlayerUI.instance.doorInteractionText.text = "Press [E] to open the exit door.";
+        }
     }
 }
