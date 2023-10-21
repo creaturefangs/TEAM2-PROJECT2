@@ -15789,7 +15789,7 @@ PrefabInstance:
     - target: {fileID: 3693450682467707276, guid: 00600692e35bee04ba8ff295f40431fb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 431.69
+      value: 506.295
       objectReference: {fileID: 0}
     - target: {fileID: 3693450682467707276, guid: 00600692e35bee04ba8ff295f40431fb,
         type: 3}
@@ -15799,7 +15799,7 @@ PrefabInstance:
     - target: {fileID: 3693450682467707276, guid: 00600692e35bee04ba8ff295f40431fb,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 215.29
+      value: 199.03
       objectReference: {fileID: 0}
     - target: {fileID: 3693450682467707276, guid: 00600692e35bee04ba8ff295f40431fb,
         type: 3}
@@ -28523,6 +28523,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2013987623}
   - component: {fileID: 2013987622}
+  - component: {fileID: 2013987625}
+  - component: {fileID: 2013987624}
   m_Layer: 0
   m_Name: AlertAudioSource
   m_TagString: Untagged
@@ -28636,12 +28638,46 @@ Transform:
   m_GameObject: {fileID: 2013987621}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 471.832, y: -39.7, z: 155.56}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1984358557}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2013987624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2013987621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0094c01a30f122b4fb3e7205891d33b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intruderAlertClip: {fileID: 8300000, guid: 36d73c1f601e82f4c898aa1ee5535b6a, type: 3}
+--- !u!65 &2013987625
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2013987621}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1.819706, z: 8.081192}
+  m_Center: {x: 0, y: 0.40985298, z: -0.012214661}
 --- !u!1001 &2019325231
 PrefabInstance:
   m_ObjectHideFlags: 0

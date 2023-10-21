@@ -41,7 +41,7 @@
 
         private void OnTriggerEnter(Collider col)
         {
-            // Check if the collided object is the player
+            // Check if the collided object is the exit door
             if(col.gameObject.CompareTag("ExitDoor"))
             {
                 // Check if the player hasn't reached 9 kills
@@ -49,8 +49,7 @@
                 {
                     // Display text prompt to the player
                     PlayerUI.instance.doorInteractionText.text = "You must kill all enemies before proceeding!";
-            
-                    // You may also want to hide this text after some seconds. You can use a Unity Coroutine for this
+                    
                     StartCoroutine(PlayerUI.instance.DisableUIElement(PlayerUI.instance.doorInteractionText.gameObject, 5f));
                 }
                 else
