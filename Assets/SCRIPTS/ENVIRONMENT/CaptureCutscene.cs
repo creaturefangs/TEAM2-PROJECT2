@@ -7,26 +7,45 @@ using UnityEngine.SceneManagement;
 
 public class CaptureCutscene : MonoBehaviour
 { 
-    public PlayableDirector cutsceneDirector;
-    public GameObject player;
-    public GameObject playerCamera; //renamed just in case of confusion :D
-    public GameObject cutsceneCamera;
+    public PlayableDirector cutsceneDirector; // timeline object
+    public GameObject player; // player object
+    //public GameObject playerCamera; //renamed just in case of confusion :D
+    public GameObject cutscene; // cutscene timeline
+    public GameObject playerUI; //playerui object
 
+
+    public int raycastDistance;
     void Start()
     {
-        GameObject camera = GameObject.Find("ThirdPersonCamera");
-        cutsceneCamera.SetActive(false);
+        cutscene.SetActive(false);
+        player.SetActive(true);
+        playerUI.SetActive(false);
     }
+
+    void Update()
+    {
+        GameObject thirdpersoncamera = GameObject.Find("");
+
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, transform.forward, out hit, raycastDistance)) //checking if collision between player and cutscene trigger is there
+        {
+            if (hit.collider.CompareTag("Player"))
+            {
+                thirdpersoncamera.SetActive(false); // third person camera is deactivated
+            }
+        }
+    }
+
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player"))  //checking collision for cutscene trigger
         {
-            cutsceneDirector.Play();
+            cutsceneDirector.Play(); // plays the cutscene timeline
             //player.SetActive(false);
-            playerCamera.SetActive(false);
-            cutsceneCamera.SetActive(true);
-
+           //playerCamera.SetActive(false);
+            cutscene.SetActive(true);
+            
         }
     }
 }
