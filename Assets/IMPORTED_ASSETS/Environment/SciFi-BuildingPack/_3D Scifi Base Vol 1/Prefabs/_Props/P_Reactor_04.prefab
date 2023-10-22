@@ -5877,6 +5877,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4224651186009106}
   - component: {fileID: 82908248758802012}
+  - component: {fileID: 6522037243673785326}
   m_Layer: 0
   m_Name: P_Reactor_04
   m_TagString: Untagged
@@ -6007,6 +6008,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!208 &6522037243673785326
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699818716648746}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 1.72, y: 3.395, z: 1.72}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 2.25, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1750835647414072
 GameObject:
   m_ObjectHideFlags: 0
