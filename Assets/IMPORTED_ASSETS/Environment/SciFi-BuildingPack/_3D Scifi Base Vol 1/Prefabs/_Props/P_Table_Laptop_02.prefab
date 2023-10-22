@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4872778088473072}
+  - component: {fileID: 727752329183087741}
   m_Layer: 0
   m_Name: P_Table_Laptop_02
   m_TagString: Untagged
@@ -35,6 +36,22 @@ Transform:
   - {fileID: 4686355304299924}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &727752329183087741
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1054097927271622}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.115, y: 1.09, z: 1.365}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.31, y: 0.59, z: 1.2}
+  m_TimeToStationary: 0.5
 --- !u!1 &1157587407304162
 GameObject:
   m_ObjectHideFlags: 0
@@ -127,6 +144,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4686355304299924}
+  - component: {fileID: 6792212712663154408}
   m_Layer: 0
   m_Name: P_Chair_01
   m_TagString: Untagged
@@ -150,6 +168,22 @@ Transform:
   - {fileID: 4811550913925672}
   m_Father: {fileID: 4872778088473072}
   m_LocalEulerAnglesHint: {x: 0, y: 160, z: 0}
+--- !u!208 &6792212712663154408
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260556954009004}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 1.61, z: 0.675}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1333803520402664
 GameObject:
   m_ObjectHideFlags: 0
@@ -636,6 +670,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4232364781339316}
   - component: {fileID: 108622263983690824}
+  - component: {fileID: 166244058407977489}
   m_Layer: 0
   m_Name: Point light
   m_TagString: Untagged
@@ -720,6 +755,29 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &166244058407977489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1726346248993874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &1757797295160008
 GameObject:
   m_ObjectHideFlags: 0
