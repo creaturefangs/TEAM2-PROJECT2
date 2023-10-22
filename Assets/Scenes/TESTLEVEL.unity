@@ -12117,6 +12117,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7807045200239279653, guid: 00600692e35bee04ba8ff295f40431fb,
+        type: 3}
+      propertyPath: animationClip
+      value: PlayerHeavyAttack
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
