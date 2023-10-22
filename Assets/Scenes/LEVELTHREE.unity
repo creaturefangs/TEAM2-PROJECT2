@@ -25401,6 +25401,11 @@ PrefabInstance:
       propertyPath: m_Cameras.Array.data[0]
       value: 
       objectReference: {fileID: 1001556733}
+    - target: {fileID: 2189595231281167777, guid: 00600692e35bee04ba8ff295f40431fb,
+        type: 3}
+      propertyPath: _isInvincible
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2314941517363703155, guid: 00600692e35bee04ba8ff295f40431fb,
         type: 3}
       propertyPath: m_AnchoredPosition.x
