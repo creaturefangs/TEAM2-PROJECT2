@@ -4948,7 +4948,7 @@ MonoBehaviour:
   additionalHealth: 0
   isAlive: 1
   invincibilityTimeout: 5
-  _isInvincible: 1
+  _isInvincible: 0
 --- !u!114 &6538745257638749634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6353,7 +6353,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7457506254224366715
 RectTransform:
   m_ObjectHideFlags: 0
