@@ -12,26 +12,26 @@ public class CaptureCutscene : MonoBehaviour
     //public GameObject playerCamera; //renamed just in case of confusion :D
     public GameObject cutscene; // cutscene timeline
     public GameObject playerUI; //playerui object
+    public GameObject thirdpersoncamera;
+    int raycastDistance = 10;
 
-
-    public int raycastDistance;
     void Start()
     {
         cutscene.SetActive(false);
         player.SetActive(true);
-        playerUI.SetActive(false);
+        
     }
 
     void Update()
     {
-        GameObject thirdpersoncamera = GameObject.Find("");
+        GameObject thirdpersoncamera = GameObject.Find("ThirdPersonCamera");
 
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward, out hit, raycastDistance)) //checking if collision between player and cutscene trigger is there
         {
             if (hit.collider.CompareTag("Player"))
             {
-                thirdpersoncamera.SetActive(false); // third person camera is deactivated
+                //thirdpersoncamera.SetActive(false); // third person camera is deactivated
             }
         }
     }
@@ -45,7 +45,8 @@ public class CaptureCutscene : MonoBehaviour
             //player.SetActive(false);
            //playerCamera.SetActive(false);
             cutscene.SetActive(true);
-            
+            thirdpersoncamera.SetActive(false);
+            playerUI.SetActive(false);
         }
     }
 }
