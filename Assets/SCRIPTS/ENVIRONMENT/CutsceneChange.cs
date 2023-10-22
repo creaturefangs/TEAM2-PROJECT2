@@ -13,6 +13,7 @@ public class CutsceneChange : MonoBehaviour
         if (changeTime <= 0)
         {
             SceneManager.LoadScene(sceneName);
+            GameManager.instance.ResetPlayerKillCount();
         }
     }
 
