@@ -3,21 +3,17 @@ using Random = UnityEngine.Random;
 
 public class EnemyAudioController : MonoBehaviour
 {
-    [HideInInspector] public AudioSource enemyAudio;
-
+    public AudioSource enemyMainAudio;
+    public AudioSource deathAudio;
     public AudioClip[] deathClips;
-    private void Awake()
-    {
-        enemyAudio = GetComponent<AudioSource>();
-    }
 
     public AudioClip GetRandomEnemyAudioClip(AudioClip[] clips)
     {
         return clips[Random.Range(0, clips.Length)];
     }
     
-    public void PlayAudioClip(AudioClip clip)
+    public void PlayAudioClip(AudioSource source, AudioClip clip)
     {
-        enemyAudio.PlayOneShot(clip);
+        source.PlayOneShot(clip);
     }
 }

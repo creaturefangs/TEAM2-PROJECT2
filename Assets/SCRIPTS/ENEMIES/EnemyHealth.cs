@@ -58,7 +58,7 @@ public class EnemyHealth : MonoBehaviour, ITakeDamage
         
         
         //play a random death sound
-        enemyAudio.PlayAudioClip(enemyAudio.GetRandomEnemyAudioClip(enemyAudio.deathClips));
+        enemyAudio.PlayAudioClip(enemyAudio.deathAudio, enemyAudio.GetRandomEnemyAudioClip(enemyAudio.deathClips));
         
         StartCoroutine(BloodPoolAfterDeath());
 
