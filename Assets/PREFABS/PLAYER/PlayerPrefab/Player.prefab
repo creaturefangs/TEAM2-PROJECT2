@@ -5093,7 +5093,7 @@ MonoBehaviour:
     timeButtonWasPressed: 0
     lastTimeTheButtonWasPressed: 0
     inButtomTimer: 0
-  animationClip: PlayerChargedAttack
+  animationClip: PlayerHeavyAttack
   animationEnd: 1
   OnPlayAnimation:
     m_PersistentCalls:

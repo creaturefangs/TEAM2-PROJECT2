@@ -33718,11 +33718,6 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.0025615096
       objectReference: {fileID: 0}
-    - target: {fileID: 315920838326186922, guid: 00600692e35bee04ba8ff295f40431fb,
-        type: 3}
-      propertyPath: m_Avatar
-      value: 
-      objectReference: {fileID: 9000000, guid: 260559d779694dc45b80cfe2a985bd08, type: 3}
     - target: {fileID: 354229547068899305, guid: 00600692e35bee04ba8ff295f40431fb,
         type: 3}
       propertyPath: m_LocalRotation.w
@@ -36237,11 +36232,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.0057070553
-      objectReference: {fileID: 0}
-    - target: {fileID: 7807045200239279653, guid: 00600692e35bee04ba8ff295f40431fb,
-        type: 3}
-      propertyPath: animationClip
-      value: PlayerHeavyAttack
       objectReference: {fileID: 0}
     - target: {fileID: 8075970486742359426, guid: 00600692e35bee04ba8ff295f40431fb,
         type: 3}
