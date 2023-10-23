@@ -5027,8 +5027,8 @@ MonoBehaviour:
   attackSpeed: 1
   minMeleeDamage: 35
   maxMeleeDamage: 70
-  heavyAttackDelay: 1.25
-  heavyAttackSpeed: 0.5
+  heavyAttackDelay: 0.8
+  heavyAttackSpeed: 1.2
   minHeavyMeleeDamage: 50
   maxHeavyMeleeDamage: 80
   attackHitEffects:
@@ -7750,8 +7750,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.11574295, y: 0.19359156, z: 0.21467286}
-  m_Center: {x: -0.03206325, y: 0.2607563, z: -0.017663227}
+  m_Size: {x: 0.21508874, y: 0.26067784, z: 0.21467283}
+  m_Center: {x: -0.0381148, y: 0.22721672, z: -0.017663242}
 --- !u!1 &8113712041341973652
 GameObject:
   m_ObjectHideFlags: 0

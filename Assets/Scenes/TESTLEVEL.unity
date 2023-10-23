@@ -139,7 +139,7 @@ PrefabInstance:
     - target: {fileID: 3822682045760253379, guid: 8cc5fd2c80ffc2f4094b3a303699a8a3,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4487614642389907321, guid: 8cc5fd2c80ffc2f4094b3a303699a8a3,
         type: 3}
@@ -2339,7 +2339,7 @@ PrefabInstance:
     - target: {fileID: 3822682045760253379, guid: 8cc5fd2c80ffc2f4094b3a303699a8a3,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4487614642389907321, guid: 8cc5fd2c80ffc2f4094b3a303699a8a3,
         type: 3}
@@ -10983,7 +10983,7 @@ PrefabInstance:
     - target: {fileID: 4891712544516388294, guid: 5281d71afdeb4734c857eafca7efcd53,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5235727074853449596, guid: 5281d71afdeb4734c857eafca7efcd53,
         type: 3}
@@ -12047,6 +12047,11 @@ PrefabInstance:
       propertyPath: m_Cameras.Array.data[0]
       value: 
       objectReference: {fileID: 2047824512}
+    - target: {fileID: 2189595231281167777, guid: 00600692e35bee04ba8ff295f40431fb,
+        type: 3}
+      propertyPath: _isInvincible
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3460353318209485918, guid: 00600692e35bee04ba8ff295f40431fb,
         type: 3}
       propertyPath: m_Name
