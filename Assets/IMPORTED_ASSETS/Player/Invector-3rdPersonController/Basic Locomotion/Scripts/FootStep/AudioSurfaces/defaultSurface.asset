@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: defaultSurface
   m_EditorClassIdentifier: 
   audioSource: {fileID: 8206458, guid: dfea19d1d34dd174d87195f78cb44ae7, type: 3}
-  audioMixerGroup: {fileID: 24352844, guid: a63f18b704a1b874a8dad30baf0939e6, type: 2}
+  audioMixerGroup: {fileID: -4917738272405083134, guid: f2755bdc192704342a314231559d7130,
+    type: 2}
   TextureOrMaterialNames: []
   audioClips:
   - {fileID: 8300000, guid: 16fd0d4a5c099054490d2a482a03de21, type: 3}
