@@ -14,6 +14,12 @@ public class CutsceneChange : MonoBehaviour
         {
             SceneManager.LoadScene(sceneName);
             GameManager.instance.ResetPlayerKillCount();
+
+            if (sceneName == "MAINMENU")
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
         }
     }
 
